@@ -1,0 +1,46 @@
+@import '../../../../../assets/styles/color';
+
+.track {
+    display: flex;
+    width: 96%;
+    overflow-x: scroll;
+    padding: 1em .4em;
+
+    .status {
+      width: 20em;
+      padding: .5em 1em;
+      text-align: center;
+      border-radius: .5em;
+      border: none;
+      margin: .4em;
+      background: $cloud;
+      font-weight: 600;
+      color: $darker-grey;
+      cursor: default;
+
+
+      span {
+        display: block;
+        text-align: center;
+        top: .2em;
+      }
+    }
+    .done{
+      color: $secondary;
+    }
+    .bussy{
+      color: $black;
+      border: 2px solid $black;
+    }
+
+    p{
+      color: $black;
+      padding: 1em;
+      background: rgba(81, 255, 0, 0.205);
+      border-radius: .5em;
+      display: block;
+      margin: .1em auto;
+      left: .5em;
+      
+    }
+  }

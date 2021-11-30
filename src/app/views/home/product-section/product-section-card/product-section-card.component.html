@@ -1,0 +1,16 @@
+<div class="item" *ngIf="product">
+  <div class="image">
+    <img [src]="product.FeaturedImageUrl" alt="Awesome Sunglasses" (click)="viewMore(product)">
+  </div>
+  <div class="info">
+
+
+    <div class="product-info" (click)="viewMore(product)">
+      {{product.Name}}
+      <span>
+        {{product.RegularPrice | currency:'R'}}
+      </span>
+    </div>
+    <a (click)="viewMore(product)">Add to cart</a>
+  </div>
+</div>

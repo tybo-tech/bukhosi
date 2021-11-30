@@ -1,0 +1,78 @@
+<div class="basic">
+
+  <div class="" *ngIf="jobItems">
+    <div class="no-child" *ngFor="let item of jobItems">
+      <div class="black-label">
+        {{item.ItemName}}
+      </div>
+      <div class="link" (click)="updateJobItem(item)">
+        {{item.Quantity || 1}}  x {{item.UnitPrice  | currency:'R'}}
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div>
+
+  
+
+    <div class="small-grid">
+      <h4>
+          Shipping...
+      </h4>
+
+      <select [(ngModel)]="Shipping" (change)="selectShipping()">
+        <option  *ngFor="let shipping of shippings; let i = index"  [value]="shipping.Name" >
+          {{shipping.Name}} - {{shipping.Price  | currency:'R'}}
+        </option>
+      </select>
+    </div>
+
+    <h4 *ngIf="order">
+      Total... {{order.Total  | currency:'R'}}
+      <!-- <span>
+        Shipping...{{0  | currency:'R'}}
+      </span> -->
+    </h4>
+  </div>
+
+  
+  <div>
+    <button class="add-new" (click)="addNew()">Add job item</button>
+    <button class="add-new" (click)="createOrder()">Create invoice</button>
+  </div>
+
+
+</div>
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h1>
+      Add new job item
+    </h1>
+
+    <div class="form-item">
+      <label for="">Job item name</label>
+      <input type="text" name="" id="" [(ngModel)]="newJobItem.ItemName" placeholder="Floara midi dress">
+
+      <label for="">Unit Price</label>
+      <input type="number" name="" id="" [(ngModel)]="newJobItem.UnitPrice" placeholder="Floara midi dress">
+
+
+      <label for="">Quantity</label>
+      <input type="number" name="" id="" [(ngModel)]="newJobItem.Quantity" placeholder="Floara midi dress">
+
+      <label for="">Size</label>
+      <input type="text" name="" id="" [(ngModel)]="newJobItem.Size" placeholder="Floara midi dress">
+
+      <label for="">Color</label>
+      <input type="text" name="" id="" [(ngModel)]="newJobItem.Colour" placeholder="Floara midi dress">
+
+      <button (click)="saveJobItem()" [disabled]="!newJobItem.ItemName">Save</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+  </div>
+</div>
+
+
+<app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>

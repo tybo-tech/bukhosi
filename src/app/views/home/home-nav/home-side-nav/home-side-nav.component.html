@@ -1,0 +1,138 @@
+<div class="overlay" (click)="toggleMenu(false)"></div>
+<div class="side-nav-mob">
+  <div class="items">
+    <div class="close-menu">
+      <a (click)="toggleMenu(false)" class="sell-ontybo close-menu">
+        <span class="material-icons">
+          close
+        </span>
+      </a>
+    </div>
+
+
+    <div class="user" *ngIf="user">
+      <p>
+        Hi, <b (click)="profile()">{{user.Name}}</b>
+        <br>
+        <span class="logout" (click)="logout()">Logout</span>
+      </p>
+    </div>
+
+
+
+
+
+    <div class="main-collections">
+      <!-- <div class="collection" *ngFor="let item of navItems" (click)="parentNavItemClicked(item)">
+        {{item.Label}} Collections
+      </div> -->
+      <div class="collection" (click)="goto('/')">
+        <!-- <span class="material-icons">
+          home
+        </span>  -->
+        Home.
+        <!-- </div>
+      <div class="collection" (click)="loadCategories('Ladies')">
+        Ladies collection
+        <span class="material-icons">
+          expand_more
+        </span>
+      </div>
+
+      <div class="sub-collections" *ngIf="subCatergories && parentCategory && parentCategory.Name=='Ladies'">
+        <div class="catergories">
+          <button class="catergory" (click)="tapChildCategory('Ladies')">
+            All
+          </button>
+          <button class="catergory" *ngFor="let catergory of subCatergories; let i = index"
+            (click)="tapChildCategory(catergory)">
+            {{catergory.Name}}
+          </button>
+        </div>
+      </div>
+      <div class="collection" (click)="loadCategories('Mens')">
+        Men's collection
+
+        <span class="material-icons">
+          expand_more
+        </span>
+      </div>
+
+
+      <div class="sub-collections" *ngIf="subCatergories && parentCategory && parentCategory.Name=='Mens'">
+        <div class="catergories">
+          <button class="catergory" (click)="tapChildCategory('Mens')">
+            All
+          </button>
+          <button class="catergory" *ngFor="let catergory of subCatergories; let i = index"
+            (click)="tapChildCategory(catergory)">
+            {{catergory.Name}}
+          </button>
+        </div>
+      </div> -->
+      </div>
+
+      <div class="main-collections">
+        <!-- <div class="collection" (click)="goto('home/shops')">
+        <span class="material-icons">
+          storefront
+          </span>
+          
+        All shops
+      </div> -->
+        <div class="collection" (click)="goto('contact')">
+          <!-- <span class="material-icons">
+            contact_phone
+          </span> -->
+
+          Contact us.
+        </div>
+      </div>
+      <div class="main-collections">
+        <div class="collection" (click)="goto('home/wishlist')">
+          <!-- <span class="material-icons love loved">
+            favorite
+          </span> -->
+          
+          My favorites.
+        </div>
+      </div>
+      <!-- <div class="main-collections">
+      <div class="collection" (click)="goto('home/messages/0/0')">
+        <span class="material-icons">
+          local_post_office
+          </span> Messages
+      </div>
+    </div> -->
+      <!-- 
+    <div class="all-catergories" *ngIf="selectedCategory && selectedCategory.Children">
+      <h3>Collections</h3>
+      <span *ngFor="let child of selectedCategory.Children">
+        <button *ngIf="child.Products && child.Products.length" (click)="childCategoryselected(child)">{{child.Name}}
+          <span> {{child.Products?.length}}</span> </button>
+      </span>
+
+      <div class="devider"></div>
+      <h3>Menu</h3>
+      <button (click)="goto('home/shops')">All shops</button>
+
+    </div> -->
+
+      <div class="all-catergories">
+        <!-- <a *ngIf="!user" (click)="goto('home/hello-fashion-shop')" class="sell-ontybo">Sell on Bukhosi blooms</a> -->
+        <a *ngIf="user && user.UserType === 'Admin'" (click)="goto('admin/dashboard')" class="sell-ontybo"> Go to my
+          dashboard</a>
+        <a *ngIf="user && user.UserType === 'Customer'" (click)="goto('home/profile')" class="sell-ontybo"> Go to my
+          profile</a>
+
+        <a *ngIf="!user" (click)="goto('sign-in')" class="sell-ontybo"> My orders</a>
+        <a *ngIf="user && user.UserType === 'Customer'" (click)="goto('home/my-orders')" class="sell-ontybo"> My
+          orders</a>
+        <a *ngIf="!user" (click)="goto('sign-in')" class="sell-ontybo"> Login</a>
+        <a *ngIf="!user" (click)="goto('sign-up')" class="sell-ontybo"> Register</a>
+
+        <!-- <a (click)="goto('')" class="sell-ontybo"> Exit shop</a> -->
+      </div>
+    </div>
+
+  </div>

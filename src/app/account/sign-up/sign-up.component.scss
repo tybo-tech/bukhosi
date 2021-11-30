@@ -1,0 +1,24 @@
+@import '../../../assets/styles/color';
+
+.top-bar-conatiner {
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+.logo {
+  text-align: center;
+  margin: 0;
+  padding: 1em ;
+  display: block;
+  margin-top: 4em;
+
+
+  img {
+    width:10em;
+    margin: 0;
+    padding: 0;
+  }
+}

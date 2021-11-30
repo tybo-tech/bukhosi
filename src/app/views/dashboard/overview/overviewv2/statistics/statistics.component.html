@@ -1,0 +1,30 @@
+<div class="stats">
+
+
+
+
+  <div class="stat" (click)="goto('invoices/Not paid')">
+    <span> {{notPaidOrders?.length}}</span>
+    Pending payments
+  </div>
+
+  <div class="stat" (click)="goto('invoices/Processing')">
+    <span> {{processingPaidOrders?.length}}</span>
+    Processing
+  </div>
+
+
+  <div class="stat" (click)="goto('invoices/On Transit')">
+    <span> {{inTransitOrders?.length}}</span>
+    In Transit
+  </div>
+
+  <div class="stat" (click)="goto('invoices/al')">
+    <span> {{orders?.length}}</span>
+    All
+  </div>
+
+
+
+
+</div>

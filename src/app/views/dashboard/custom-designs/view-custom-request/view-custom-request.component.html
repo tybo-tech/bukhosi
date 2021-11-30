@@ -1,0 +1,46 @@
+<div class="main" *ngIf="customDesign">
+  <div class="top-bar" >
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name">
+     Customer request.
+    </div>
+  </div>
+  <div class="image">
+    <img [src]="customDesign.Image1" alt="">
+  </div>
+  <div class="description">
+    <p>
+      {{customDesign.Description}}
+      <span *ngIf="customDesign.DueDate" class="date">
+        Due by   {{customDesign.DueDate | date: 'mediumDate'}}
+        </span>
+    </p>
+
+    <div class="actions">
+      <!-- <button class="login" (click)="egnore()">Egnore</button> -->
+      <button (click)="qoute()">Estimate & qoute</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h1>
+      Add  job to estimate work.
+    </h1>
+
+    <div class="form-item">
+      <label for="">Job tittle</label>
+      <input type="text" name="" id="" [(ngModel)]="newJob.Tittle" placeholder="Enter job tittle">
+      <button (click)="saveJob()" [disabled]="!newJob.Tittle">Save job</button>
+      <div class="link"  (click)="showAdd = false" >Cancel</div>
+    </div>
+  </div>
+</div>

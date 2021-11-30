@@ -1,0 +1,81 @@
+<h3 class="heading" *ngIf="products">
+  My products  <span (click)="addProduct()">Add product</span>
+</h3>
+
+<div class="filters">
+  <div class="search-box">
+    <input type="search" [(ngModel)]="searchString" placeholder="🔎 Filter by product name or description">
+  </div>
+
+  <div class="tabs">
+    <p>
+      <span  (click)="all()">Active ({{activeProducts?.length}})</span>
+      <span  (click)="filterWith(STATUS_TRASHED_STRING)">Trash ({{trasheddProducts?.length}})</span>
+      <!-- <span  (click)="filterWith('all')">Active ({{products.length}})</span> -->
+    </p>
+  </div>
+</div>
+<div class="products" *ngIf="products">
+
+  <div class="product" *ngFor="let product of products   | searchproduct: searchString; let i = index">
+    <div class="image">
+      <img [src]="product.FeaturedImageUrl" *ngIf="product.FeaturedImageUrl" alt="Awesome Sunglasses"
+        (click)="view(product)">
+      <img *ngIf="!product.FeaturedImageUrl" src="assets/images/common/image-holder.svg" alt="" (click)="view(product)">
+
+    </div>
+
+    <div class="product-details" (click)="view(product)">
+      <p>
+        {{product.Name}}
+        <span>{{product.ParentCategoryName}} | {{product.CategoryName}}</span>
+        <span *ngIf="product.IsJustInTime != 'Just in time'"> {{product.TotalStock}} In stock</span>
+        <span *ngIf="product.IsJustInTime == 'Just in time'"> {{product.OrderLimit}} Max. orders</span>
+        <!-- <span class="cat">
+          {{product.IsJustInTime}}
+        </span> -->
+        <span class="price" *ngIf="!product.OnSale">
+          {{product.RegularPrice | currency:'R'}}
+        </span>
+        <span class="price" *ngIf="product.OnSale">
+          <del> {{product.RegularPrice | currency:'R'}}</del> <br>
+          {{product.SalePrice | currency:'R'}}
+        </span>
+      </p>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+<div class="quick-add" *ngIf="showAdd && newProduct">
+  <div class="form">
+    <h1>
+      Add new product.
+    </h1>
+
+
+    <div class="form-item">
+      <label for="">Product name</label>
+      <input type="text" name="" id="" [(ngModel)]="newProduct.Name" placeholder="Enter product name.">
+    </div>
+
+    <div class="form-item">
+      <label for="">Product Description</label>
+      <textarea type="text" [(ngModel)]="newProduct.Description" placeholder="Enter product description."></textarea>
+    </div>
+    <div class="form-item">
+      <label for="">Product  Price <strong>(ZAR)</strong></label>
+      <input type="tel" name="" id="" [(ngModel)]="newProduct.RegularPrice" placeholder="Enter product price.">
+    </div>
+
+
+    <div class="form-item">
+      <button (click)="saveProduct()" [disabled]="!newProduct.Name">Next</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+  </div>
+</div>

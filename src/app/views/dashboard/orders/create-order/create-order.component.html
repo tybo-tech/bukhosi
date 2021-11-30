@@ -1,0 +1,173 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="create-order mobile-full">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back ">
+        <span class="material-icons" (click)="back()">
+          keyboard_arrow_left
+        </span>
+      </div>
+
+
+      <div class="name link tal" (click)="back()">
+        Orders
+      </div>
+
+      <div class="name">
+        New order
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section-card mt5" *ngIf="order && order.Customer">
+    <h2 class="header-label">
+      Customer
+    </h2>
+    <div class="user-profile">
+      <div class="icon" *ngIf="order.Customer.Dp">
+        <img *ngIf="order.Customer.Dp" [src]="order.Customer.Dp" alt="">
+      </div>
+
+      <div class="icon" *ngIf="!order.Customer.Dp">
+        <img class="profile-user" src="assets/images/common/profile-user-darker.svg" alt="">
+      </div>
+
+      <div class="name">
+        {{order.Customer.Name}}
+        <span>
+          {{order.Customer.PhoneNumber}}
+        </span>
+        <span>
+          {{order.Customer.Email}}
+        </span>
+      </div>
+    </div>
+
+    <div class="more-details">
+      <p>
+        <span class="price address">
+          {{order.Customer.AddressLineHome}}
+        </span>
+      </p>
+
+      <div class="options">
+        <button class="edit br" (click)="editCustomer()">
+          Edit customer
+        </button>
+        <button class="edit" (click)="chooseCustomer()">
+          Change customer
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section-card">
+    <h1>
+      Ordered Products
+      <span *ngIf="order && order.Orderproducts && !order.Orderproducts.length" (click)="selectProduct()">
+        Add product to order
+      </span>
+    </h1>
+
+    <div class="more-details" *ngIf="order && order.Orderproducts && order.Orderproducts.length">
+      <app-order-cart [order]="order"></app-order-cart>
+
+      <div class="options">
+        <button class="edit br" (click)="selectProduct()" *ngIf="order.OrdersId.length < 10">
+          Add more items
+        </button>
+        <button class="edit">
+          Total: {{order.Total  | currency:'R'}}
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="section-card">
+
+    <h2 class="header-label">
+      Shipping method
+    </h2>
+
+    <div class="shippings" *ngIf="shippings &&  shippings.length">
+
+      <div class="line-item" *ngFor="let shipping of shippings; let i = index" (click)="selectShipping(shipping)">
+
+        <div class="item">
+          <p>
+            {{shipping.Name}}
+            <span>
+              <span class="price">
+                {{shipping.Price  | currency:'R'}}
+              </span>
+            </span>
+          </p>
+        </div>
+
+        <div class="item">
+          <span class="material-icons active" *ngIf="shipping.Selected">
+            check_circle
+          </span>
+          <span class="material-icons" *ngIf="!shipping.Selected">
+            lens
+          </span>
+        </div>
+
+
+      </div>
+
+
+      <h2 class="sammary" *ngIf="order">
+        Sub Total: {{order.Total  | currency:'R'}}
+        <span class="ship" *ngIf="order.Shipping">{{ order.Shipping}}  {{order.ShippingPrice  | currency:'R'}}</span>
+      </h2>
+
+      <label for="">Notes</label>
+      <textarea name="" id="" [(ngModel)]="order.Notes" cols="30" rows="10"></textarea>
+
+
+
+      <div class="ctas">
+
+        <div class="cta">
+          <button class="mat-primary checkout cancel" mat-button color="primary" (click)="abort()">
+            Abort
+          </button>
+        </div>
+        <div class="cta">
+          <button class="mat-primary checkout " mat-button color="primary" (click)="checkout()"
+            [disabled]="!order || !order.Orderproducts || !order.Orderproducts.length">
+            Checkout
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="pb"></div>
+
+
+
+
+</div>
+
+<app-customer-selector *ngIf="showChooseCustomer" [items]="users"
+  (doneSelectingCustomer)="doneSelectingCustomer($event)"></app-customer-selector>
+
+<app-item-selector *ngIf="showChooseProduct" [items]="productsToChooseFrom"
+  (selectedItemDoneEventEmitter)="doneSelectingProduct($event)">
+</app-item-selector>
+<app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>

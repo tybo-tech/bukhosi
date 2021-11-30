@@ -1,0 +1,268 @@
+button {
+  border-radius: none;
+  border: none;
+  width: 100%;
+  padding: 1em;
+  font-weight: 600;
+  border-radius: .5em;
+  transition: .4s ease-in-out;
+
+
+  &:disabled {
+    background: $cloud !important;
+    color: $darker-grey !important;
+    border: 1px solid $darker-grey;
+    cursor: no-drop;
+  }
+
+  cursor: pointer;
+  text-transform: uppercase;
+
+
+
+  &.mat-flat-button.mat-primary[disabled] {
+    background-color: $grey;
+    color: #a5b1c2 !important;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-width: 600px) {
+    &.mat-primary {
+      background: $pop;
+      width: 100%;
+    }
+  }
+}
+
+.primary {
+  background: $pop;
+  color: $black;
+}
+.btn-danger {
+  background: $red !important;
+  color: $white !important;
+}
+
+.secondary {
+  background: $black !important;
+  color: $white !important;
+  border:2px solid $black !important;
+
+}
+.tertiary {
+  border:2px solid $black !important;
+  color: $black !important;
+  background: $white !important;
+
+}
+
+button {
+  &.mat-primary {
+    color: $black;
+
+    &:disabled {
+      background: $darker-grey;
+      cursor: no-drop;
+      color: $black
+    }
+  }
+}
+
+
+
+.sec {
+  background: $secondary !important;
+}
+
+.tertiary {
+  background: $white !important;
+  color: $black !important;
+  border: 2px solid $black;
+
+}
+
+
+.save-all {
+  position: fixed;
+  padding: 1rem;
+  color: $white;
+  bottom: 11rem;
+  right: 19rem;
+  height: 2rem;
+}
+
+button.danger {
+  background: $danger;
+}
+
+
+.btn-uplaod {
+  width: 15em;
+  ;
+  padding: .6em 1em;
+  background: $white;
+  margin: .5em 0;
+  box-shadow: $box-shadow;
+  position: relative;
+  left: 0;
+  transition: .4s ease-in-out;
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
+
+  .material-icons {
+
+    top: .2em;
+    margin: 0;
+  }
+}
+
+
+
+
+.back,
+.bookmark,
+.like {
+  position: fixed;
+  left: 1em;
+  top: 1.5em;
+  box-shadow: $box-shadow;
+  height: 2em;
+  width: 2em;
+  background: $main-bg;
+  color: $black;
+
+  .material-icons {
+    top: -5px;
+    left: -10px;
+    margin: 0;
+  }
+}
+
+.bookmark {
+  position: fixed;
+  top: 5em;
+  z-index: 10000;
+}
+
+.like {
+  top: 8em;
+  z-index: 10000;
+}
+
+.more {
+  background: $pop;
+  // position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  padding: 1em;
+  color: $black;
+  font-weight: 600;
+  border-radius: .5em;
+  margin: 1em 0;
+
+  &:disabled {
+    background: $darker-grey;
+    cursor: no-drop;
+    color: $black
+  }
+
+}
+
+.btn-pop {
+  background: $pop !important;
+  color: $white!important;
+}
+
+
+
+// checkout & cart  modal buttons 
+
+
+
+.buttons {
+  position: fixed;
+  height: 7em;
+
+  z-index: 11000;
+  // background: $white;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+
+  div {
+    text-align: center;
+    padding: .5em 0;
+  }
+
+  button {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    bottom: .2em;
+    padding: 1em;
+  }
+
+}
+
+
+
+.btn-color {
+
+  padding: .5em;
+  text-align: center;
+  border-radius: .5em;
+  margin: .4em;
+  color: $black;
+  float: auto;
+  width: 3em;
+  height: 3em;
+  padding: .2em;
+  position: relative;
+  border: 3px solid $cloud;
+  background-size: contain;
+
+  .material-icons {
+    top: .3em;
+    left: .4em;
+    font-size: 1.4em;
+    position: absolute;
+  }
+
+}
+
+.active-color {
+  border: 3px solid $pop;
+  box-shadow: $box-shadow;
+
+}
+
+
+.btn-google {
+  background: $google !important;
+  color: $white !important;
+  font-weight: 700;
+  margin: .5em auto;
+
+
+  @media only screen and (max-width: 600px) {
+    margin: .5em auto;
+    margin-top: 3em;
+  }
+}
+
+.btn-facebook{
+  background: $facebook !important;
+  color: $white !important;
+}
+
+.or {
+  padding: 1em;
+  text-align: center;
+  font-weight: 700;
+}

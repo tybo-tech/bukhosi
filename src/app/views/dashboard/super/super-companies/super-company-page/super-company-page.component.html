@@ -1,0 +1,177 @@
+<div *ngIf="company" class="main success-modal">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          keyboard_arrow_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        Admin: Company Profile
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="main" *ngIf="company && company.Dp">
+
+    <div class="card logo-side">
+
+      <div class="logo">
+        <img *ngIf="company.Dp" [src]="company.Dp" alt="">
+
+      </div>
+
+      <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+        (change)="uploadFile(file.files)" style="display:none;">
+      <div (click)="file.click()" class="logout logo-btn">
+        Change logo
+      </div>
+    </div>
+
+    <div class="bread-info-tabs">
+      <div class="item" *ngFor="let item of tabs; let i = index" [ngClass]="item.Class" (click)="tab(item, i)">
+        {{item.Name}}
+      </div>
+    </div>
+
+
+    <div class="card" *ngIf="selectedTab == 0">
+      <h2>
+        Basic details
+      </h2>
+      <div class="inputs">
+
+        <div class="shop-link">
+          <div class="">
+            <p>
+              {{baseUrl}}/
+            </p>
+          </div>
+          <div class="">
+            <input *ngIf="isEditMode" type="text" [(ngModel)]="company.Slug" class="txt-edit">
+          </div>
+        </div>
+        <label>Company Name</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.Name" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.Name}}</div>
+
+
+        <!-- 
+        <label>Company Shop Link</label>
+        {{baseUrl}}/<input *ngIf="isEditMode" type="text" [(ngModel)]="company.Slug" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode"> {{baseUrl}}/{{company.Slug}}</div> -->
+
+
+        <label>Company Phone</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.Phone" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.Phone}}</div>
+
+        <label>Company Email</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.Email" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.Email}}</div>
+
+        <label>Company Address</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.AddressLine" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.AddressLine}}</div>
+
+        <div (click)="toggleEditMode()" *ngIf="!isEditMode" class="logout logo-btn edit-btn">
+          Edit Info
+        </div>
+
+        <div (click)="save()" *ngIf="isEditMode" class="logout logo-btn edit-btn long-btn">
+          Save company basic info
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="card" *ngIf="selectedTab == 1">
+      <h2>
+        Company Payments
+      </h2>
+      <div class="inputs">
+
+        <label>Company Bank Name</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.BankName" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.BankName}}</div>
+
+        <label>Company Bank Acc No</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.BankAccNo" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.BankAccNo}}</div>
+
+        <label> Bank AccHolder</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.BankAccHolder" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.BankAccHolder}}</div>
+
+        <label> Bank Branch/Code</label>
+        <input *ngIf="isEditMode" type="text" [(ngModel)]="company.BankBranch" class="txt-edit">
+        <div class="value" *ngIf="!isEditMode">{{company.BankBranch}}</div>
+
+        <div (click)="toggleEditMode()" *ngIf="!isEditMode" class="logout logo-btn edit-btn">
+          Edit Info
+        </div>
+
+
+        <div (click)="save()" *ngIf="isEditMode" class="logout logo-btn edit-btn long-btn">
+          Save company banking info
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="card" *ngIf="selectedTab == 2">
+      <h2>
+        Customise invoice
+      </h2>
+      <div class="inputs">
+
+        <label>Company Invoice Background</label>
+        <input type="color" [(ngModel)]="company.Background" class="txt-edit">
+
+        <label>Company Invoice Color</label>
+        <input type="color" [(ngModel)]="company.Color" class="txt-edit">
+
+        <div (click)="save()" class="logout logo-btn edit-btn">
+          Save colours
+        </div>
+      </div>
+    </div>
+    <div class="mt5"></div>
+    <div class="mt5"></div>
+  </div>
+
+  <div class="main" *ngIf="user && company && !company.Dp">
+    <div class="no-data">
+      <h1>
+        Final step, Company logo set up.
+      </h1>
+      <img src="assets/images/common/store.svg" alt="">
+      <p>
+        We need your <b>shop logo to increase customer recognition,</b> you can not continue without a shop logo.
+      </p>
+      <input type="file" accept="image/png, image/jpeg" #file2 placeholder="Choose file" multiple
+        (change)="uploadFile(file2.files)" style="display:none;">
+      <button class="logout   logo-btn center-btn" (click)="file2.click()">Upload company logo</button>
+      <button class="logout   logo-btn  skip" (click)="skip()">Skip for now</button>
+
+    </div>
+  </div>
+
+  <!-- 
+  <button mat-button class="more" *ngIf="isEditMode" type="button" (click)="save()">
+    Save company.
+  </button> -->
+</div>
+
+
+<app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>

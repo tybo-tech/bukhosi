@@ -1,0 +1,129 @@
+@import '../../../assets/styles/color';
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 17em auto;
+  max-width: $max-width;
+  margin: .5em auto;
+  grid-template-columns: 100%;
+
+  @media only screen and (max-width: 600px) {
+    max-width: auto;
+    width: 100%;
+  }
+
+  //   background: $white;
+  //   background: $cloud;
+  padding: 0;
+
+  .out-let {
+    // height: 100vh;
+    overflow-y: scroll;
+    padding: 6em 0;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+      height: auto;
+    }
+
+
+
+  }
+
+
+}
+
+.loading {
+  h3 {
+    width: 100%;
+    text-align: center;
+    color: $pop-darker;
+  }
+}
+
+.mat-spinner {
+  margin: 10% auto;
+  margin-bottom: 2em;
+
+
+
+  @media only screen and (max-width: 600px) {
+    margin: 50% auto;
+    margin-bottom: 2em;
+  }
+}
+
+.loading ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $pop-darker;
+}
+
+
+footer {
+  background: $cloud;
+  padding: .5em;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 20% 5% auto;
+    padding-left: 20%;
+
+    p {
+      font-size: .85em;
+      font-weight: 600;
+      top: .2em;
+
+      @media only screen and (max-width: 600px) {
+        top: 1em;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 55% auto;
+      padding: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.overlay{
+  z-index: 10000000000000;
+}
+
+
+.user
+ {
+  background: $white;
+  padding: 1em;
+  border-radius: .2em;
+  margin: 1em auto;
+  max-width: 50em;
+  margin-top: 6em;
+  padding-top: 2em;
+
+  h4 {
+    span {
+      display: block;
+      font-weight: 300;
+    }
+    .role{
+      font-weight: 500;
+      color: $primary;
+    }
+    .change{
+      background: $pop;
+      color: $white;
+      margin: .2em 0;
+      padding: .2em;
+      width: 5em;
+      text-align: center;
+      border-radius: .2em;
+      font-weight: 500;
+    }
+  }
+}
+

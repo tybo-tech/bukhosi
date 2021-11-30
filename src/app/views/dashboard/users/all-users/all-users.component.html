@@ -1,0 +1,59 @@
+
+<div class="body success-modal" *ngIf="users && users.length">
+
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar" *ngIf="users">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        All users ({{users.length}})
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="product-item" *ngFor="let item of users" (click)="view(item)">
+    <div class="item">
+      <div class="icon" *ngIf="item.Dp">
+        <div class="user-dp-image">
+          <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.Dp">
+        <div class="user-dp-image">
+          <img src="assets/images/common/profile-user.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <p>
+        <b> {{item.Name}} {{item.Surname}}</b>
+        <span *ngIf="item.PhoneNumber" class="cat">
+          {{item.PhoneNumber}}
+        </span>
+        <span *ngIf="item.Email" class="cat">
+          {{item.Email}}
+        </span>
+        <span *ngIf="item.UserType" class="user-type">
+          {{item.UserType}}
+        </span>
+        <span *ngIf="item.AddressLineHome" class="cat address">
+          {{item.AddressLineHome}}
+        </span>
+
+      </p>
+    </div>
+  </div>
+
+  <div class="p6"></div>
+</div>

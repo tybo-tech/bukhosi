@@ -1,0 +1,84 @@
+@import '../../../../assets/styles/color';
+.footer {
+  background: $black;
+  color: #ffffff;
+  padding: 0;
+
+
+
+  .items {
+    display: grid;
+    grid-template-columns: 33% 36% auto;
+    padding: 2em;
+
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 100%;
+    }
+
+    .item {
+      h3 {
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: .5em;
+        padding: .2em 0em;
+        font-size: 1em;
+
+        @media only screen and (max-width: 600px) {
+          margin: .5em 0;
+          border-top: 1px solid #ecf0f1;
+          padding: .5em 0;
+        }
+      }
+    }
+  }
+}
+
+
+.social {
+  padding: .5em;
+  display: grid;
+  grid-template-columns: 1.5em auto;
+
+  .name {
+    padding: 0 2em;
+
+    a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.col-1 {
+  grid-template-columns: 100%;
+
+  .name {
+    padding: 0;
+
+  }
+}
+
+
+.power {
+  padding: 2em;
+  padding-top: 1em;
+  font-size: .85em;
+
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+a{
+  font-size: .85em;
+}

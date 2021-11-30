@@ -1,0 +1,31 @@
+<div class="overlay" *ngIf="modalModel && modalModel.heading"></div>
+<div class="modal" *ngIf="modalModel && modalModel.heading">
+  <div class="head">
+
+    <div class="close" (click)="close()">
+      <!-- <span class="material-icons">
+        clear
+      </span> -->
+    </div>
+  </div>
+
+
+  <div class="body">
+    <h1>
+      {{modalModel.heading}}
+    </h1>
+    <p *ngFor="let item of modalModel.body">
+      {{item}}
+    </p>
+    <div class="image">
+      <img *ngIf="modalModel.img" [src]="modalModel.img" alt="">
+    </div>
+  </div>
+
+
+  <div class="cta">
+    <button mat-button class="mat-primary" type="button" (click)="goto()">
+      {{modalModel.ctaLabel}}
+    </button>
+  </div>
+</div>

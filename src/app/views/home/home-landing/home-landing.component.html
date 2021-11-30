@@ -1,0 +1,45 @@
+<div class="pc pc-slider">
+  <app-home-slider></app-home-slider>
+</div>
+
+<div class="home phone">
+  <div class="banner">
+    <img (swipeleft)="changeSlide(1)" (swiperight)="changeSlide(-1)" src="assets/images/banner1-phone.png"
+      *ngIf="slide==1" class="phone" alt="">
+    <img (swipeleft)="changeSlide(1)" (swiperight)="changeSlide(-1)" src="assets/images/banner2-phone.png"
+      *ngIf="slide==2" class="phone" alt="">
+    <img (swipeleft)="changeSlide(1)" (swiperight)="changeSlide(-1)" src="assets/images/banner3-phone.png"
+      *ngIf="slide==3" class="phone" alt="">
+    <div class="scrolls">
+      <span class="material-icons" (click)="changeSlide(-1)">
+        arrow_back_ios
+      </span>
+      <span class="material-icons" (click)="changeSlide(1)">
+        arrow_forward_ios
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="shop-by-category phone-only">
+  <h3>
+    Shop by category
+  </h3>
+  <div class="my-grid">
+    <div class="">
+      <img src="assets/images/moblie-dogs.png" (click)="selectCategory('dogs')" alt="">
+    </div>
+    <div class="">
+      <img src="assets/images/moblie-cats.png" (click)="selectCategory('cats')" alt="">
+    </div>
+    <div class="">
+      <img src="assets/images/moblie-birds.png" (click)="selectCategory('birds')" alt="">
+    </div>
+
+  </div>
+
+</div> -->
+
+
+
+<app-product-section></app-product-section>

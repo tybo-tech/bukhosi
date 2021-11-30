@@ -1,0 +1,147 @@
+@import '../../../../assets/styles/_color.scss';
+
+.section {
+  background: #fff;
+  padding: 2.5em 1em;
+  margin: 0;
+  color: rgb(42, 42, 42);
+  margin: 1em 0;
+  padding: 10em 18em;
+
+
+  @media only screen and (max-width: 600px) {
+
+    padding: .5em;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  p {
+    width: 90%;
+    margin: 1em auto;
+    text-align: center;
+  }
+
+
+  .skin-types {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 1em;
+    grid-gap: 1em;
+    margin: .5em auto;
+    box-sizing: border-box;
+    position: relative;
+    left: -1em;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      grid-template-columns: repeat(1, 100%);
+      left: 0em;
+      padding: .35em;
+    }
+
+    .service {
+      background: #fff;
+      box-shadow: $box-shadow;
+      padding: 1em;
+      text-align: center;
+      width: 100%;
+
+      h4 {
+        font-size: 1.5em;
+        text-transform: capitalize;
+        padding: 1em;
+        padding-bottom: .2em;
+        border-bottom: 3px solid #D6B498;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .image {
+        width: 100%;
+        max-height: 22em;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      span {
+        display: block;
+      }
+
+      p {
+        padding: .5em;
+      }
+    }
+  }
+
+}
+
+
+.form {
+  max-width: 40em;
+  margin: 2em auto;
+  display: block;
+  position: relative;
+}
+
+input,
+textarea {
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 3px solid black;
+  width: 100%;
+}
+
+textarea {
+  height: 10em;
+}
+
+button {
+  margin: 1em 0;
+  padding: 1em;
+  background: $primary;
+  color: $white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border: 3px solid #000;
+  width: 100%;
+  max-width: 15em;
+
+  @media only screen and (max-width: 600px) {
+
+    max-width: 100%;
+  }
+
+  &:disabled {
+    opacity: .4;
+    cursor: no-drop;
+  }
+
+}
+
+
+.form{
+  width: 50%;
+  
+.form-item{
+  width: 100%;
+
+  button{
+    display: block;
+    width: 100%;
+  }
+}
+}

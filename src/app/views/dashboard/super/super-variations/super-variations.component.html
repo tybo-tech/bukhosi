@@ -1,0 +1,101 @@
+<div class="main-list _super" *ngIf="variations && variations.length">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        {{heading}}
+      </h1>
+    </div>
+    <!-- <div class="action">
+      <input type="search" placeholder="Filter by Category Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add(variations[index])">
+        Add {{variations[index].Name}}
+      </button>
+    </div> -->
+  </div>
+
+  <div class="filters">
+    <mat-chip-list aria-label="variations selection">
+      <mat-chip color="primary" *ngFor="let item of variations; let i = index" [selected]="item.IsSelected"
+        (click)="view(item, i)">
+        {{item.Name}}
+      </mat-chip>
+      | <mat-chip color="primary" class="add">
+        Add new
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div class="headers">
+
+    <div class="item">
+      Option
+    </div>
+    <div class="item" *ngIf="variations[index].Name == 'Color'">
+      Visual
+    </div>
+    <!-- <div class="item">
+      Actions
+    </div> -->
+
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of variations[index].VariationsOptions" (click)="edit(item)">
+
+
+    <div class="item">
+      <input type="text" [(ngModel)]="item.Name" placeholder="+ Add"
+        (change)="updateOption(item)">
+
+    </div>
+    <div class="item" *ngIf="variations[index].Name == 'Color'">
+      <input class="color-input" type="color" [(ngModel)]="item.Description" placeholder="+ Add"
+        (change)="updateOption(item)">
+    </div>
+    <!-- <div class="item" *ngIf="variations[index].Name == 'Size'">
+     <div class="size-circle">
+      {{item.Description}}
+     </div>
+    </div> -->
+    <!-- <div class="item">
+      <a href="">Edit</a>
+    </div> -->
+
+
+  </div>
+
+
+  <div class="line-items">
+
+
+    <div class="item">
+      <input type="text"   [(ngModel)]="newOption.Name" (change)="addVariationOption()" placeholder="+ Add">
+    </div>
+    <div class="item"  [(ngModel)]="newOption.Description" *ngIf="variations[index].Name == 'Color'">
+      <input class="color-input"  (change)="addVariationOption()" type="color" placeholder="+ Add">
+    </div>
+
+    <!-- <div class="item">
+      <a href="">Save</a>
+    </div> -->
+
+
+  </div>
+
+</div>
+
+
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+
+  <div class="body">
+  </div>
+</div>

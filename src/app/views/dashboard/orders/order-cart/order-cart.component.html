@@ -1,0 +1,35 @@
+<div class="body" *ngIf="order">
+  <div class="cart-item" *ngFor="let item of order.Orderproducts; let i = index">
+    <div class="item">
+      <div class="icon" *ngIf="item.FeaturedImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.FeaturedImageUrl" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.FeaturedImageUrl">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <p>
+        {{item.ProductName}}
+      
+        <span class="price">
+          {{item.Quantity}} x {{item.UnitPrice  | currency:'R'}}
+        </span>
+      </p>
+    </div>
+
+    <div class="item">
+      <span  class="material-icons" *ngIf="!hideDelete" (click)="deleteItem(item, i)">
+        delete
+      </span>
+    </div>
+  </div>
+  <!-- <h1>
+   Sub Total:  {{order.Total  | currency:'R'}}
+  </h1> -->
+</div>

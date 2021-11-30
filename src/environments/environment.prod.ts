@@ -1,0 +1,15 @@
+export const environment = {
+  production: true,
+  API_URL: 'https://bukhosiblooms.co.za//api/',
+  BASE_URL: 'https://bukhosiblooms.co.za/',
+  // API_URL: 'https://bukhosiblooms.co.za//api',
+  // BASE_URL: 'https://bukhosiblooms.co.za/',
+  // API_URL: 'http://localhost:8200/api-tybo-accounting',
+  // BASE_URL: 'http://localhost:4200',
+  BASE_URL_ADMIN: 'http://localhost:4200',
+  ACCOUNT_TEST_EMAIL: 'info@bukhosiblooms.co.za',
+  ACCOUNT_TEST_PASSWORD: 'info@bukhosiblooms.co.za',
+  TEST_EMAIL_ACCOUNT: undefined,
+  DF_LOGO: `https://bukhosiblooms.co.za//api//api/upload/uploads/1616127224newlogo.png`,
+  DF_USER_LOGO: `https://bukhosiblooms.co.za//api//api/upload/uploads/1616127548iio.jpg`,
+};

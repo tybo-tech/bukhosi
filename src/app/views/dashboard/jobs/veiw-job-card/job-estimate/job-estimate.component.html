@@ -1,0 +1,246 @@
+<div class="main add-screen mobile-full">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons link" (click)="back()">
+          keyboard_arrow_left
+        </span>
+      </div>
+
+
+      <div class="name link tal" (click)="back()">
+        Job
+      </div>
+      <div class="name">
+        Estimate
+      </div>
+    </div>
+  </div>
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Material
+      </div>
+      <div class="link" (click)="showAddMaterial = true">
+        ADD
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div>
+
+    <div class="children" *ngIf="materials && materials.length">
+      <div class="line" *ngFor="let item of materials; let i = index">
+        <div class="">
+          {{item.Tittle}}
+          <span class="span">
+            {{item.Quantity}} {{item.Units}} x {{item.TotalCost| currency:'R'}}
+          </span>
+        </div>
+        <div class="">
+          {{item.Quantity * item.TotalCost  | currency:'R'}}
+          <span class="material-icons" (click)="deleteItem(item, i)">
+            delete_forever
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="children" *ngIf="materials && materials.length">
+      <div class="line">
+        <div class="">
+          <b>Material Total</b>
+        </div>
+        <div class="">
+          <b> {{sumMaterial  | currency:'R'}}</b>
+        </div>
+      </div>
+    </div>
+    <div class="children" *ngIf="!materials || !materials.length">
+      <div class="empty-list">
+        All Material items will show here, click add to <b>ADD</b> item
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Labour
+      </div>
+      <div class="link" (click)="toggleShowAddLabour()">
+        ADD
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div>
+
+    <div class="children" *ngIf="labourItems && labourItems.length">
+      <div class="line" *ngFor="let item of labourItems; let i = index">
+        <div class="">
+          {{item.Tittle}}
+          <span class="span">
+            {{item.Quantity}} {{item.Units}} x {{item.TotalCost| currency:'R'}}
+          </span>
+        </div>
+        <div class="">
+          {{item.Quantity * item.TotalCost  | currency:'R'}}
+          <span class="material-icons" (click)="deleteItem(item, i)">
+            delete_forever
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="children" *ngIf="labourItems && labourItems.length">
+      <div class="line">
+        <div class="">
+          <b>Labour Total</b>
+        </div>
+        <div class="">
+          <b> {{sumLabour  | currency:'R'}}</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="children" *ngIf="!labourItems || !labourItems.length">
+      <div class="empty-list">
+        All Labour items will show here, click add to <b>ADD</b> item
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Markup
+      </div>
+      <div class="link" (click)="toggleShowAddMarkup()">
+        {{markup}}%
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div>
+
+
+
+    <div class="children" *ngIf="materials && materials.length">
+      <div class="line">
+        <div class="">
+          Material + Labour
+        </div>
+        <div class="">
+          {{estimMaterialAndLabourateTotal  | currency:'R'}}
+        </div>
+      </div>
+      <div class="line">
+        <div class="">
+          Total Markup
+        </div>
+        <div class="">
+          {{markupTotal  | currency:'R'}}
+        </div>
+      </div>
+
+      <div class="line">
+        <div class="">
+          <b>Estimate Total</b>
+        </div>
+        <div class="">
+          <b> {{estimateTotal  | currency:'R'}}</b>
+        </div>
+      </div>
+      <br><br>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAddMaterial">
+  <div class="form">
+    <h1>
+      Add Material Item
+    </h1>
+
+    <div class="form-item">
+      <label for="">Item Name</label>
+      <input type="text" name="" id="" [(ngModel)]="newMaterial.Tittle" placeholder="e.e. Red Scuba">
+    </div>
+    <div class="form-item">
+      <label for="name">Cost per unit</label>
+      <input type="number" [(ngModel)]="newMaterial.TotalCost" placeholder="Helps to estimate costs">
+    </div>
+    <div class="form-item">
+      <label for="name">Units</label>
+      <select [(ngModel)]="newMaterial.Units">
+        <option value="Miters">Miters</option>
+        <option value="Units">Units</option>
+        <option value="Hours">Hours</option>
+      </select>
+    </div>
+    <div class="form-item">
+      <label for="name">Quantity</label>
+      <input type="number" [(ngModel)]="newMaterial.Quantity">
+
+      <button (click)="saveJobWork()" [disabled]="!newMaterial.Tittle || !newMaterial.TotalCost">Save</button>
+      <div class="link" (click)="showAddMaterial = false">Cancel</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAddLabour">
+  <div class="form">
+    <h1>
+      Add Labour Item
+    </h1>
+
+
+    <div class="form-item">
+      <label for="name">Rate per hour (ZAR)</label>
+      <input type="number" [(ngModel)]="newMaterial.TotalCost" placeholder="Helps to estimate costs">
+    </div>
+
+    <div class="form-item">
+      <label for="name">Estimate total hours</label>
+      <input type="number" [(ngModel)]="newMaterial.Quantity">
+
+      <button (click)="saveJobWork()" [disabled]="!newMaterial.Tittle || !newMaterial.TotalCost">Save</button>
+      <div class="link" (click)="showAddLabour = false">Cancel</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAddMarkup">
+  <div class="form">
+    <h1>
+      Setup Markup
+    </h1>
+
+
+    <div class="form-item">
+      <label for="name">Enter Markup % </label>
+      <input type="number" [(ngModel)]="newMaterial.TotalCost" placeholder="e.g. 10%">
+
+      <button (click)="saveJobWork()" [disabled]="!newMaterial.Tittle || !newMaterial.TotalCost">Save</button>
+      <div class="link" (click)="showAddMarkup = false">Cancel</div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!-- <app-loader  *ngIf="showLoader"></app-loader> -->
+
+<div class="dash-forms mobile-full">
+  <!-- 
+  <div class="upload-preview">
+    <div class="upload">
+      <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)"
+        style="display:none;">
+      <span class="material-icons  user-dp" *ngIf="!job.FeaturedImageUrl" (click)="file.click()">
+        panorama
+      </span>
+    </div>
+    <div class="preview" (click)="file.click()">
+      <img *ngIf="job.FeaturedImageUrl" [src]="job.FeaturedImageUrl" alt="">
+    </div>
+  </div> -->
+
+
+  <div class="form-item">
+    <label for="name">Customer</label>
+    <input  matInput placeholder="Customer" aria-label="Customer" [matAutocomplete]="auto"
+      [(ngModel)]="job.CustomerName">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let customer of filteredStates | async" [value]="customer.Name + ' '+ customer.Surname"
+        (click)="selectCustomer(customer)">
+        <img class="example-option-img" aria-hidden [src]="customer.flag" height="25">
+        <span>{{customer.Name}} {{customer.Surname}}</span>
+      </mat-option>
+    </mat-autocomplete>
+
+  </div>
+
+
+  <div class="form-item">
+    <label for="name">Job Number (system generated)</label>
+    <input type="text" [(ngModel)]="job.JobNo" disabled>
+  </div>
+
+
+
+
+  <div class="form-item">
+    <label for="name">Job Tittle *</label>
+    <input type="text" [(ngModel)]="job.Tittle" placeholder="e.g. Floral summer shirts">
+  </div>
+
+
+
+
+
+  <!-- <div class="form-item">
+    <label for="name">Product Status</label>
+    <select [(ngModel)]="job.StatusId">
+      <option value="1">Active</option>
+      <option value="2">In-Active</option>
+      <option value="3">Deleted</option>
+    </select>
+  </div> -->
+
+
+
+  <div class="form-item">
+    <div class="body quill">
+      <label for="name">Product Description</label>
+      <quill-editor [styles]="editorStyle" [modules]="modules" [(ngModel)]="job.Description">
+      </quill-editor>
+    </div>
+  </div>
+
+
+
+  <button mat-button class="more" [disabled]="!job.Tittle" type="button" (click)="saveJob()">
+    Save job.
+  </button>
+</div>

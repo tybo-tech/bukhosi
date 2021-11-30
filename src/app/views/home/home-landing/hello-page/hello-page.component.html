@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="body">
+
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="">
+      {{eventText}}
+    </div>
+
+    <div class="intro">
+      <div class="eg-image" (swipe)="onSwipe($event)">
+        <img src="assets/images/common/hs1.png" *ngIf="slide == 1" alt="">
+        <img src="assets/images/common/hs2.png" *ngIf="slide == 2" alt="">
+        <!-- <img src="assets/images/common/shopeg3.png" *ngIf="slide == 3" alt=""> -->
+        <div class="btns">
+          <div class="btn" (click)="changeSlide(1)" [ngStyle]="slide == 1 && {'background': '#F3CF3D'}"></div>
+          <div class="btn" (click)="changeSlide(2)" [ngStyle]="slide == 2 && {'background': '#F3CF3D'}"></div>
+          <!-- <div class="btn" (click)="changeSlide(3)" [ngStyle]="slide == 3 && {'background': '#F3CF3D'}"></div> -->
+        </div>
+      </div>
+      <h1>
+        Buy ready to wear <span>chothing</span> or design your own <span>.</span>
+      </h1>
+      <p>
+        We ship to your address.
+      </p>
+      <p>
+        We accept EFT and card payments
+      </p>
+
+      <div class="actions">
+        <button (click)="custom()">Custom design</button>
+        <button class="login" (click)="shop()">Shop</button>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>

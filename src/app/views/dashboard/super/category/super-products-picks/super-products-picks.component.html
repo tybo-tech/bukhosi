@@ -1,0 +1,83 @@
+<div class="top-bar-conatiner">
+
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      Editor's pick.
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="main">
+  <div class="tabs">
+    <div class="tab" *ngFor="let item of parentCategories; let i = index" [ngClass]="item.Class"
+      (click)="view(item, i)">
+      {{item.Name}}
+    </div>
+
+
+  </div>
+
+
+
+
+  <div class="tab-items">
+
+    <h3 class="devider">
+      <span>Picks for {{category?.Name}}</span>
+      <span class="add-new" (click)="addNewpick()">
+        <b>+</b> New pick
+      </span>
+    </h3>
+    <div class="all-items" *ngFor="let item of picksCategories" (click)="open(item)">
+      <div class="item">
+        <img *ngIf="item.ImageUrl" [src]="item.ImageUrl" alt="">
+        <img *ngIf="!item.ImageUrl" src="assets/images/icons/add.svg" alt="">
+      </div>
+
+      <div class="item">
+        {{item?.Name}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="quick-add" *ngIf="showAdd && addEditCategory">
+  <div class="form">
+    <h3>
+     Add a new pick.
+      <span>
+    
+      </span>
+    </h3>
+
+
+    <div class="form-item" >
+      <label for="">Shop name</label>
+      <input type="text" name="" id="" [(ngModel)]="addEditCategory.Name" placeholder="Enter your shop name.">
+    </div>
+
+
+
+
+
+    <div class="form-item">
+      <button (click)="savePick()" [disabled]="!addEditCategory.Name">Next</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+
+  </div>
+</div>

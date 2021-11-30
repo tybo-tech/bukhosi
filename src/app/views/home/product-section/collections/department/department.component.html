@@ -1,0 +1,126 @@
+<div class="main-products" *ngIf="products && products.length">
+  <div class="full-image" *ngIf="parentCategory">
+    <img [src]="parentCategory.ImageUrl" class="pc-only" alt="">
+    <img [src]="parentCategory.PhoneBanner" class="phone-only" alt="">
+  </div>
+
+
+  <div class="collections">
+    <div class="collection" (click)="goto('home/shop-for/Ladies')" *ngIf="parentCategoryId == 'Mens'">
+      Shop Ladies
+    </div>
+    <div class="collection" (click)="goto('home/shop-for/Mens')" *ngIf="parentCategoryId == 'Ladies'">
+      Shop Mens
+    </div>
+    <div class="collection" (click)="goto('home/shops')">
+      View shops
+    </div>
+  </div>
+
+  <app-shop-by-catergory *ngIf="parentCategory" [parentId]="parentCategory.CategoryId"></app-shop-by-catergory>
+
+
+  <div class="picked">
+    <h4>
+      {{parentCategoryId}} collections
+    </h4>
+
+    <div class="filters">
+      <div class="search-box">
+        <input class="cloud" type="search" [(ngModel)]="searchString" placeholder="🔎 What you are looking for?">
+      </div>
+    </div>
+    <div class="catergories" *ngIf="catergories">
+      <button class="catergory" (click)="all()">
+        All
+      </button>
+      <button class="catergory" *ngFor="let catergory of catergories; let i = index"
+        (click)="tapChildCategory(catergory)">
+        {{catergory.Name}}
+      </button>
+
+    </div>
+
+
+
+
+
+
+    <div class="products" *ngIf="products">
+      <div class="product" *ngFor="let product of products | searchproductshome:searchString; let i = index">
+        <div class="image">
+          <img [src]="product.FeaturedImageUrl" alt="Awesome Sunglasses" (click)="viewMore(product)">
+        </div>
+
+        <div class="product-details">
+          <span class="stock-check" *ngIf="product.TotalStock==0">Sold out</span>
+
+          <p>
+            {{product.Name}}
+
+            <span class="price" *ngIf="!product.OnSale">
+              {{product.RegularPrice | currency:'R'}}
+            </span>
+            <span class="price" *ngIf="product.OnSale">
+              <del> {{product.RegularPrice | currency:'R'}}</del> <br>
+              {{product.SalePrice | currency:'R'}}
+            </span>
+
+            <span class="company-name" *ngIf="product.Company && product.Company.Name" (click)="gotoComapny(product)">
+              By {{product.Company.Name}}
+            </span>
+
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="next">
+      <button class="primary" *ngIf="showShowMore" (click)="loadMore()">Load more</button>
+    </div>
+  </div>
+
+
+  <div class="picked" *ngIf="allUxisexProducts && allUxisexProducts.length">
+    <h4>
+      More products
+    </h4>
+    <div class="products">
+      <div class="product" *ngFor="let product of allUxisexProducts; let i = index">
+        <div class="image">
+          <img [src]="product.FeaturedImageUrl" alt="Awesome Sunglasses" (click)="viewMore(product)">
+        </div>
+
+        <div class="product-details">
+          <span class="stock-check" *ngIf="product.TotalStock==0">Sold out</span>
+
+          <p>
+            {{product.Name}}
+
+            <span class="price" *ngIf="!product.OnSale">
+              {{product.RegularPrice | currency:'R'}}
+            </span>
+            <span class="price" *ngIf="product.OnSale">
+              <del> {{product.RegularPrice | currency:'R'}}</del> <br>
+              {{product.SalePrice | currency:'R'}}
+            </span>
+
+            <span class="company-name" *ngIf="product.Company && product.Company.Name" (click)="gotoComapny(product)">
+              By {{product.Company.Name}}
+            </span>
+
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>

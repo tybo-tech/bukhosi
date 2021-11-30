@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/color';
+
+.success-modal {
+  z-index: 10000;
+  
+ 
+}
+
+
+
+.buttons {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% auto;
+  padding: 1em;
+  @media only screen and (max-width: 600px) {
+    width: 21em;
+    grid-template-columns: 100%;
+  }
+
+  button {
+    background: $pop;
+    color: $black;
+    width: 14em;
+    margin: .2em auto;
+    border: none;
+    border-radius: .5em;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}

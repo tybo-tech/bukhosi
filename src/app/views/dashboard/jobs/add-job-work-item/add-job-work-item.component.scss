@@ -1,0 +1,61 @@
+@import '../../../../../assets/styles/color';
+
+.mat-primary {
+  width: 30%;
+}
+
+.main {
+  position: fixed;
+  z-index: 900000;
+  width: 40%;
+  left: 30%;
+  bottom: 10%;
+  height: 70%;
+  // overflow-y: scroll;
+  // padding-bottom: 4em;
+  padding: 1em;
+  border-radius: .5em;
+  background: $white;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 50% auto;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    bottom: 0;
+    border-radius: 0;
+  }
+
+  .main-list {
+    padding: 1em;
+    @media only screen and (max-width: 600px) {
+      padding: 0;
+    }
+
+    input,
+    textarea {
+      border: 0;
+      background: $cloud;
+      border-radius: .5em;
+      margin-bottom: 1.5em;
+    }
+
+    textarea {
+      height: 5em;
+    }
+
+
+
+    label {
+      font-weight: 600;
+      text-align: left;
+    }
+  }
+
+  .more {
+    // position: fixed;
+    // bottom: 0;
+    // left: 0;
+    // width: 100%;
+  }
+}

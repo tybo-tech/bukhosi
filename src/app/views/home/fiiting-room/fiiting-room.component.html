@@ -1,0 +1,33 @@
+<div class="fitting-room">
+
+  <div class="container vh-100">
+    <div class="d-flex flex-column align-items-center">
+      <div class="p-1">
+        <video #video class="vid" autoplay></video>
+      </div>
+      <div class="pb-2">
+        <button class="btn btn-primary" (click)="capture()">Capture Image</button>
+      </div>
+      <div class="p-1">
+        <canvas #canvas class="vid"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="images">
+    <div class="image">
+      <img src="../../../../assets/svg/r.png" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="selected-items">
+  <div class="image">
+    <img src="../../../../assets/svg/r.png" class="top" alt="">
+  </div>
+
+  <div class="image">
+    <img src="../../../../assets/svg/s.png" class="short" alt="">
+  </div>
+
+</div>

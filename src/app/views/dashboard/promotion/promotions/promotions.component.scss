@@ -1,0 +1,45 @@
+@import '../../../../../assets/styles/color';
+
+.product {
+  cursor: pointer;
+}
+
+.filters {
+  .search-box {
+    padding: .5em 1em;
+
+    @media only screen and (max-width: 600px) {
+
+      padding: .5em 0;
+    }
+
+    input {
+      background: $white;
+      margin: .5em 0;
+    }
+
+
+  }
+
+  .tabs {
+
+
+    p {
+      display: grid;
+      margin: .2em 1em;
+      grid-template-columns: repeat(5, 7em);
+      grid-gap: 1em;
+
+      span {
+        display: block;
+        background: $white;
+        padding: .4em .75em;
+        text-align: center;
+        font-size: .7em;
+        font-weight: 600;
+        cursor: pointer;
+        color: $darker-grey;
+      }
+    }
+  }
+}

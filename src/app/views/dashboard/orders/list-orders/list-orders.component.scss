@@ -1,0 +1,55 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 3% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 10% auto;
+  }
+
+}
+
+.order-status {
+  font-weight: 600;
+  color: $pop;
+  background: rgba(0, 0, 0, 0.568);
+  width: 8em;
+  padding: .3em;
+  text-align: center;
+  border-radius: .5em;
+  
+  margin-top: .75em;
+  margin: .5em 0;
+
+}
+
+.date {
+  padding: .2em 0;
+  
+  font-weight: 600;
+}
+
+.mobile-full {
+  @media only screen and (max-width: 600px) {
+
+    padding-top: 4em;
+  }
+}
+
+
+.product-item {
+  grid-template-columns: 60% auto;
+  width: 100%;
+
+  .item {
+    &:last-child {
+      text-align: right;
+      padding: 1em;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 65% auto;
+    width: 100%;
+  }
+}

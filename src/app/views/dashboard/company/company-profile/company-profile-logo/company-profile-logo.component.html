@@ -1,0 +1,57 @@
+<div class="main" *ngIf="user && user.Company && user.Company.Dp">
+
+
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons link" (click)="back()">
+          keyboard_arrow_left
+        </span>
+      </div>
+
+
+      <div class="name link tal" (click)="back()">
+        Back to dashboard
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="card logo-side">
+
+    <div class="logo">
+      <img *ngIf="user.Company.Dp" [src]="user.Company.Dp" alt="">
+
+    </div>
+
+    <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+      (change)="uploadFile(file.files)" style="display:none;">
+    <div (click)="file.click()" class="logout logo-btn">
+      Change logo
+    </div>
+  </div>
+
+
+  <div class="mt5"></div>
+</div>
+
+<div class="main" *ngIf="user && user.Company && !user.Company.Dp">
+  <div class="no-data">
+    <h1>
+      Final step, Company logo set up.
+    </h1>
+    <img src="assets/images/common/store.svg" alt="">
+    <p>
+      Shop logo can quickly grab customers attention and communicate a company’s core values in an interesting way.
+    </p>
+    <input type="file" accept="image/png, image/jpeg" #file2 placeholder="Choose file" multiple
+      (change)="uploadFile(file2.files)" style="display:none;">
+    <button class="logout   logo-btn center-btn" (click)="file2.click()">Upload company logo</button>
+    <button class="logout   logo-btn center-btn skip" (click)="skip()">Skip for now</button>
+  </div>
+</div>
+
+
+<app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>
+<app-loader *ngIf="showLoader"></app-loader>

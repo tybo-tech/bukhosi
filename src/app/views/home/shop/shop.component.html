@@ -1,0 +1,20 @@
+<!-- <app-shop-products *ngIf="parentCatergories && selectedCategory && company"  [promotions]="company.Promotions"
+  (selectCategoryEvent)="selectCategory($event)"></app-shop-products> -->
+
+  <div class="no-products" *ngIf="!this.allProducts || !this.allProducts.length">
+    <h3>
+      No products found  for this shop yet, please check again later.
+      <span>
+        <a routerLink=""> Checkout more shops</a>
+      </span>
+    </h3>
+  </div>
+
+<div class="showNotFound" *ngIf="showNotFound">
+  <h1>
+    Sorry,the page/shop you are looking for was not found.
+
+  </h1>
+  <a routerLink="">Take me home</a>
+</div>
+

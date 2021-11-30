@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        All fashion shops
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+  <div class="product-section col-1-of-1">
+    <div class="mt5" *ngIf="shops">
+
+      <div class="search-box">
+        <input type="search" [(ngModel)]="searchString" placeholder="🔎 Filter by shop">
+      </div>
+      <div class="shops" *ngFor="let item of shops | searchcompany: searchString" (click)="view(item)">
+        <div class="shop">
+          <div class="icon">
+            <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+            <img *ngIf="!item.Dp" src="assets/images/shop.svg" alt="">
+          </div>
+          <h3>
+            {{item.Name}}
+            <span>
+              <a *ngFor="let product of item.GeCategoryNames">
+                {{product.CategoryName}}
+              </a>
+            </span>
+          </h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="bread" *ngIf="items">
+  <a *ngFor="let item of items; let i = index" [routerLink]="item.Link" >
+    {{item.Name}}
+    <i *ngIf="i < items.length-1">
+    /
+    </i>
+  </a>
+</div>

@@ -1,0 +1,150 @@
+<div class="private">
+  <div class="main" *ngIf="order">
+    <h3>
+      New order : {{order.OrderNo}}
+      <span>
+        {{order.CreateDate | date: 'mediumDate'}} 
+        <a *ngIf="order.OrderSource">{{order.OrderSource}}</a>
+        <a> | {{order.Status}}</a>
+      </span>
+    </h3>
+    <div class="bag" *ngIf="order.Orderproducts && order.Orderproducts.length">
+      <div class="cart-item" *ngFor="let item of order.Orderproducts; let i = index">
+        <div class="item">
+          <div class="icon" *ngIf="item.FeaturedImageUrl">
+            <div class="user-dp-image">
+              <img [src]="item.FeaturedImageUrl" alt="">
+            </div>
+          </div>
+
+          <div class="icon" *ngIf="!item.FeaturedImageUrl">
+            <div class="user-dp-image">
+              <img src="assets/images/icons/add.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            {{item.ProductName}}
+          
+            <span class="price">
+              {{item.Quantity}} x {{item.UnitPrice  | currency:'R'}}
+            </span>
+          </p>
+        </div>
+      </div>
+      <h3>
+        <span class="print" (click)="print()">Print Invoice</span>
+      </h3>
+    </div>
+
+
+    <div class="shipping-method">
+      <div class="name">
+        Delivery: {{ order.Shipping}} <b>{{ this.order.ShippingPrice  | currency:'R'}}</b>
+      </div>
+    </div>
+
+
+    <div class="shipping-method">
+      <div class="name">
+        <b>
+          Delivery information <br>
+        </b>
+        {{order.Customer.Name}} {{order.Customer.Surname}} <br>
+        {{order.Customer.PhoneNumber}} <br>
+        {{order.Customer.Email}} <br>
+
+
+        <p class="full-address" *ngIf="order.Customer.AddressLineHome">
+
+          {{order.Customer.AddressLineHome}}
+        </p>
+
+        <p *ngIf="!order.Customer.AddressLineHome" class="warn">
+          Please capture your delivery address
+          <br>
+        </p>
+      </div>
+
+
+    </div>
+
+
+    <div class="shipping-method">
+      <div class="name">
+        <b>
+          Order Notes <br>
+        </b>
+
+      </div>
+      <p>
+        {{order.Notes || 'No notes'}}
+      </p>
+    </div>
+
+
+    <h3 class="sammary" *ngIf="order">
+      <span class="tot">
+        Order Total: {{order.Total  | currency:'R'}} <a *ngIf="order.Due == 0">Fully paid.</a>
+      </span>
+    </h3>
+
+
+    <div class="actions">
+      <button type="button" (click)="goto('home/my-orders')" class="cta shop-more secondary">Order History</button>
+      <button type="button" (click)="goto('')" class="cta primary">Take me home</button>
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <div class="quick-add" *ngIf="showAdd">
+    <div class="form">
+      <h3>
+        Accepting order.
+      </h3>
+
+      <div class="form-item">
+        <label for="">When are you going to ship the product?*</label>
+        <input type="date" (change)="validateDate()" name="" id="" [(ngModel)]="order.EstimatedDeliveryDate">
+        <div class="error" *ngIf="formError">
+          {{formError}}
+        </div>
+
+        <h3 *ngIf="order.EstimatedDeliveryDate">
+          <span>This order will be shipped by:</span>
+          {{order.EstimatedDeliveryDate |date: 'fullDate'}}
+        </h3>
+      </div>
+
+      <div class="form-item">
+        <button (click)="updateOrder()" [disabled]="!order.EstimatedDeliveryDate || formError">Confirm order</button>
+        <div class="link" (click)="showAdd = false">Cancel</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="quick-add" *ngIf="showAddCancel">
+    <div class="form">
+      <h3>
+        Cancelling order
+      </h3>
+
+      <div class="form-item">
+        <button class="btn-danger" (click)="updateOrder()">Finish order cancel</button>
+        <div class="link" (click)="showAddCancel = false">Cancel</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>

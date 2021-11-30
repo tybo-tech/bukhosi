@@ -1,0 +1,35 @@
+@import '../../../../../../assets/styles/color';
+
+.chat, .chat-current-user {
+  margin: 1em;
+
+  display: grid;
+  grid-template-columns: 4em auto;
+  .message{
+    background: rgba(0, 140, 255, 0.349);
+    padding: 1em;
+    border-radius: 2em;
+  }
+
+  .chat-dp{
+    width: 2.8em;
+    height: 2.8em;
+    border-radius: 2.8em;
+    overflow: hidden;
+    border: 2px solid $cloud;
+    img{
+      width: 3em;
+      margin: auto;
+    }
+  }
+}
+
+.chat-current-user{
+  grid-template-columns:  30% auto;
+  .message{
+    background: $cloud;
+    padding: 1em;
+    border-radius: 2em;
+    text-align: right;
+  }
+}

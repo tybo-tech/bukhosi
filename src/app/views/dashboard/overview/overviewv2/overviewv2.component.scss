@@ -1,0 +1,144 @@
+@import '../../../../../assets/styles/color';
+
+
+.all-catergories {
+  display: flex;
+  background: $primary;
+  padding: .7em;
+
+  @media only screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    grid-gap: .5em;
+  }
+
+  button {
+    width: auto;
+    margin-right: .8em;
+    background: #283947;
+    color: $white;
+
+    @media only screen and (max-width: 600px) {}
+  }
+}
+
+.form-item {
+  width: 100%;
+}
+
+.company-profile {
+  margin: 0 auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 8em auto;
+  background: $white;
+  margin-top: 4em;
+  box-shadow: $box-shadow;
+  width: 98%;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 6em auto;
+    padding: 1em .5em;
+    margin: 0;
+    margin-top: 3em;
+    padding-top: 3em;
+    width: 100%;
+  }
+
+  img {
+    width: 5em;
+    top: 1em;
+  }
+
+  h3 {
+    padding: .5em 0;
+
+    @media only screen and (max-width: 600px) {
+      padding: .3em 0;
+    }
+
+    span {
+      font-weight: 400;
+      padding: 0;
+      font-size: .85em;
+      color: $darker-grey;
+
+      .material-icons {
+        margin: 0;
+        top: .2em;
+        font-size: 1.2em;
+        color: $black;
+      }
+    }
+
+  }
+}
+
+
+.catergories {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+  overflow-x: scroll;
+  margin: 1em;
+
+  .catergory {
+    background: $black;
+    text-align: center;
+    padding: .2em;
+    border-radius: .2em;
+    color: $white;
+    width: fit-content;
+    text-align: center;
+    height: 2em;
+    padding: .5em 1em;
+    // width:100%;
+    margin: .5em;
+    flex: 0 0 auto;
+    border-radius: .5em;
+    font-size: 1em;
+  }
+}
+
+
+.collections {
+  display: grid;
+  grid-template-columns: 50% auto;
+
+  .collection {
+    background: $pop;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1em;
+    padding: .7em;
+    cursor: pointer;
+    font-weight: 500;
+  }
+}
+
+.col-2-of-2 {
+  display: grid !important;
+  grid-template-columns: 12em auto;
+  margin-top: 1em;
+}
+
+.follow {
+  width: 10em !important;
+}
+
+// .heading {
+//   padding: 1em;
+//   margin: 0;
+//   margin-top: 3em;
+//   border-top: 1px solid $grey;
+
+//   span {
+//     position: relative;
+//     // left: 3em;
+//     padding: .2em 1em;
+//     text-align: center;
+//     background: $pop;
+//     border-radius: .2em;
+//     cursor: pointer;
+//   }
+// }

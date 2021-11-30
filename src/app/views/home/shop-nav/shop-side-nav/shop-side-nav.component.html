@@ -1,0 +1,74 @@
+<div class="side-nav">
+  <div class="items">
+    <div class="bottom-nav" *ngIf="navItems">
+      <div class="nav-items" *ngFor="let item of navItems">
+        <a [routerLink]="item.Url" [ngClass]="item.Class" (click)="navItemClicked(item)">
+          {{item.Label}}
+        </a>
+      </div>
+    </div>
+
+    <div class="all-catergories" *ngIf="selectedCategory && selectedCategory.Children">
+      <span *ngFor="let child of selectedCategory.Children">
+        <button *ngIf="child.Products && child.Products.length" (click)="selectCategory(child)">{{child.Name}}
+          <span> {{child.Products?.length}}</span> </button>
+      </span>
+      <button (click)="goto(4)">All shops</button>
+
+
+    </div>
+
+    <div class="all-catergories">
+      <a *ngIf="!user" (click)="goto('home/hello-fashion-shop')" class="sell-ontybo">Sell on Bukhosi blooms</a>
+      <a *ngIf="user && user.UserType === 'Admin'" (click)="goto('dashboard')" class="sell-ontybo"> Go to my
+        dashboard</a>
+      <a *ngIf="user && user.UserType === 'Customer'" (click)="goto(7)" class="sell-ontybo"> Go to my
+        profile</a>
+
+      <a *ngIf="!user" (click)="goto('sign-in')" class="sell-ontybo"> My orders</a>
+      <a *ngIf="user && user.UserType === 'Customer'" (click)="goto(8)" class="sell-ontybo"> My orders</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+ <div class="overlay" *ngIf="showMobileNav" (click)="toggleMenu(false)" ></div>
+<div class="side-nav-mob" *ngIf="showMobileNav">
+  <div class="items">
+    <div class="bottom-nav" *ngIf="navItems">
+      <div class="nav-items" *ngFor="let item of navItems">
+        <a [routerLink]="item.Url" [ngClass]="item.Class" (click)="navItemClicked(item)">
+          {{item.Label}}
+        </a>
+      </div>
+    </div>
+
+    <div class="all-catergories" *ngIf="selectedCategory && selectedCategory.Children">
+      <span *ngFor="let child of selectedCategory.Children">
+        <button *ngIf="child.Products && child.Products.length" (click)="selectCategory(child)">{{child.Name}}
+          <span> {{child.Products?.length}}</span> </button>
+        </span>
+        <button (click)="goto(4)">All shops</button>
+
+    </div>
+
+    <div class="all-catergories">
+      <a *ngIf="!user" (click)="goto('home/hello-fashion-shop')" class="sell-ontybo">Sell on Bukhosi blooms</a>
+      <a *ngIf="user && user.UserType === 'Admin'" (click)="goto('dashboard')" class="sell-ontybo"> Go to my
+        dashboard</a>
+      <a *ngIf="user && user.UserType === 'Customer'" (click)="goto(2)" class="sell-ontybo"> Go to my
+        profile</a>
+
+      <a *ngIf="!user" (click)="goto('sign-in')" class="sell-ontybo"> My orders</a>
+      <a *ngIf="user && user.UserType === 'Customer'" (click)="goto(3)" class="sell-ontybo"> My orders</a>
+      <a (click)="toggleMenu(false)" class="sell-ontybo close-menu"> 
+        <span class="material-icons">
+          close
+          </span>
+      </a>
+    </div>
+  </div>
+
+</div>

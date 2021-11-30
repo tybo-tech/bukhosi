@@ -1,0 +1,44 @@
+<div class="main mobile-full"  *ngIf="showDone">
+  
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        keyboard_arrow_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      Order complete & paid
+    </div>
+  </div>
+  <h1>
+    Your order was successful.
+    <span class="material-icons check">
+      check_circle_outline
+    </span>
+  </h1>
+
+  <p>
+    Your order <b>
+      {{orderNo}}
+    </b>
+    is being processed.
+
+
+    Once your order is ready to be delivered, you'll receive an Email notification confirming your scheduled delivery
+    date.
+
+    <!-- Please have your cash ready for when the driver arrives. -->
+  </p>
+
+  <div class="actions">
+
+    <button (click)="back()">Home</button>
+    <button (click)="track()">Go to my orders</button>
+  </div>
+
+
+  <!-- <app-checkout></app-checkout> -->
+</div>
+

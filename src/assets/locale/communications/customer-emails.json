@@ -1,0 +1,11 @@
+[{
+    "Type": "Add-New-Customer",
+    "Subject": "Customer Info Captured",
+    "Message": "We have captured your information, for order delivery and confirmation of receipt. Please note this information will not be shared with anybody or third party."
+  },
+  {
+    "Type": "Update-Customer",
+    "Subject": "Customer Info Updated",
+    "Message": "We have updated your customer information has been updated successfully. Please note this information will not be shared with anybody or third party."
+  }
+]

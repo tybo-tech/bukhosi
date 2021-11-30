@@ -1,0 +1,226 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 3% 45% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4% 40% auto;
+    position: relative;
+  }
+
+}
+
+.tittle {
+  padding: 2em .5em;
+  font-weight: 600;
+  display: grid;
+  margin-top: 3em;
+  grid-template-columns: 5em auto;
+
+  @media only screen and (max-width: 600px) {
+    padding: .5em .5em;
+  }
+
+  .icon {
+    img {
+      width: 4em;
+      margin: .2em auto;
+    }
+  }
+
+  .data {
+    padding: .3em;
+
+    @media only screen and (max-width: 600px) {}
+
+
+    .created {
+      font-weight: 400;
+      padding: 0;
+      color: $darker-grey;
+      margin: 0;
+      display: block;
+    }
+
+    .due {
+      margin: 0;
+      color: $black;
+    }
+  }
+
+
+}
+
+
+
+.job-status {
+  background: $cloud;
+  font-weight: 600;
+  color: $black;
+  text-align: center;
+  width: 8em;
+  margin: 1em 0 !important;
+  border-radius: .5em;
+  border: 2px solid $black;
+  display: block;
+
+}
+
+.working {
+  border: 2px solid $warn-color;
+}
+
+.done {
+  border: 2px solid $secondary;
+}
+
+.to-do {
+  border: 2px solid $tertiary;
+}
+
+
+.stuck {
+  border: 2px solid $danger;
+}
+
+.due {
+  display: grid;
+  grid-template-columns: 30% auto;
+  margin-top: 1em;
+
+  .label {
+
+    font-weight: 600;
+    padding: 1em 0;
+  }
+
+
+}
+
+input {
+  background: $cloud;
+  border-radius: .5em;
+  padding: .5em .1em;
+  border: none;
+  font-weight: 600;
+}
+
+textarea {
+  background: $cloud;
+  border-radius: .5em;
+  padding: .7em;
+  border: none;
+  font-weight: 600;
+  line-height: 1.2;
+  font-family: 'Jost' !important;
+}
+
+.job-item {
+  display: grid;
+  grid-template-columns: 2em auto;
+  background-color: $cloud;
+  padding: .5em;
+  margin: .5em 0;
+  border-radius: 2em;
+
+  .label {
+    font-weight: 600;
+
+  }
+}
+
+.add-new {
+  a {
+    display: block;
+    padding: 1em .4em;
+    font-weight: 700;
+    color: $secondary;
+    text-decoration: none;
+  }
+}
+
+.add-item {
+  grid-template-columns: 100%;
+  background: rgba(107, 211, 11, 0.247);
+  margin-top: 2em 0;
+  border-radius: .5em;
+  padding: .8em .5em;
+
+  input {
+    border: none;
+    color: $black;
+    background: $white;
+    width: 100%;
+  }
+}
+
+.notasks {
+  background: rgba(255, 10, 10, 0.308);
+  padding: 1.5em;
+  text-align: center;
+  border-radius: .5em;
+  margin: 1em 0;
+}
+
+.address {
+  border-top: 1px solid $cloud;
+  padding: .4em 0;
+  margin: .4em 0;
+}
+
+.user-profile {
+  @media only screen and (max-width: 600px) {
+    position: relative;
+    padding-top: 0;
+  }
+}
+
+.link {
+  span {
+    top: .3em;
+  }
+}
+
+.black-label {
+  color: $black;
+}
+
+.ctas .cta {
+  text-align: left;
+
+  button {
+    @media only screen and (max-width: 600px) {
+      margin: .5em;
+    }
+  }
+}
+
+.data-view-main {
+  @media only screen and (max-width: 600px) {
+    padding-bottom: 3em;
+  }
+}
+
+.cloud{
+  background: $cloud;
+  button{
+    background: $pop;
+  }
+}
+
+.heading{
+  padding: 1em;
+  margin: 0;
+  margin-bottom: 3em;
+  border-bottom: 1px solid $grey;
+  span{
+    position: relative;
+    left: 3em;
+    padding: .2em 1em;
+    text-align: center;
+    background: $pop;
+    border-radius: .2em;
+    cursor: pointer;
+    color: $black;
+  }
+}

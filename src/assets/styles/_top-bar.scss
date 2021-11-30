@@ -1,0 +1,138 @@
+
+
+.top-bar-conatiner {
+  position: fixed;
+  z-index: 50000000001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid $grey;
+
+  // height: 3em;
+  background: $white;
+  .top-bar {
+    padding: .3em 1em;
+    background: $white;
+    display: grid;
+    margin: 0;
+    border-radius: 0;
+    grid-template-columns: 3% 45% auto;
+    max-width: $max-width;
+    margin: 0 auto;
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 5% auto;
+      width: 100%;
+      border-radius: 0;
+
+    }
+
+    span {
+      cursor: pointer;
+    }
+
+    .menu-back {
+      color: $black;
+    }
+
+    .logo {
+      box-sizing: border-box;
+      display: block;
+      text-align: center;
+
+      img {
+        width: 100%;
+        top: .6em;
+        border-radius: .2em;
+
+        @media only screen and (max-width: 600px) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .name {
+      padding: .7em;
+      font-weight: 600;
+      color: $black;
+      ;
+    }
+
+    .material-icons {
+      position: relative;
+      top: 0.4rem;
+  }
+
+
+    .btn-menu {
+      text-align: right;
+      color: $black;
+    }
+
+  }
+}
+
+
+
+.top-bar-home {
+  padding: .3em 1em;
+  background: $white;
+  display: grid;
+  margin: 0;
+  border-radius: 0;
+  grid-template-columns: 3% 45% auto;
+  max-width: $max-width;
+  margin: 0 auto;
+  border: 1px solid $cloud;
+  border-bottom: 1px solid $grey;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4%  auto;
+    width: 100%;
+    border-radius: 0;
+
+  }
+
+  span {
+    cursor: pointer;
+  }
+
+  .menu-back {
+    color: $black;
+  }
+
+  .logo {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+
+    img {
+      width: 100%;
+      top: .6em;
+      border-radius: .2em;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .name {
+    padding: .7em;
+    font-weight: 600;
+    color: $black;
+    ;
+  }
+
+  .material-icons {
+    position: relative;
+    top: 0.4rem;
+}
+
+
+  .btn-menu {
+    text-align: right;
+    color: $black;
+  }
+
+}

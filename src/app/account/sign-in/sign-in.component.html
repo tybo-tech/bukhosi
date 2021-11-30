@@ -1,0 +1,99 @@
+<div class="account-form mobile-full">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        Login to your account
+      </div>
+
+    </div>
+  </div>
+
+ 
+
+  <form class="form" [formGroup]="rForm">
+    <div class="form-container">
+      <!-- <h1 class="h1">
+          Login to your account.
+        </h1> -->
+
+      <div class="logo">
+        <a routerLink="">
+          <img src="assets/images/logo.png" alt="">
+        </a>
+      </div>
+
+      <!-- <div class="social">
+        <app-social-login></app-social-login>
+        <div class="or">Or</div>
+      </div> -->
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1"
+          placeholder="youremail@mail.com">
+        <div class="alert" *ngIf="!rForm.controls['Email'].valid  && rForm.controls['Email'].touched ">
+          Email is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">
+          Password
+          <mat-icon class="pointer" (click)="hidePassword = !hidePassword">
+            {{hidePassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+        </label>
+        <input type="password" [type]="hidePassword? 'password': 'text'" class="form-control" formControlName="Password"
+          id="exampleInputPassword1" placeholder="*************">
+        <div class="showPassword" (click)="hidePassword = !hidePassword">
+          <div class="alert" *ngIf="!rForm.controls['Password'].valid && rForm.controls['Password'].touched ">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      <div class="forgot-password">
+        <a routerLink="/home/forgot-password">Forgot password ?</a>
+      </div>
+      <div class="action">
+        <button class="more" mat-button color="primary" (click)="Login()" [disabled]="!rForm.valid">
+          Login
+        </button>
+        <h5 class="error">{{error}}</h5>
+      </div>
+
+      <div class="go-login">
+        <a routerLink="/sign-up">
+          Go to sign up</a>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+<app-home-loader *ngIf="showLoader"></app-home-loader>
+
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h3>
+      Please login or sign up to view your wishlist.
+    </h3>
+
+    <div class="form-item">
+      <button (click)="goto('sign-in')">Login</button>
+      <div class="or">Or</div>
+      <button (click)="goto('sign-up')">Sign up</button>
+      <div class="link" (click)="back()">Back</div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="quick-add">
+  <div class="form">
+    <h3>
+      Select Customer
+    </h3>
+
+    <div class="form-item">
+      <button class="primary" *ngIf="items && items.length" (click)="add()">
+        add new customer
+      </button>
+      <div class="items" *ngIf="items && items.length">
+
+        <div class="">
+
+          <div *ngFor="let item of items; let i = index" class="item" (click)="selectItem(item)">
+            <div class="image">
+              <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+              <img *ngIf="!item.Dp" src="assets/images/common/profile-user.svg" alt="">
+            </div>
+
+            <div class="name">
+              <p>
+                {{item.Name}}
+                <!-- <span>
+                  {{item.PhoneNumber}}
+                </span> -->
+
+                <span>
+                  {{item.Email}}
+                </span>
+
+                <!-- <span>
+                  {{item.AddressLineHome}}
+                </span> -->
+              </p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+      <div class="" *ngIf="items && !items.length">
+        <div class="no-data">
+          <h1>
+            You don't have customers yet.
+          </h1>
+          <img src="assets/images/common/customer.svg" alt="">
+          <p>
+            To create an order you need to have customers in the system. Click the button below to create a new customer
+          </p>
+
+          <button class="more" (click)="add()">Add customer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

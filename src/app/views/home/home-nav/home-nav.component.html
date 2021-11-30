@@ -1,0 +1,84 @@
+<div class="phone-only">
+  <div class="mess">
+    Free delivery for orders above R1000
+  </div>
+
+  <div class="top-banner">
+    <div class="col">
+      <a href="mailto:info@bukhosiblooms.co.za">info@bukhosiblooms.co.za</a>
+    </div>
+    <div class="col" *ngIf="!user">
+      <a class="a-btn" routerLink="/sign-in">Sign in</a>
+    </div>
+    <div class="col" *ngIf="!user">
+      <a class="a-btn" routerLink="/sign-up">Register</a>
+    </div>
+    <div class="col" *ngIf="user">
+    </div>
+    <div class="col" *ngIf="user">
+      <a class="a-btn" style="max-height: 2.4em ;overflow: hidden;" routerLink="/home/profile">Hi {{user.Name}}</a>
+    </div>
+  </div>
+
+  <div class="phone-menu phone-only">
+    <div class="side-phone" style="position: absolute;">
+      <app-home-side-nav *ngIf="showMenu"></app-home-side-nav>
+    </div>
+    <div class="col menu">
+      <span class="material-icons icons" (click)="showMenu = true">
+        menu
+      </span>
+    </div>
+    <div class="col">
+      <a routerLink="/">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="col cart">
+      <mat-icon class="icons" [matBadge]="carttItems" matBadgeColor="pink" (click)="cart()">shopping_bag</mat-icon>
+    </div>
+  </div>
+
+</div>
+
+<div class="pc-only">
+  <div class="pc-menu">
+    <div class="col">
+      <a routerLink="/">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="col">
+      <ul class="menu">
+        <li>
+          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/">Home</a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/about">About us</a>
+        </li>
+        <!-- <li>
+          <a class="a-btn" routerLink="/sign-in">New in</a>
+        </li> -->
+        <li>
+          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/contact">Contact us</a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" *ngIf="user" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/home/profile">Hi {{user.Name}}</a>
+          <a routerLinkActive="active-link" *ngIf="!user" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/sign-in">Login / Sign up</a>
+        </li>
+        <li>
+          <a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="a-btn"
+            routerLink="/shop/cart">Cart({{carttItems}})</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

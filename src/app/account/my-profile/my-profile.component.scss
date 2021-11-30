@@ -1,0 +1,88 @@
+@import '../../../assets/styles/color';
+
+h1 {
+  text-align: center;
+}
+
+.top-bar {
+  grid-template-columns: 3% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 10% auto;
+  }
+}
+
+.edit-user-profile {
+
+  padding: 0 2em;
+  border-top-left-radius: .4em;
+  border-top-right-radius: .4em;
+  text-align: center;
+  // margin: 5em auto;
+  // width: 28em;
+  padding: 1em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .user {
+    @media only screen and (max-width: 600px) {
+      padding: 1em;
+      text-align: center;
+    }
+  }
+
+  img {
+    width: 4em;
+    top: .4em;
+    border-radius: 1em;
+
+  }
+}
+
+p {
+
+  span {
+    display: block;
+    padding: .1em 0;
+    font-weight: 400;
+  }
+}
+
+.edit {
+  background: $pop;
+  width: 12em;
+  margin: .5em 0;
+  border-radius: .5em;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  padding: .7em;
+  margin: 1em auto;
+  color: $white;
+
+  @media only screen and (max-width: 600px) {
+    margin: .5em auto;
+  }
+}
+
+.user-section {
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 2em;
+  }
+}
+
+.more-details {
+  p {
+    span {
+      display: block;
+      padding: 1em 0;
+      background: $white;
+      margin: 0;
+      border-bottom: 1px solid $cloud;
+    }
+  }
+}

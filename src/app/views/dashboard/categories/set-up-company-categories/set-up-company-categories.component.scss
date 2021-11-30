@@ -1,0 +1,48 @@
+@import '../../../../../assets/styles/color';
+
+.main-list {
+  background: $cloud;
+}
+
+.page-section {
+  background: $cloud;
+}
+
+.form-section {
+  background: $white;
+  padding: 2em 1em;
+  margin: 2rem 0;
+  margin-top: 0;
+  box-shadow: $box-shadow
+}
+
+
+span.label {
+  font-weight: 400;
+  
+  margin-bottom: 1em;
+  color: $primary;
+}
+
+
+
+.category-item {
+  margin: 1em 0;
+  border-bottom: 1px solid $cloud;
+  cursor: pointer;
+}
+
+.select-name {
+  position: relative;
+  margin: 0 1em;
+  top: -.2em;
+}
+
+
+::ng-deep {
+
+  .mat-checkbox-ripple .mat-ripple-element,
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $primary !important;
+  }
+}

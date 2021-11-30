@@ -1,0 +1,59 @@
+.items .details {
+  grid-template-columns: 10% 20% 20% 20% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-gap: .8rem;
+    padding: 1rem;
+  }
+}
+
+.status {
+  border: 2px solid $black;
+  font-weight: 600;
+}
+
+.modal {
+  img {
+    width: 60%;
+    margin: 1rem auto;
+    height: auto;
+  }
+}
+
+.btn-pp {
+  display: block;
+  
+  font-weight: 600;
+  width: 8rem;
+  margin: .8rem auto;
+  color: $info;
+  padding: .2rem;
+  text-align: center;
+  position: relative;
+  left: -.5rem;
+  cursor: pointer;
+}
+
+.item {
+  cursor: pointer;
+}
+
+
+.dp {
+  @media only screen and (max-width: 600px) {
+    top: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+
+.create-cta {
+  // padding: 2em 0;
+  border-bottom: 1px solid $cloud;
+  // margin-bottom: 2em;
+  button{
+    width: 20%;
+    margin: 0 .5em;
+  }
+}

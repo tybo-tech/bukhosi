@@ -1,0 +1,39 @@
+@import '../../../../../assets/styles/color';
+
+h3 {
+  text-align: center;
+  padding: 1em;
+  border-bottom: 1px solid $cloud;
+}
+
+.form-item {
+  display: grid;
+  grid-template-columns: 40% auto;
+
+  label {
+    top: .4em;
+  }
+}
+
+.col-1 {
+  grid-template-columns: 100%;
+}
+
+
+.actions{
+  display: grid;
+  grid-template-columns:50% auto;
+  button{
+    width: 95%;
+    // padding-top: 1px;
+  }
+}
+
+
+.data-view-main {
+  height: auto;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+}

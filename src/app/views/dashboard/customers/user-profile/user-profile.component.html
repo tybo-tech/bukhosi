@@ -1,0 +1,49 @@
+<div class="body success-modal">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          keyboard_arrow_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        My profile
+      </div>
+    </div>
+  </div>
+
+  <div class="user">
+    <div class="icon" *ngIf="user.Dp">
+      <img *ngIf="user.Dp" [src]="user.Dp" alt="">
+    </div>
+
+    <div class="icon" *ngIf="!user.Dp">
+      <img class="profile-user" src="assets/images/common/profile-user.svg" alt="">
+    </div>
+
+    <div class="more-details">
+      <p>
+      <span>  {{user.Name}}</span>
+
+        <span class="cat">
+          {{user.PhoneNumber}}
+        </span>
+
+        <span class="price">
+          {{user.Email}}
+        </span>
+
+
+        <button class="btn-pop" (click)="edit()"> Edit profile</button>
+        <button class="btn-pop" (click)="logout()"> Logout</button>
+      </p>
+    </div>
+  </div>
+
+
+
+
+</div>

@@ -1,0 +1,157 @@
+<!-- <h1>Shop</h1>
+<h1>Shop</h1>
+<h1>Shop</h1>
+<h1>Shop</h1>
+<h1>Shop</h1>
+<h1>{{company?.Name}}</h1>
+<h1>Shop</h1> -->
+
+<div class="main" *ngIf="company && products">
+
+  <div class="company-profile">
+    <div class="cdp">
+      <img [src]="company.Dp" alt="">
+    </div>
+
+    <div class="details">
+      <h3>
+        {{company.Name}}
+        <span class="block lnk" *ngIf="user && user.CompanyId === company.CompanyId && user.UserType === ADMIN"
+          (click)="gotoDashboard()">Go to dashboard</span>
+        <span class="block black line-break" [innerHtml]="company.Description"></span>
+        <span class="block" *ngIf="shopOwner && shopOwner.UserId">Shop owner: <b>{{shopOwner.Name}}</b></span>
+        <span class="block col-2-of-2">
+          <span class="block follow" *ngIf="liked == 'no'" (click)="onLike('yes')">Follow</span>
+          <span class="block follow" *ngIf="liked == 'yes'" (click)="onLike('no')">Following</span>
+          <span class="block follow contact" *ngIf="shopOwner && shopOwner.UserId"
+            (click)="goto('home/messages/0/'+ shopOwner.UserId)">
+            <span class="material-icons">
+              textsms
+            </span>
+            Contact shop owner
+          </span>
+        </span>
+      </h3>
+
+
+
+
+    </div>
+
+  </div>
+<app-show-promotions *ngIf="promotions" [promotions]="promotions" [products]="products"></app-show-promotions>
+
+
+  <!-- <div class="catergories" *ngIf="catergories">
+    <button class="catergory" (click)="all()">
+      All ({{allProducts.length}})
+    </button>
+    <button class="catergory" *ngFor="let catergory of catergories; let i = index"
+      (click)="tapChildCategory(catergory)">
+      {{catergory.Name}}
+    </button>
+
+  </div> -->
+
+
+  <div class="filters">
+    <div class="search-box">
+      <input class="" type="search" [(ngModel)]="searchString" placeholder="🔎 Search this shop.">
+    </div>
+  </div>
+  <div class="products" *ngIf="products">
+    <div class="product" *ngFor="let product of products | searchproductshome:searchString;; let i = index">
+      <div class="image">
+        <img [src]="product.FeaturedImageUrl" alt="Awesome Sunglasses" (click)="viewMore(product)">
+      </div>
+
+      <div class="product-details" (click)="viewMore(product)">
+        <span class="stock-check" *ngIf="product.TotalStock==0">Sold out</span>
+
+        <p>
+          {{product.Name}}
+
+          <span class="price" *ngIf="!product.OnSale">
+            {{product.RegularPrice | currency:'R'}}
+          </span>
+          <span class="price" *ngIf="product.OnSale">
+            <del> {{product.RegularPrice | currency:'R'}}</del> <br>
+            {{product.SalePrice | currency:'R'}}
+          </span>
+
+          <!-- <span class="company-name" *ngIf="product.Company && product.Company.Name">
+            By {{product.Company.Name}}
+          </span> -->
+
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="next" *ngIf="showShowMore">
+    <button class="primary" (click)="loadMore()">Load more</button>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h3>
+      Please login or sign up to like the product.
+    </h3>
+
+    <div class="form-item">
+      <button (click)="goto('sign-in')">Login</button>
+      <div class="or">Or</div>
+      <button (click)="goto('sign-up')">Sign up</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- <p>
+  {{item.Name}}
+  <span class="sub">
+    {{item.PromoGroup}}
+    <span class="material-icons">
+      fiber_manual_record
+    </span>
+    {{item.PromoType}}
+    <span class="material-icons">
+      fiber_manual_record
+    </span>
+    {{item.DiscountValue}} {{item.DiscountUnits}} Off
+
+
+  </span>
+
+  <span class="sub">
+    {{item.AppliesTo}}
+    <span class="material-icons">
+      fiber_manual_record
+    </span>
+    {{item.MinimumRequirementValue}}   {{item.MinimumRequirements}}
+  </span>
+  <span class="sub">
+    {{item.StartDate  | date: 'mediumDate'}} <b>{{item.StartTime}}</b>
+    <span class="material-icons">
+      trending_flat
+    </span>
+    {{item.FinishDate  | date: 'mediumDate'}} <b>{{item.FinishTime}}</b>
+  </span>
+</p> -->
+
+<!-- 
+ <h2>
+  {{products | json}}
+</h2> 
+
+<p>
+  {{company | json}}
+
+</p> -->

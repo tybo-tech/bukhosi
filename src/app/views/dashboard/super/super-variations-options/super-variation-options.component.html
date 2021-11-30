@@ -1,0 +1,71 @@
+<div class="main-list _super" *ngIf="variation">
+  <div class="create-cta">
+    <div class="">
+      <h1>
+        {{heading}}
+      </h1>
+    </div>
+    <div class="action">
+      <input type="search" placeholder="Filter by Category Name ">
+    </div>
+    <div class="action">
+      <button mat-button class="mat-primary sec" type="button" (click)="add()">
+        Add New Category
+      </button>
+    </div>
+  </div>
+
+  <div class="filters">
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip color="primary" (click)="filter('all')" [selected]="isAll">All</mat-chip>
+      <mat-chip color="primary" (click)="filter('cat')" [selected]="isCat">Categories</mat-chip>
+      <mat-chip color="primary" (click)="filter('sub')" [selected]="isSub">Sub categories</mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <div class="headers">
+
+    <div class="item">
+      Image
+    </div>
+    <div class="item">
+      Name
+    </div>
+    <div class="item">
+      <span *ngIf="isSub">
+        Parent category
+      </span>
+    </div>
+  </div>
+
+
+  <div class="line-items" *ngFor="let item of variation.VariationsOptions" (click)="view(item)">
+
+    <div class="item np">
+      <div class="icon" *ngIf="item.ImageUrl">
+        <div class="user-dp-image">
+          <img [src]="item.ImageUrl" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.ImageUrl">
+        <div class="user-dp-image">
+          <img src="assets/images/icons/add.svg" class="img-ph" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Name}}
+      </h1>
+    </div>
+    <div class="item">
+      <h1>
+        {{item.Description}}
+      </h1>
+    </div>
+
+
+  </div>
+
+</div>

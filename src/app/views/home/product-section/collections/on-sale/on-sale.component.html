@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        Shops running promotions
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="promotions" *ngIf="promotions && promotions.length">
+    <div class="promo-item" *ngFor="let promotion of promotions" [ngClass]="promotion.Class">
+      <h4 *ngIf="promotion.ImageUrl">
+        {{ promotion.Company?.Name}}
+      </h4>
+      <img *ngIf="promotion.ImageUrl" [src]="promotion.ImageUrl" (click)="gotoShopPromotion(promotion)">
+    </div>
+  </div>
+
+</div>

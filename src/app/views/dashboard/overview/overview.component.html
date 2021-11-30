@@ -1,0 +1,306 @@
+<div *ngIf="user" class="main success-modal">
+
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="logo" (click)="list('company-profile')">
+        <img *ngIf="user.Company.Dp" [src]="user.Company.Dp" alt="">
+        <img *ngIf="!user.Company.Dp" src="assets/images/common/newlogo.png" alt="">
+      </div>
+
+      <div class="name" (click)="list('company-profile')">
+        {{user.Company.Name}}
+      </div>
+
+      <div class="user-tab">
+
+        <span class="name" (click)="list('user-profile')">
+          <span class="material-icons" *ngIf="!user.Dp">
+            account_circle
+          </span>
+          <img class="profile-user" *ngIf="user.Dp" [src]="user.Dp" alt="">
+        </span>
+
+      </div>
+      <div class="btn-menu nots">
+
+
+        <mat-icon [matBadge]="0" matBadgeColor="primary">notifications_none</mat-icon>
+
+      </div>
+
+      <div class="col menu">
+        <span class="material-icons pointer">
+          menu
+         </span>
+      </div>
+    </div>
+  </div>
+  <h3 class="hello-h1">
+    Hi {{user.Name}}, welcome to your dashboard
+    <span>
+      <div class="name"> {{baseUrl}}/<b>{{user.Company.Slug}}</b></div>
+      <div class="share" [cdkCopyToClipboard]="fullLink" (click)="copy()">
+        Share
+      </div>
+    </span>
+  </h3>
+  <a target="_blank" [href]="fullLink">
+    <button class="goto-shop">
+      Go to your shop
+    </button>
+  </a>
+
+
+
+  <div class="cards">
+
+
+    <!-- 
+    <div class="card" *ngIf="user.UserType === ADMIN">
+      <h3>
+        <span>
+          Due to you 🤑 R0.00
+        </span>
+      </h3>
+
+
+
+      <div (click)="cashout()" class="logout">
+        <span class="material-icons">
+          credit_card
+        </span>
+        Cashout
+      </div>
+
+
+    </div> -->
+
+
+    <div class="card" *ngIf="user.UserType === ADMIN">
+      <h3>
+        Orders
+      </h3>
+
+      <div class="stat-grid" (click)="list('invoices/Not paid')">
+        <div class="col">
+          Not paid
+        </div>
+        <div class="col">
+          {{notPaidOrders?.length}}
+        </div>
+      </div>
+      <div class="stat-grid" (click)="list('invoices/Processing')">
+        <div class="col">
+          Processing
+        </div>
+        <div class="col">
+          {{processingPaidOrders?.length}}
+        </div>
+      </div>
+      <div class="stat-grid" (click)="list('invoices/On Transit')">
+        <div class="col">
+          In Transit
+        </div>
+        <div class="col">
+          {{inTransitOrders?.length}}
+        </div>
+      </div>
+
+
+      <div class="stat-grid" (click)="list('invoices/all')">
+        <div class="col">
+          All
+        </div>
+        <div class="col">
+          {{orders?.length}}
+        </div>
+      </div>
+
+
+      <div (click)="addOrder()" class="logout add">
+
+        New order
+      </div>
+
+    </div>
+
+
+
+    <div class="card" *ngIf="user.UserType === ADMIN">
+      <h3>
+        Products
+      </h3>
+
+      <div class="stat-grid" (click)="list('products')">
+        <div class="col">
+          Stock products
+        </div>
+        <div class="col">
+          {{stockProducts?.length}}
+        </div>
+      </div>
+
+      <div class="stat-grid" (click)="list('products')">
+        <div class="col">
+          Just in time products
+        </div>
+        <div class="col">
+          {{jitProducts?.length}}
+        </div>
+      </div>
+
+
+
+
+
+      <div (click)="addProduct()" class="logout add">
+
+        New product
+      </div>
+
+    </div>
+
+
+    <div class="card" *ngIf="user.UserType === ADMIN">
+      <h3>
+        Overview
+      </h3>
+
+      <div class="stat-grid" (click)="list('products')">
+        <div class="col">
+          All products
+        </div>
+        <div class="col">
+          {{products?.length}}
+        </div>
+      </div>
+      <div class="stat-grid" (click)="list('customers')">
+        <div class="col">
+          Customers
+        </div>
+        <div class="col">
+          {{customers?.length}}
+        </div>
+      </div>
+      <div class="stat-grid" (click)="list('jobs')">
+        <div class="col">
+          Jobs
+        </div>
+        <div class="col">
+          {{jobCards?.length}}
+        </div>
+      </div>
+      <div class="stat-grid" (click)="list('promotions')">
+        <div class="col">
+          Promotions
+        </div>
+        <div class="col">
+          >
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="card" style="display:none;" *ngIf="user.UserType === ADMIN">
+      <h3 (click)="list('pending-custom-designs')">
+        custom design requests
+      </h3>
+      <div (click)="list('pending-custom-designs')" class="logout add">
+        Manage
+      </div>
+    </div>
+  </div>
+
+  <app-super-overview *ngIf="user.UserType === SUPER"></app-super-overview>
+
+</div>
+
+
+<div class="quick-add" *ngIf="showAdd && newProduct">
+  <div class="form">
+    <h1>
+      Add new product.
+    </h1>
+
+
+    <div class="form-item">
+      <label for="">Product name</label>
+      <input type="text" name="" id="" [(ngModel)]="newProduct.Name" placeholder="Enter product name.">
+    </div>
+
+    <div class="form-item">
+      <label for=""><b>Product stock type.</b></label>
+      <select [(ngModel)]="newProduct.IsJustInTime">
+        <option value="Stock product">Stock product</option>
+        <option value="Just in time">Just in time</option>
+      </select>
+    </div>
+    <div class="form-item" *ngIf="newProduct.IsJustInTime == 'Just in time'">
+      <label for=""><b>Estimated shipping days, from the order date.</b></label>
+      <select [(ngModel)]="newProduct.EstimatedDeliveryDays">
+        <option value="1">1 Day</option>
+        <option value="2">2 Days</option>
+        <option value="3">3 Days</option>
+        <option value="4">4 Days</option>
+        <option value="5">5 Days</option>
+        <option value="6">6 Days</option>
+        <option value="7">7 Days</option>
+        <option value="8">8 Days</option>
+        <option value="9">9 Days</option>
+        <option value="10">10 Days</option>
+        <option value="11">11 Days</option>
+        <option value="12">12 Days</option>
+        <option value="13">13 Days</option>
+        <option value="14">14 Days</option>
+        <option value="-1"> Other</option>
+      </select>
+
+    </div>
+
+    <div class="form-item" *ngIf="newProduct.EstimatedDeliveryDays == -1">
+      <label for="">Enter your own shipping days</label>
+      <input type="number" name="" id="" [(ngModel)]="newProduct.OtherEstimatedDeliveryDays"
+        placeholder="Enter number of days, e.ge. 7">
+    </div>
+
+    <div class="form-item" *ngIf="newProduct.IsJustInTime == 'Just in time'">
+      <label for=""><b>Product order limit.</b></label>
+      <select [(ngModel)]="newProduct.OrderLimit">
+        <option [value]="PRODUCT_ORDER_LIMIT_MAX">Not limited</option>
+        <option value="1">1 Product</option>
+        <option value="2">2 Products</option>
+        <option value="3">3 Products</option>
+        <option value="4">4 Products</option>
+        <option value="5">5 Products</option>
+        <option value="6">6 Products</option>
+        <option value="7">7 Products</option>
+        <option value="8">8 Products</option>
+        <option value="9">9 Products</option>
+        <option value="10">10 Products</option>
+        <option value="11">11 Products</option>
+        <option value="12">12 Products</option>
+        <option value="13">13 Products</option>
+        <option value="14">14 Products</option>
+        <option value="-1"> Other</option>
+      </select>
+
+    </div>
+
+    <div class="form-item" *ngIf="newProduct.OrderLimit == -1">
+      <label for="">Enter your own order limit</label>
+      <input type="number" name="" id="" [(ngModel)]="newProduct.OtherOrderLimit"
+        placeholder="Enter number of days, e.ge. 7">
+    </div>
+
+    <div class="form-item">
+      <button (click)="saveProduct()" [disabled]="!newProduct.Name">Next</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+  </div>
+</div>
+<!-- 
+
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+<app-user-feedback *ngIf="showModal" [modalModel]="modalModel"></app-user-feedback> -->

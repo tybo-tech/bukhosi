@@ -1,0 +1,37 @@
+
+
+<div class="user-profile">
+
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        keyboard_arrow_left
+      </span>
+    </div>
+  
+  
+    <div class="name">
+      My orders
+    </div>
+  </div>
+  
+  <div class="user-section" *ngIf="orders && !orders.length">
+
+
+    <div class="eddition-info">
+      <span class="span">
+        My Orders (0)
+      </span>
+
+      <span class="value">
+        You dont have any orders history.
+      </span>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="orders && orders.length">
+    <app-my-orders [orders]="orders" [user]="user"></app-my-orders>
+  </div>
+</div>

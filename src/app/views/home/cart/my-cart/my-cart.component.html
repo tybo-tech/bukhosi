@@ -1,0 +1,45 @@
+<div class=" main" *ngIf="order">
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+       My cart
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="list">
+    <app-cart-items [order]="order"></app-cart-items>
+    <div class="buttons">
+
+      <div class="">
+        <button *ngIf="order.Orderproducts.length" class="mat-primary secondary" mat-button color="primary" (click)="continueShopping()">
+          Continue shopping
+        </button>
+      </div>
+
+      <div class="">
+        <button *ngIf="order.Orderproducts.length" class="mat-primary checkout" mat-button color="primary"
+          (click)="checkout()">
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+</div>

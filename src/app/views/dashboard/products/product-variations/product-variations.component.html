@@ -1,0 +1,131 @@
+<div class="data-view-main" *ngIf="variations && variations.length && product">
+  <div class="basic variation" *ngFor="let variation of variations">
+    <h3 class="header-label">
+      Choose {{variation.Name}}(s)
+    </h3>
+
+
+
+    <div class="variations" *ngIf="variation.Name == 'Size'">
+      <button class="btn-size" *ngFor="let item of variation.VariationsOptions" (click)="select(item, variation.Name)"
+        [ngClass]="item.Class">
+        {{item.Name}}</button>
+
+      <button class="btn-size" style="background:#F3CF3D !important;" (click)="toggleShowAddSize(variation)">
+        Add new size
+      </button>
+    </div>
+
+    <div class="variations" *ngIf="variation.Name == 'Color'">
+      <button class="btn-color" *ngFor="let item of variation.VariationsOptions"
+        [ngStyle]="{'background-color':item.Description, 'background-image': item.ImageUrl? 'url(' + item.ImageUrl + ')' : 'none'}"
+        (click)="select(item, variation.Name)" [ngClass]="item.Class">
+        <span *ngIf="item.Class && item.Class.length" class="selected-color">
+        </span>
+        <span *ngIf="!item.Class || !item.Class.length" class="not-selected-color">
+        </span>
+      </button>
+      <button class="btn-size in-colour"  style="background:#F3CF3D !important;" (click)="toggleShowAddColor(variation)">
+        Add new color
+      </button>
+      <button  style="background:#F3CF3D !important;" class="btn-size in-colour" (click)="file.click(); selectedVariation=variation">
+        Use image
+      </button>
+
+
+      <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+        (change)="uploadFile(file.files)" style="display:none;position: fixed;">
+
+    </div>
+
+
+    <!-- <pre>
+      {{variations | json}}
+    </pre> -->
+  </div>
+
+  <div class="basic">
+
+    <div class="actions">
+      <button (click)="back()">Back to product</button>
+      <button class="save" (click)="saveProduct()">Save</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAddColor">
+  <div class="form">
+    <h1>
+      Add new color
+    </h1>
+
+    <div class="form-item" *ngIf="!newOption.ImageUrl">
+      <label for="">Pick the colur</label>
+      <input type="color" class="color-picker" [(ngModel)]="newOption.Description">
+    </div>
+    <div class="form-item" *ngIf="newOption.ImageUrl">
+      <label for="">Color/Prints image</label>
+      <img [src]="newOption.ImageUrl" alt="" style="width: 20%;">
+    </div>
+
+    <div class="form-item">
+
+      <label for="">Color name</label>
+      <input type="text" name="" id="" [(ngModel)]="newOption.Name" placeholder="Enter color name here">
+    </div>
+
+    <div class="form-item">
+      <button (click)="addVariationOption()" [disabled]="!newOption.Name || !newOption.Description">Save</button>
+      <div class="link" (click)="showAddColor = false">Cancel</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="quick-add" *ngIf="showAddSize">
+  <div class="form">
+    <h1>
+      Add new size
+    </h1>
+
+    <div class="form-item">
+
+      <label for="">Size value</label>
+      <input type="text" name="" id="" [(ngModel)]="newOption.Name" placeholder="Enter color name here">
+    </div>
+
+    <div class="form-item">
+      <button (click)="addVariationOption()" [disabled]="!newOption.Name">Save</button>
+      <div class="link" (click)="showAddSize = false">Cancel</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- 
+<div class="main-list _super" *ngIf="variations && variations.length && product">
+
+  <div class="variation" *ngFor="let variation of variations">
+    Product {{variation.Name}}(s)
+
+
+  </div>
+
+
+  <div class="actions">
+    <button class="save" (click)="saveProduct()">Save</button>
+    <button (click)="back()">Back to product</button>
+
+  </div>
+</div>
+
+
+
+ -->

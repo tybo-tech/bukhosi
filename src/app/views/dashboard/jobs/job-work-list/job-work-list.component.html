@@ -1,0 +1,51 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div *ngIf="jobWorks && jobWorks.length">
+  <div class="">
+
+    <div class="product-item" *ngFor="let item of jobWorks" (click)="view(item)">
+      <div class="item">
+        <p>
+          {{item.Tittle}}
+          <span>
+            {{item.Quantity}} {{item.Units}} x {{item.TotalCost| currency:'R'}}
+          </span>
+        </p>
+      </div>
+      <div class="item">
+        <p>
+          {{(item.TotalCost *  item.Quantity)| currency:'R'}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="" *ngIf="jobWorks && !jobWorks.length">
+  <div class="no-data">
+    <h1>
+      You don't have jobs yet.
+    </h1>
+    <img src="assets/images/common/customer.svg" alt="">
+    <p>
+      To create an order you need to have jobs in the system. Click the button below to create a new job.
+    </p>
+
+    <button class="more" (click)="add()">Add job</button>
+  </div>
+</div>
+
+
+
+
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="item-options" *ngIf="showModal">
+  <div class="close">
+    <span class="material-icons" (click)="showModal = false">
+      close
+    </span>
+    <app-add-job-work-item [jobWork]="jobWork" (doneAddingJobWork)="doneAddingJobWork($event)"></app-add-job-work-item>
+  </div>
+</div>

@@ -1,0 +1,154 @@
+<div class="" *ngIf="order">
+  <div class="track" *ngIf="order.Status == 'Processing'">
+
+    <span class="status done">
+      Order Placed
+      <span class="material-icons">
+        shopping_cart
+      </span>
+    </span>
+    <span class="status done">
+      Order Paid
+      <span class="material-icons">
+        payment
+      </span>
+    </span>
+    <span class="status bussy">
+      Order Processing
+      <span class="material-icons">
+        more_horiz
+      </span>
+    </span>
+    <span class="status">
+      In transit
+      <span class="material-icons">
+        local_shipping
+      </span>
+    </span>
+    <span class="status">
+      Order Delivered
+      <span class="material-icons">
+        check_circle
+      </span>
+    </span>
+  </div>
+
+
+  <div class="track" *ngIf="order.Status == 'Delivered'">
+
+    <span class="status done">
+      Order Placed
+      <span class="material-icons">
+        check_circle
+      </span>
+    </span>
+    <span class="status done">
+      Order Paid
+      <span class="material-icons">
+        payment
+      </span>
+    </span>
+    <span class="status done">
+      Order Processing
+      <span class="material-icons">
+        more_horiz
+      </span>
+    </span>
+    <span class="status done">
+      In transit
+      <span class="material-icons">
+        local_shipping
+      </span>
+    </span>
+    <span class="status done">
+      Order Delivered
+      <span class="material-icons">
+        check_circle
+      </span>
+    </span>
+  </div>
+
+
+
+  <div class="track" *ngIf="order.Status == 'Not paid'">
+
+    <span class="status bussy">
+      Order Placed
+      <span class="material-icons">
+        shopping_cart
+      </span>
+    </span>
+    <span class="status">
+      Order Paid
+      <span class="material-icons">
+        payment
+      </span>
+    </span>
+    <span class="status">
+      Order Processing
+      <span class="material-icons">
+        more_horiz
+      </span>
+    </span>
+
+    <span class="status">
+      In transit
+      <span class="material-icons">
+        local_shipping
+      </span>
+    </span>
+    <span class="status">
+      Order Delivered
+      <span class="material-icons">
+        check_circle
+      </span>
+    </span>
+  </div>
+
+
+
+
+  <div class="track" *ngIf="order.Status == 'On transit'">
+
+    <span class="status done">
+      Order Placed
+      <span class="material-icons">
+        shopping_cart
+      </span>
+    </span>
+    <span class="status done">
+      Order Paid
+      <span class="material-icons">
+        payment
+      </span>
+    </span>
+    <span class="status done">
+      Order Processing
+      <span class="material-icons">
+        more_horiz
+      </span>
+    </span>
+    <span class="status bussy">
+      In transit
+      <span class="material-icons">
+        local_shipping
+      </span>
+    </span>
+    <span class="status">
+      Order Delivered
+      <span class="material-icons">
+        check_circle
+      </span>
+    </span>
+
+
+  </div>
+
+  <div class="track" *ngIf="order.Status == 'On transit'">
+    <p>
+      We are waiting for order delivery confirmation from the customer,
+      please follow up with the customer if needed.
+    </p>
+  </div>
+
+</div>

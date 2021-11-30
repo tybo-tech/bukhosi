@@ -1,0 +1,318 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  // z-index: 5000000000;
+  z-index: 5000;
+  background: rgb(42 38 38 / 85%);
+
+  // background: #f4f4f4cc;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: fixed;
+  background: $white;
+  z-index: 50000000001 !important;
+  left: 36%;
+  width: 32%;
+  bottom: 13%;
+  max-height: 80vh;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: .5em;
+  overflow-y: scroll;
+
+  .head {
+
+    display: grid;
+    grid-template-columns: 90% auto;
+    color: $black;
+    border-bottom: 2px solid $cloud;
+    margin-bottom: 1em;
+
+    h1 {
+      margin: 0;
+      padding: 0 1em;
+
+      text-align: left;
+      font-weight: 900;
+    }
+
+    .material-icons {
+      position: relative;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+
+  .body {
+    padding: .5em;
+
+    p {
+      margin: 1em 0;
+      padding: 0;
+    }
+  }
+
+  .cta {
+    text-align: center;
+    padding: 1em;
+  }
+
+  form {
+    width: 40%;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    // height: 100vh;
+    max-height: 100vh;
+  }
+
+  .main-list {
+    background: none;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  p {
+    padding: 2rem;
+  }
+
+  .editor {
+    p {
+      padding: 0;
+      text-align: left;
+      margin: .3rem;
+    }
+
+    h1 {
+      text-align: left;
+      margin: .3rem;
+    }
+  }
+
+  label,
+  input,
+  textarea,
+  select {
+    display: block;
+    margin: .5 0rem;
+  }
+
+  label {
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+
+
+    span {
+      display: block;
+      font-weight: 500;
+
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    padding: 1rem;
+    width: 97.5%;
+    margin: 1rem 0;
+    margin-top: 0;
+  }
+
+  button {
+    @media only screen and (max-width: 600px) {
+      left: 1rem;
+      bottom: 2rem;
+      width: 92%;
+      z-index: 10000;
+    }
+  }
+
+  .secondary {
+    @media only screen and (max-width: 600px) {
+      bottom: 6rem;
+    }
+  }
+
+  .btn-float {
+    position: fixed;
+    z-index: 1000;
+    right: 22%;
+    bottom: 8%;
+    width: 10rem !important;
+  }
+
+  .col-1-of-2 {
+
+    input,
+    textarea,
+    select {
+      width: 80%;
+    }
+  }
+
+  select {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+  }
+}
+
+
+.success-modal {
+  width: 100%;
+  height: 100%;
+  background: $cloud;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  // animation: animationFadeIn .3s ease-in-out;
+  padding: .5em 1em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+  h1 {
+    text-align: left;
+    padding: 1em;
+    color: $black;
+    width: 70%;
+    margin: .2em auto;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    .check {}
+  }
+
+  .summary {
+    background: $white;
+    padding: 1em;
+    width: 92%;
+    border-radius: .5em;
+    margin: 1em auto;
+
+
+    .item {
+      border-bottom: 1px solid $cloud;
+      text-align: center;
+      padding: 1em;
+
+      .material-icons {
+        top: 0.3rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $primary;
+        font-weight: 600;
+      }
+
+      .cancel {
+        color: $danger;
+      }
+
+      .checkout {
+        color: $secondary;
+      }
+
+      .info {
+        color: $info;
+      }
+    }
+
+    .product-item {
+      display: grid;
+      grid-template-columns: 80% auto;
+      text-align: left;
+
+      img {
+        width: 3em;
+        border-radius: .2em;
+      }
+
+      .action {
+        text-align: right;
+        color: $danger;
+      }
+    }
+
+  }
+}
+
+
+
+
+.product-options {
+  display: grid;
+  background: $white;
+  width: 70%;
+  margin: .1em auto;
+  padding: .75em;
+  margin: .5em auto;
+  text-align: center;
+  grid-template-columns: repeat(10, 10%);
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(5, 20%);
+  }
+
+  .option {
+    font-weight: 700;
+    padding: .4em;
+
+    margin: .1em auto;
+
+    span {
+      position: absolute;
+      top: -21px;
+      right: 5px;
+      color: $secondary;
+    }
+  }
+
+  .label {
+
+    top: .5em;
+  }
+
+  .size-btn {
+    border-radius: .5em;
+    width: auto;
+    height: 3em;
+    background: $cloud;
+    text-align: center;
+    padding: .8em;
+    font-weight: 700;
+    border: 1px solid $primary;
+    margin: .1em auto;
+    cursor: pointer;
+  }
+
+  .color-btn {
+    border-radius: 10em;
+    height: 3em;
+    width: 3em;
+    border: 1px solid $darker-grey;
+    cursor: pointer;
+  }
+
+}

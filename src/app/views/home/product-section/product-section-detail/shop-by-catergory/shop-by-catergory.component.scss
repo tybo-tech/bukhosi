@@ -1,0 +1,41 @@
+@import '../../../../../../assets/styles/color';
+
+.main {
+  background: $white;
+  margin: 1em 0;
+  padding: 1em;
+
+  .flexy {
+    overflow-x: scroll;
+    padding: 1em 0;
+  }
+
+  .list {
+    display: flex;
+
+    .catergory {
+      width: 10em;
+      height: 7em;
+      //   background: red;
+      flex: 0 0 auto;
+      border: 1px solid $cloud;
+      text-align: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      margin-right: 1em;
+
+      span {
+        display: block;
+        width: 100%;
+        background: $pop;
+        color: $white;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

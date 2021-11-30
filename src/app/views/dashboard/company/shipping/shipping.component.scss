@@ -1,0 +1,21 @@
+.top-bar {
+    grid-template-columns: 3% auto;
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 10% auto;
+    }
+  
+  }
+  
+.product-item .item p{
+    padding: 1em 0;
+    top: .3em;
+    font-weight: 600;
+}
+
+.cards{
+  
+    @media only screen and (max-width: 600px) {
+      margin-top: 6em;
+      }  
+}
+

@@ -1,0 +1,32 @@
+@import '../../../../../../assets/styles/color';
+
+.main {
+  background: $white;
+  padding: 1em;
+  border-radius: .5em;
+  margin: .5em;
+
+  @media only screen and (max-width: 600px) {
+    padding: .5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 100000;
+    padding-top: 5em;
+  }
+
+}
+
+
+.promo-item {
+  margin: 1em 0;
+  border-bottom: 1px solid $cloud;
+  padding-bottom: 1em;
+
+  h4 {
+    padding: .5em 0;
+  }
+}

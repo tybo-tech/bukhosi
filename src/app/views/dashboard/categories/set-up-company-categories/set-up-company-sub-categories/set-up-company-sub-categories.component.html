@@ -1,0 +1,59 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main" *ngIf="selectedParentCategory">
+
+  <div class="page-section">
+    <h3>
+      <span class="material-icons pointer" (click)="back()">
+        west
+      </span>
+      Set up company categories.
+    </h3>
+    <div class="main-list">
+      <div class="form-section">
+        <span class="label">
+          Choose your sub categories for <b>{{selectedParentCategory.Name}}</b>.
+        </span>
+
+        <div class="categories">
+          <div *ngFor="let category of categories; let i = index" (click)="selectCategory(category)"
+            class="category-item">
+
+            <!-- <input [checked]="category.IsSelected" class="select" type="checkbox"> 
+            <span class="select-name">{{category.Name}}</span> -->
+
+            <section class="example-section">
+              <mat-checkbox class="example-margin" disabled [(ngModel)]="category.IsSelected">{{category.Name}}
+              </mat-checkbox>
+            </section>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="form-section">
+
+
+        <div class="create-cta">
+          <div class="action">
+            <button mat-button class="mat-primary" type="button" (click)="save()">
+              Next
+            </button>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+  <app-user-feedback *ngIf="showModal" [modalModel]="modalModel"></app-user-feedback>

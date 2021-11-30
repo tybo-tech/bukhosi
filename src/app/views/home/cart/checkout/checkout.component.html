@@ -1,0 +1,71 @@
+<div class="main" *ngIf="order">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+      <div class="logo">
+
+      </div>
+
+      <div class="name">
+        Order Summary.
+      </div>
+
+      <div class="btn-menu">
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-items">
+    <app-cart-items [order]="order" [hideDelete]="true" [shippings]="shippings" [Class]="'grid'"></app-cart-items>
+  </div>
+
+
+
+  <!-- <pre>
+  {{order | json}}
+</pre> -->
+  <div class="payfast-form">
+    <form ngNoForm action="https://www.payfast.co.za/eng/process" method="POST">
+      <span *ngIf="user">
+        <input type="hidden" name="merchant_id" [value]="merchantId">
+        <input type="hidden" name="merchant_key" [value]="merchantKey">
+        <input type="hidden" name="return_url" [value]="shopingSuccesfulUrl">
+        <input type="hidden" name="cancel_url" [value]="paymentCancelledUrl">
+        <input type="hidden" name="notify_url" [value]="paymentCallbackUrl">
+
+        <input type="hidden" name="name_first" [value]="user.Name">
+        <input type="hidden" name="name_last" [value]="user.Surname">
+        <input type="hidden" name="email_address" [value]="user.Email">
+        <input type="hidden" name="cell_number" [value]="user.PhoneNumber">
+
+
+        <input type="hidden" name="amount" [value]="order.Total">
+        <input type="hidden" name="item_name" [value]="productName">
+        <input type="hidden" name="item_description" [value]="productDescription">
+
+
+        <input type="hidden" name="email_confirmation" value="1">
+        <input type="hidden" name="confirmation_address" value="payments@tybo.co.za">
+      </span>
+
+      <div class="actions">
+        <button (click)="checkCustomerProfileForCompany()" type="submit" *ngIf="user && order && order.Orderproducts.length" class="cta">Proceed to
+          payments</button>
+        <button type="button" *ngIf="user && isLocal" (click)="success()" class="cta shop-more tertiary">Success</button>
+        <button type="button" *ngIf="user" (click)="back()" class="cta shop-more secondary">continue shopping</button>
+        <button type="button" *ngIf="!user" (click)="goto('sign-in')" class="cta">Login & checkout</button>
+        <button type="button" *ngIf="!user" (click)="goto('sign-up')" class="cta shop-more secondary">Register &
+          checkout</button>
+      </div>
+    </form>
+  </div>
+  <!-- <button type="submit" *ngIf="!user" (click)="login()" class="cta">Please login to checkout</button> -->
+</div>

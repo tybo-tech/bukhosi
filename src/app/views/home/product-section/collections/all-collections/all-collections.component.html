@@ -1,0 +1,34 @@
+<div class="main">
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        All fashion shops
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="product-section col-1-of-1">
+    <div class="mt5" *ngIf="selectedCategory">
+      <div class="shops" *ngFor="let item of selectedCategory.Children" (click)="selectCategory(item)">
+        <div class="shop">
+          <h3>
+            {{item.Name}}
+          </h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="body success-modal mobile-full" *ngIf="customDesigns && customDesigns.length">
+
+  <div class="top-bar" *ngIf="customDesigns">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name link tal" (click)="back()">
+     Dashboard
+    </div>
+
+    <div class="name">
+      Pending requests
+    </div>
+  </div>
+
+
+  <div class="cards">
+    <div class="product-item" *ngFor="let item of customDesigns"  (click)="select(item)">
+      <div class="item">
+        <div class="icon" *ngIf="item.Dp">
+          <div class="user-dp-image">
+            <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+          </div>
+        </div>
+
+        <div class="icon" *ngIf="!item.Dp">
+          <div class="user-dp-image">
+            <img *ngIf="!item.Image1" src="assets/images/common/order.svg" alt="">
+            <img *ngIf="item.Image1" [src]="item.Image1" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="item">
+
+        <p>
+          {{item.Description}}
+          <span *ngIf="item.DueDate" class="date">
+            Due by   {{item.DueDate | date: 'mediumDate'}}
+            </span>
+        </p>
+
+        <div class="actions">
+          <button>View request.</button>
+        </div>
+      </div>
+
+    
+    </div>
+  </div>
+
+  <div class="p6"></div>
+</div>
+
+
+<div class="" *ngIf="customDesigns && !customDesigns.length">
+  <div class="no-data">
+    <h1>
+      No custom designs requests found at the moment.
+    </h1>
+    <img src="assets/images/common/customer.svg" alt="">
+    <p>
+      Please keep an eye on your notifications .
+    </p>
+    <button class="more" (click)="back()">Back to dashboard</button>
+
+  </div>
+</div>
+

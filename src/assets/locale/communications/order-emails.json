@@ -1,0 +1,18 @@
+[
+{
+  "Type":"order-confirmation",
+  "Subject":"Order confirmation",
+  "Message":"We hereby confirm receipt of your order! Your world is about to look a whole lot better. We will drop you another email when your order has been shipped."
+},
+{
+  "Type": "order-shipped",
+  "Subject": "Hooray, your order has been shipped!",
+  "Message": "Your order has been shipped to your delivery address, Thank you for shopping on Bukhosi blooms, you didn't just get a great deal -- you also supported the growth of the Bukhosi blooms community. Thank You."
+},
+{
+  "Type": "order-review",
+  "Subject": "Your opinion is VALUABLE, let's talk",
+  "Message": "Thank you for shopping on Bukhosi blooms. We really appreciate your support. To help us improve, we'd like to ask you a few questions about your experience so far. In a minute or less, your feedback will help us make Bukhosi blooms even better for you and other shoppers.",
+  "Link":"link-to-review"
+}
+]

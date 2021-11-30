@@ -1,0 +1,42 @@
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <!-- <img  src="assets/images/pcslide3.png" alt=""> -->
+    <img id="firstClone" src="assets/images/pcslide1.png" (click)="goto('about')" alt="">
+    <img src="assets/images/pcslide2.png" (click)="selectCategory('ladies')" alt="">
+    <img src="assets/images/pcslide3.png" (click)="selectCategory('men')" alt="">
+
+    <!-- <img id="lastClone"  src="assets/images/pcslide1.png" alt=""> -->
+  </div>
+
+  <div class="scrolls">
+    <span class="material-icons" (click)="slidePrev()">
+      west
+    </span>
+    <span class="material-icons" (click)="slideNext()">
+      east
+    </span>
+  </div>
+</div>
+
+
+
+
+<div class="shop-cta" style="background: #fff; border-bottom: 1px solid rgb(200, 200, 200);">
+  <img class="" src="assets/images/surething.png" alt="">
+</div>
+
+<div class="intro">
+  <h1>
+    Bukhosi blooms
+  </h1>
+
+  <p>
+    We at Bukhosi blooms vow to take you on a remarkable pets journey. Through our pets reviews, we aim to
+    educate
+    & introduce you to the very best luxury scents & hidden gems the world has to offer.
+  </p>
+
+  <button class="primary" (click)="goto('about')">Read more</button>
+</div>
+
+

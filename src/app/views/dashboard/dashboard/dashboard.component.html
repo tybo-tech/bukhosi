@@ -1,0 +1,34 @@
+
+
+
+<div class="dasboard">
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="pop" *ngIf="message">
+  <p>
+    {{message}}
+  </p>
+  <div class="">
+    <span class="material-icons" (click)="message = ''">
+      close
+    </span>
+  </div>
+</div>
+
+
+
+<div class="overlay" *ngIf="loadingUx && loadingUx.Loading">
+  <div class="loading">
+    <mat-spinner></mat-spinner>
+    <h3 *ngIf="loadingUx.Message">
+      {{loadingUx.Message}}
+    </h3>
+  </div>
+</div>
+<button *ngIf="showScrollUp" class="scroll-top" (click)="totop()">
+  <span class="material-icons">
+    arrow_circle_up
+  </span>
+</button>

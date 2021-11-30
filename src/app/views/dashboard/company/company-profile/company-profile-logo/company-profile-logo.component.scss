@@ -1,0 +1,76 @@
+@import '../../../../../../assets/styles/color';
+
+
+
+
+.main {
+  background: $cloud;
+  padding: .5em 1em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+  .top-bar {
+    grid-template-columns: 3%  auto;
+  
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 4%  auto;
+      position: relative;
+    }
+  
+  }
+  .card {
+    background: $white;
+    margin: 0;
+    padding: 1em;
+    border-radius: 0;
+    position: relative;
+    height: 88vh;
+
+    .logo {
+      text-align: center;
+      padding-bottom: 1em;
+      display: block;
+      margin: .6em auto;
+      @media only screen and (max-width: 600px) {
+        margin-top: 5em;
+      }
+    
+
+      img {
+        width: 6em;
+        border-radius: .5em;
+        margin: .1em auto;
+      }
+    }
+
+    h1 {
+      color: $black;
+      padding: .5em;
+      text-align: left;
+
+      span {
+        display: block;
+        color: $black;
+        font-weight: 300;
+      }
+    }
+
+
+
+    .logo-btn {
+      background: $pop;
+      width: 17em;
+      margin: .5em auto;
+      padding: .6em 1em;
+      font-weight: 700;
+      border-radius: .5em;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+
+
+}

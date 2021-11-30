@@ -1,0 +1,69 @@
+@import '../../../../assets/styles/color';
+
+.newin{
+    img{
+      width: 100%;
+    }  
+  }
+
+  .gender {
+    background: $white;
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+    width: 100%;
+    margin: 0em auto;
+    padding: 0;
+    overflow: hidden;
+    height: 23em;
+    // padding: 0em 8em;
+    // padding-bottom: 4em;
+  
+    .col {
+      text-align: center;
+  
+      img {
+        width: 80%;
+        cursor: pointer;
+        margin: .4em auto;
+        transition: 0.5s ease-in-out;
+        &:hover{
+          width: 102%;
+        }
+      }
+    }
+  }
+  
+  .pc-only{
+    .products{
+      max-width: 70%;
+      margin: 1em auto;
+      grid-template-columns: repeat(3,33%);
+      .product{
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        img{
+          transition: .5s ease-in-out;
+        }
+        &:hover{
+          img{
+            width: 105%;
+          }
+        }
+        .image{
+          border: 2px solid $cloud;
+          width: 100%;
+          overflow: hidden;
+        
+        }
+
+        p{
+          text-align: center;
+          font-weight: 700;
+          padding: 1em;
+        }
+      }
+    }
+  }
+
+ 

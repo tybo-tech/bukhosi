@@ -1,0 +1,23 @@
+@import '../../../assets/styles/color';
+h1{
+  text-align: center;
+}
+.top-bar {
+  display: grid;
+  grid-template-columns: 3% auto;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 10% auto;
+  }
+}
+
+.dashboard {
+  bottom: 4em;
+}
+
+.user-profile {
+  background: $cloud;
+  padding-bottom:5em ;
+  padding: 0 ;
+  display: block;
+
+}

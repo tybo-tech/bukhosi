@@ -1,0 +1,151 @@
+<div class="main">
+  <div class="body">
+
+    <div class="logo">
+      <a routerLink="">
+        <img src="assets/images/logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="intro">
+      <div class="eg-image">
+        <img src="assets/images/common/s1.png" (swipeleft)="handleSwipe('left')" (swiperight)="handleSwipe('right')"
+          *ngIf="slide == 1" alt="" [ngClass]="imageClass">
+        <img src="assets/images/common/shopeg2.png" (swipeleft)="handleSwipe('left')"
+          (swiperight)="handleSwipe('right')" *ngIf="slide == 2" alt="" [ngClass]="imageClass">
+        <img src="assets/images/common/shopeg3.png" (swipeleft)="handleSwipe('left')"
+          (swiperight)="handleSwipe('right')" *ngIf="slide == 3" alt="" [ngClass]="imageClass">
+        <!-- <div class="btns">
+          <div class="btn" (click)="changeSlide(1)" [ngStyle]="slide == 1 && {'background': '#F3CF3D'}"></div>
+          <div class="btn" (click)="changeSlide(2)" [ngStyle]="slide == 2 && {'background': '#F3CF3D'}"></div>
+          <div class="btn" (click)="changeSlide(3)" [ngStyle]="slide == 3 && {'background': '#F3CF3D'}"></div>
+        </div> -->
+      </div>
+      <h1>
+        Start your fashion shop in few minutes, for FREE.
+      </h1>
+      <p>
+        Get your own personal shop with unique link, <i>e.g. Bukhosi blooms.co.za/<b>your_shop</b></i>
+      </p>
+      <p>
+        Get a full dashboard to manage your products, orders, invoices, jobs, tasks, and people.
+      </p>
+      <p>
+        Oh! and the nice thing is you only pay <b>8% of the total order amount</b> each time
+        <i> the customer purchase online. </i> That's all, no monthly fees, no hidden fees.
+      </p>
+      <div class="actions">
+        <button (click)="add()">Start your shop</button>
+        <button class="login" (click)="showLogin = true">Login</button>
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+<div class="quick-add" *ngIf="showAdd && newUser">
+  <div class="form">
+    <h3>
+      {{signUpHeading}}
+      <span>
+        {{signUpSpan}}
+      </span>
+    </h3>
+
+
+    <div class="form-item" *ngIf="signUpStep === 1">
+      <label for="">Shop name</label>
+      <input type="text" name="" id="" [(ngModel)]="newUser.CompanyName" placeholder="Enter your shop name.">
+    </div>
+
+
+
+    <span *ngIf="signUpStep === 2">
+      <div class="social">
+        <button class="btn-google" (click)="signInWithGoogle()"> Login with Google</button>
+        <button class="btn-google btn-facebook" (click)="signInWithFB()"> Login with Facebook</button>
+      </div>
+      <div class="or">
+        Or sign up with email
+      </div>
+
+
+      <div class="form-item">
+        <label for="name">Your Full Name *</label>
+        <input type="search" [(ngModel)]="newUser.Name" placeholder="The shop owner or shop admin name">
+      </div>
+
+      <div class="form-item">
+        <label for="name">Your Email *</label>
+        <input type="search" [(ngModel)]="newUser.Email" placeholder="The shop owner or shop admin email address.">
+      </div>
+
+      <div class="form-item p6">
+        <label for="name">Password *</label>
+        <input type="password" [(ngModel)]="newUser.Password" placeholder="********">
+      </div>
+    </span>
+
+
+
+    <div class="form-item">
+      <button (click)="nextStep()" *ngIf="signUpStep === 1" [disabled]="!newUser.CompanyName">Next</button>
+      <button (click)="save()" *ngIf="signUpStep === 2"
+        [disabled]="!newUser.Email || !newUser.Name || !newUser.Password">Go to my dashboard</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+
+
+
+    <app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+
+  </div>
+</div>
+
+
+
+
+<div class="quick-add" *ngIf="showLogin">
+  <div class="form">
+    <h3>
+      Login to your account
+    </h3>
+
+    <div class="social">
+      <button class="btn-google" (click)="signInWithGoogle()"> Login with Google</button>
+      <button class="btn-google btn-facebook" (click)="signInWithFB()"> Login with Facebook</button>
+    </div>
+    <div class="or">
+      Or sign in with email
+    </div>
+
+
+    <div class="form-item">
+      <label for="">Your email</label>
+      <input type="text" name="" id="" [(ngModel)]="email" placeholder="Enter youremail.">
+    </div>
+    <div class="form-item">
+      <label for="">Your password</label>
+      <input type="password" name="" id="" [(ngModel)]="password" placeholder="Enter your password.">
+    </div>
+
+
+
+    <div class="form-item">
+      <button (click)="OnLogin()" [disabled]="!email || !password">Login</button>
+
+      <div class="link" (click)="showLogin = false">Cancel</div>
+    </div>
+
+
+
+    <app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+
+  </div>
+</div>

@@ -1,0 +1,26 @@
+@import '../../../../../../assets/styles/color';
+.catergories {
+    display:flex;
+    flex-direction:row;
+    // justify-content: space-between;
+    overflow-x: scroll;
+    margin: 1em;
+  
+    .catergory {
+      background: $black;
+      text-align: center;
+      padding: .2em;
+      border-radius: .2em;
+      color: $white;
+      width: fit-content;
+      text-align: center;
+      height: 2em;
+      padding: .5em 1em;
+      // width:100%;
+      margin: .5em;
+      flex:0 0 auto;
+      border-radius: .5em;
+      font-size: 1em;
+    }
+  }
+  

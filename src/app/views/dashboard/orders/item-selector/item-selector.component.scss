@@ -1,0 +1,200 @@
+@import '../../../../../assets/styles/color';
+
+.list-selector {
+  background: rgba(0, 0, 0, 0.377);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400000;
+  width: 100%;
+  height: 100%;
+  color: $black;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 600px) {
+    background: $white;
+  }
+
+  .items {
+    padding-bottom: 4em;
+    background: $white;
+    width: 60%;
+    margin: 2em auto;
+    padding: 1em;
+    border-radius: 1em;
+    overflow-y: scroll;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .steps {
+      color: $black;
+      display: grid;
+      grid-template-columns: repeat(4, 25%);
+      grid-template-columns: 100%;
+      padding: 1em;
+      margin-bottom: 1em;
+
+      .step {
+        text-align: center;
+        color: $darker-grey;
+        border: none;
+
+        padding: 1em 0;
+
+        .material-icons {
+          margin: 0;
+        }
+
+        .last {
+          color: $white;
+        }
+      }
+
+      .active {
+        color: $black;
+        font-weight: 700;
+        border-bottom: 2px solid $pop;
+      }
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 7% auto;
+      background: $white;
+      margin: .5em;
+      padding: .5em 0;
+      border-bottom: 1px solid $cloud;
+
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: 20% auto;
+      }
+
+
+      .name {
+        padding: .5em 1em;
+        font-weight: 600;
+
+      }
+
+      img {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      p {
+
+        span {
+          display: block;
+          ;
+          padding: .3em 0;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  .more {
+    margin: 1.5em auto;
+    width: 14em;
+
+    border-radius: .5em;
+    display: block;
+    position: relative;
+  }
+
+  .item-options {
+    position: fixed;
+    background: $white;
+    padding: 1em;
+    z-index: 5000000004;
+    width: 40%;
+    bottom: 14%;
+    left: 30%;
+    border-radius: .5em;
+
+
+    @media only screen and (max-width: 600px) {
+      left: 3%;
+      width: 96%;
+      bottom: 2em;
+    }
+
+
+
+
+    .image {
+      text-align: center;
+
+      img {
+        width: 5em;
+        margin: .5em auto;
+      }
+    }
+
+    .details {
+      p {
+        padding: 1em;
+
+        font-weight: 600;
+        background: $white;
+        width: 96%;
+        margin: .5em auto;
+        text-align: center;
+
+        span {
+          display: block;
+          font-weight: 700;
+          color: $black;
+
+          padding: .5em 0;
+        }
+      }
+
+
+
+    }
+
+    button {
+      width: 100%;
+      color: $black;
+      padding: 1em;
+      background: $pop;
+    }
+
+
+    .qyt {
+
+      input,
+      label {
+        text-align: center;
+        font-weight: 600;
+        display: block;
+
+      }
+
+      input {
+        margin-bottom: 1em;
+      }
+    }
+
+    .close {
+      text-align: right;
+    }
+  }
+
+
+}
+
+
+.more {
+  position: relative;
+}
+
+.overlay {
+  background: rgb(42 38 38 / 85%);
+
+}

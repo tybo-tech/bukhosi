@@ -1,0 +1,97 @@
+<div class="list-selector">
+  <div class="items" *ngIf="items && items.length">
+    <div class="steps">
+      <div class="step active">
+        Select product for the order.
+      </div>
+    </div>
+    <div *ngFor="let item of items; let i = index" class="item" (click)="selectItem(item)">
+      <div class="image">
+        <img [src]="item.FeaturedImageUrl" alt="">
+      </div>
+
+      <div class="name">
+        <p>
+          {{item.Name}}
+          <span>
+            {{item.RegularPrice   | currency:'R'}}
+          </span>
+          <!-- <span>
+            In Stock: {{item.Quantity}}
+          </span> -->
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="" *ngIf="items && !items.length">
+    <div class="no-data">
+      <h1>
+        You don't have products yet.
+      </h1>
+      <img src="assets/images/common/customer.svg" alt="">
+      <p>
+        To create an order you need to have products in the system. Click the button below to create a new product
+      </p>
+
+      <button class="more" (click)="add()">Add product</button>
+    </div>
+  </div>
+  <button class="more" *ngIf="items && items.length" (click)="add()">
+    quick add product
+  </button>
+
+
+  <div class="overlay" *ngIf="product" (click)="product = null"></div>
+
+  <div class="item-options" *ngIf="product">
+    <div class="close">
+      <span class="material-icons" (click)="product = null">
+        close
+      </span>
+    </div>
+    <div class="images">
+      <div class="image">
+        <img id="i" [src]="product.FeaturedImageUrl" alt="">
+      </div>
+    </div>
+
+    <div class="details">
+      <p>
+        {{product.Name}}
+        <span>
+          {{product.RegularPrice | currency:'R'}}
+        </span>
+      </p>
+
+      <div class="product-options " *ngIf="sizes">
+        <div *ngFor="let option of sizes.ProductVariationOptions" class="option size-btn"
+          (click)="selectColor(option, 'Size')">
+          {{option.OptionName}}
+          <span class="material-icons" *ngIf="option.IsSelected">
+            check_circle
+          </span>
+        </div>
+      </div>
+
+      <div class="product-options " *ngIf="colors">
+
+        <div *ngFor="let option of colors.ProductVariationOptions" class="option color-btn"
+          [ngStyle]="{background: option.Description}" (click)="selectColor(option, 'Coulor')">
+          <span class="material-icons" *ngIf="option.IsSelected">
+            check_circle
+          </span>
+
+        </div>
+      </div>
+
+      <div class="qyt">
+        <label for="">Quantity</label>
+        <input type="number" [(ngModel)]="product.SelectedQuantiy" class="qty" name="" id="">
+      </div>
+
+      <button (click)="addToCart()">Add to bag</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="top-bar">
+  <div class="menu-back">
+    <span class="material-icons" (click)="back()">
+      keyboard_arrow_left
+    </span>
+  </div>
+
+
+  <div class="name">
+    Edit My profile
+  </div>
+</div>
+
+
+<div class="edit-user-profile" *ngIf="user">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section">
+
+        <div class="upload-preview">
+          <div class="upload">
+            <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+              (change)="uploadFile(file.files)" style="display:none;">
+
+            <img class="profile-user" *ngIf="!user.Dp" (click)="file.click()"
+              src="assets/images/common/profile-user.svg" alt="">
+          </div>
+          <div class="preview" (click)="file.click()">
+            <img *ngIf="user.Dp" [src]="user.Dp" alt="">
+          </div>
+        </div>
+        <div class="">
+          <div class="col">
+            <div class="detail">
+              <label for="name">My Name *</label>
+              <input type="text" [(ngModel)]="user.Name" placeholder="e.g. John">
+            </div>
+
+            <!-- <div class="detail">
+              <label for="name">My Address</label>
+              <input type="text" [(ngModel)]="user.AddressLineHome" placeholder="e.g. Mnisi">
+            </div> -->
+
+            <div class="detail">
+              <label for="name">My Email</label>
+              <input type="text" [(ngModel)]="user.Email" placeholder="e.g. john.mnisi@gmail.com">
+            </div>
+
+            <div class="detail">
+              <label for="name">My Phone Number</label>
+              <input type="text" [(ngModel)]="user.PhoneNumber" placeholder="e.g. 084 001 0100">
+            </div>
+
+
+
+
+            <button mat-button class="more" [disabled]="!user.Name" type="button" (click)="save()">
+              Save my profile
+            </button>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+  <app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>
+  <app-loader *ngIf="showLoader"></app-loader>
+</div>

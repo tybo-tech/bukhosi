@@ -1,0 +1,282 @@
+[{
+    "ParentCategoryId": "Women",
+    "ParentCategoryName": "Women",
+    "SubCategories": [{
+        "CategoryId": "Tops",
+        "CategoryName": "Tops",
+        "products": [{
+            "ProductId": "e0cdcdbe-dca3-4828-9694-cd7933f5a415",
+            "Name": "Lady top new",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "women-lady-top-new-tops"
+          },
+          {
+            "ProductId": "f1ce8fe5-fdc8-4973-8450-ffd9a2ecf87b",
+            "Name": "Beckon book top",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "women-beckon-book-top-tops"
+          },
+          {
+            "ProductId": "909a8e6a-b084-42bf-ba68-b1b07b604e3b",
+            "Name": "Nevor set top",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "women-nevor-set-top-tops"
+          },
+          {
+            "ProductId": "45c13180-0aca-4a57-8ac6-9ad7bc7f5b2e",
+            "Name": "Ladies basic top",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "women-ladies-basic-top-tops"
+          }
+        ]
+      },
+      {
+        "CategoryId": "Denim",
+        "CategoryName": "Denim",
+        "products": [{
+            "ProductId": "ab446733-5590-468b-9dea-6042e74c1eab",
+            "Name": "Denim work day",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "women-denim-work-day-denim"
+          },
+          {
+            "ProductId": "cc9d9d9a-fe7c-4c58-a03a-ea17754090bd",
+            "Name": "Beck-ham low denim",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "women-beck-ham-low-denim-denim"
+          },
+          {
+            "ProductId": "1593800f-8826-43e5-b6e7-296693dddfaf",
+            "Name": "Denim trouser",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "women-denim-trouser-denim"
+          },
+          {
+            "ProductId": "e7ec2648-c8d6-4ebf-afd6-69e6898be5bb",
+            "Name": "Trouser",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "women-trouser-denim"
+          }
+        ]
+      },
+      {
+        "CategoryId": "WaistDenim",
+        "CategoryName": "Waist Denim",
+        "products": [{
+            "ProductId": "3ec9cf54-a2e7-4fcd-be6d-2be1d630f8d6",
+            "Name": "Basic denim",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Waist Denim",
+            "ProductSlug": "women-basic-denim-waist-denim"
+          },
+          {
+            "ProductId": "069d26e3-0834-4283-9e5f-6f4f2ceff9b1",
+            "Name": "Fifty setter",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Waist Denim",
+            "ProductSlug": "women-fifty-setter-denim"
+          },
+          {
+            "ProductId": "01b3e41d-f9a5-408d-aab1-df9dc237989c",
+            "Name": "New terminology",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Waist Denim",
+            "ProductSlug": "women-new-terminology-denim"
+          },
+          {
+            "ProductId": "05ac9f24-3bbd-43b7-b105-2189c3b25d44",
+            "Name": "Waist denim tool",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Women",
+            "SubCategoryName": "Waist Denim",
+            "ProductSlug": "women-waist-denim-tool-waist-denim"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ParentCategoryId": "Men",
+    "ParentCategoryName": "Men",
+    "SubCategories": [{
+        "CategoryId": "Tops",
+        "CategoryName": "Tops",
+        "products": [{
+            "ProductId": "e0clclbe-lca3-4828-9694-cl7933f5a415",
+            "Name": "Men top new",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "men-men-top-new-tops"
+          },
+          {
+            "ProductId": "f1ce8fe5-flc8-4973-8450-ffl9a2ecf87b",
+            "Name": "Ben sherman",
+            "UnitPrice": "200.00",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "men-ben-sherman-tops"
+          },
+          {
+            "ProductId": "909a8e6a-b084-42bf-ba68-b1b07b604e3b",
+            "Name": "Nevor set top",
+            "UnitPrice": "200.00",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "men-nevor-set-top-tops"
+          },
+          {
+            "ProductId": "45c13180-0aca-4a57-8ac6-9al7bc7f5b2e",
+            "Name": "Basic top",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Tops",
+            "ProductSlug": "men-basic-top-tops"
+          }
+        ]
+      },
+      {
+        "CategoryId": "Denim",
+        "CategoryName": "Denim",
+        "products": [{
+            "ProductId": "ab446733-5590-468b-9lea-6042e74c1eab",
+            "Name": "Denim work lay",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "men-denim-work-lay-denim"
+          },
+          {
+            "ProductId": "cc9l9l9a-fe7c-4c58-a03a-ea17754090bl",
+            "Name": "Men Beck-ham",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "men-men-beck-ham-denim"
+          },
+          {
+            "ProductId": "1593800f-8826-43e5-b6e7-296693lllfaf",
+            "Name": "Men Denim trouser",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "men-men-denim-trouser-denim"
+          },
+          {
+            "ProductId": "e7ec2648-c8l6-4ebf-afl6-69e6898be5bb",
+            "Name": "Mens Heavy Duty",
+            "Description": "Use this specification to format your product information for Merchant Center programs, such as surfaces across Google, Shopping ads, and Shopping Actions. Submitting your product data to Google in the correct format is important for creating successful ads and unpaid listings for your products. We use this data to make sure that it's matched to the right queries.",
+            "UnitPrice": "200.00",
+            "ImagUrl": "",
+            "CategoryName": "Men",
+            "SubCategoryName": "Denim",
+            "ProductSlug": "men-mens-heavy-duty-denim"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "ParentCategoryId": "Unisex",
+    "ParentCategoryName": "Unisex",
+    "SubCategories": [{
+      "CategoryId": "Tops",
+      "CategoryName": "Tops",
+      "products": [{
+          "ProductId": "e0clclbe-lca3-4828-9694-cl7933f5a415",
+          "Name": "Top new",
+          "UnitPrice": "200.00",
+          "ImagUrl": "",
+          "CategoryName": "Unisex",
+          "SubCategoryName": "Tops",
+          "ProductSlug": "unisex-top-new-tops"
+        },
+        {
+          "ProductId": "f1ce8fe5-fdc8-4973-8450-ffd9a2ecf87b",
+          "Name": "Beckon book top",
+          "UnitPrice": "200.00",
+          "ImagUrl": "",
+          "CategoryName": "Unisex",
+          "SubCategoryName": "Tops",
+          "ProductSlug": "unisex-beckon-book-top-tops"
+        },
+        {
+          "ProductId": "909a8e6a-b084-42bf-ba68-b1b07b604e3b",
+          "Name": "Nevor set top",
+          "UnitPrice": "200.00",
+          "ImagUrl": "",
+          "CategoryName": "Unisex",
+          "SubCategoryName": "Tops",
+          "ProductSlug": "unisex-nevor-set-top-tops"
+        },
+        {
+          "ProductId": "45c13180-0aca-4a57-8ac6-9ad7bc7f5b2e",
+          "Name": "Ladies basic top",
+          "UnitPrice": "200.00",
+          "ImagUrl": "",
+          "CategoryName": "Unisex",
+          "SubCategoryName": "Tops",
+          "ProductSlug": "unisex-ladies-basic-top-tops"
+        }
+      ]
+    }]
+  }
+
+]

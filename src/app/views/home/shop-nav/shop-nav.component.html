@@ -1,0 +1,143 @@
+
+
+
+
+
+
+<div class="top-nav-bar"  *ngIf="company">
+  <div class="nav-grid">
+   
+    <div class="logo col">
+      <img *ngIf="company.Dp" [src]="company.Dp" alt="">
+    </div>
+    <div class="name col">
+     <p>
+      {{company.Name}}
+     </p>
+    </div>
+    <div class="search col">
+  
+      <div class="form-item search">
+        <input type="search" [(ngModel)]="searchString" name="" id="" placeholder="🔎 Search products and shops"
+          (keyup)="search()">
+        <div class="search-results" *ngIf="searchString && searchString.length > 0">
+          <span *ngIf="searchResults && searchResults.length">
+            <div class="result-item" *ngFor="let item of searchResults" (click)="openSearchResult(item)">
+              <div class="image">
+                <img [src]="item.Icon" alt="">
+              </div>
+              <div class="name">
+                {{item.Name}}
+                <span class="price">
+                  {{item.RegularPrice | currency:'R'}}
+                </span>
+  
+                <span class="company">
+                  <div class="company-image">
+                    <img *ngIf="item.Object.Company.Dp" [src]="item.Object.Company.Dp" alt="">
+                    <img *ngIf="!item.Object.Company.Dp" src="assets/images/shop.svg" alt="">
+                  </div>
+                  <div class=""> {{item.Object.Company?.Name}}</div>
+                </span>
+  
+              </div>
+  
+            </div>
+          </span>
+  
+          <span *ngIf="searchResults && !searchResults.length">
+            <div class="sorry">
+              <span>
+                <img src="assets/images/common/search-no-found.svg" alt="">
+              </span>
+              Sorry we didn't find any results matching this search : <b>{{searchString}}</b>
+            </div>
+          </span>
+  
+        </div>
+  
+      </div>
+    </div>
+    
+    <div class="user-col col">
+      <span *ngIf="user" class="name" (click)="goto(1)">
+  
+  
+        <span class="material-icons" *ngIf="!user.Dp">
+          account_circle
+        </span>
+        <img class="profile-user" *ngIf="user.Dp" [src]="user.Dp" alt="">
+      </span>
+  
+      <span *ngIf="!user" class="name" (click)="goto(1)">
+        <span class="material-icons">
+          account_circle
+        </span>
+        Login
+      </span>
+    </div>
+    <div class="col">
+      <mat-icon [matBadge]="carttItems" matBadgeColor="pink" (click)="goto(1)">shopping_bag</mat-icon>
+  
+    </div>
+    <div class="menu col">
+      <img class="menu-image" src="assets/images/common/menu2.svg" (click)="menu()" alt="">
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="search-mobile">
+  <div class="form-item search">
+    <input type="search" [(ngModel)]="searchString" name="" id="" placeholder="🔎 Search products and shops"
+      (keyup)="search()">
+    <div class="search-results" *ngIf="searchString && searchString.length > 0">
+      <span *ngIf="searchResults && searchResults.length">
+        <div class="result-item" *ngFor="let item of searchResults" (click)="openSearchResult(item)">
+          <div class="image">
+            <img [src]="item.Icon" alt="">
+          </div>
+          <div class="name">
+            {{item.Name}}
+            <span class="price">
+              {{item.RegularPrice | currency:'R'}}
+            </span>
+
+            <span class="company">
+              <div class="company-image">
+                <img *ngIf="item.Object.Company.Dp" [src]="item.Object.Company.Dp" alt="">
+                <img *ngIf="!item.Object.Company.Dp" src="assets/images/shop.svg" alt="">
+              </div>
+              <div class=""> {{item.Object.Company?.Name}}</div>
+            </span>
+
+          </div>
+
+        </div>
+      </span>
+
+      <span *ngIf="searchResults && !searchResults.length">
+        <div class="sorry">
+          <span>
+            <img src="assets/images/common/search-no-found.svg" alt="">
+          </span>
+          Sorry we didn't find any results matching this search : <b>{{searchString}}</b>
+        </div>
+      </span>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="search-mobile">
+  <div class="bottom-nav" *ngIf="navItems">
+    <div class="nav-items" *ngFor="let item of navItems">
+      <a [routerLink]="item.Url" [ngClass]="item.Class" (click)="navItemClicked(item)">
+        {{item.Label}}
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,223 @@
+<div class="top-bar-conatiner">
+
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      {{heading}}
+    </div>
+
+  </div>
+</div>
+
+<div class="main picks">
+
+  <h2>
+    Picks
+  </h2>
+
+  <div class="add-new" (click)="onAddEditCategory('pick')">
+    Add new parent
+  </div>
+</div>
+
+<div class="main">
+  <div class="tabs">
+    <div class="tab" *ngFor="let item of parentCategories; let i = index" [ngClass]="item.Class"
+      (click)="view(item, i)">
+      {{item.Name}}
+    </div>
+
+    <div class="tab add-new" (click)="onAddEditCategory('parent')">
+      Add new parent
+    </div>
+
+  </div>
+
+  <div class="">
+    <a class="a-edit" (click)="onAddEditCategory(category)">Edit {{category.Name}}</a>
+  </div>
+
+
+  <div class="tab-items">
+    <div class="all-items" *ngFor="let item of category.Children" (click)="edit(item)">
+      <div class="item">
+        <img *ngIf="item.ImageUrl" [src]="item.ImageUrl" alt="">
+        <img *ngIf="!item.ImageUrl" src="assets/images/icons/add.svg" alt="">
+      </div>
+
+      <div class="item">
+        {{item.Name}}
+      </div>
+    </div>
+    <h2 class="devider">
+      Tertiary categories
+    </h2>
+    <div class="all-items" *ngFor="let item of categoryTertiaryList" (click)="edit(item)">
+      <div class="item">
+        <img *ngIf="item.ImageUrl" [src]="item.ImageUrl" alt="">
+        <img *ngIf="!item.ImageUrl" src="assets/images/icons/add.svg" alt="">
+      </div>
+
+      <div class="item">
+        {{item.Name}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="main">
+
+  <div class="main-list" *ngIf="category.Children && category.Children.length">
+    <div class="body success-modal">
+
+      <div class="filters">
+        <mat-chip-list aria-label="variations selection">
+          <span *ngFor="let item of categories; let i = index">
+            <mat-chip color="primary" *ngIf="item.CategoryType === 'Parent'" [selected]="item.IsSelected"
+              (click)="view(item, i)">
+              <span class="material-icons _danger" *ngIf="item.StatusId === '2'">
+                disabled_by_default
+              </span>
+              <span class="material-icons _danger" *ngIf="item.StatusId === '3'">
+                delete_outline
+              </span>
+              {{item.Name}}
+            </mat-chip>
+          </span>
+
+        </mat-chip-list>
+
+        <div class="checks">
+
+          <div class="">
+            <input class="checkbox" type="checkbox" (click)="filter()" [checked]="showActive"> Show Active
+            only
+          </div>
+
+          <div class="">
+            <a class="a-edit" (click)="onAddEditCategory(category)">Edit {{category.Name}}</a>
+          </div>
+        </div>
+      </div>
+
+  
+
+
+
+      <div class="product-item" *ngFor="let item of category.Children" (click)="edit(item)">
+        <div class="item">
+          <div class="icon" *ngIf="item.ImageUrl">
+            <div class="user-dp-image">
+              <img [src]="item.ImageUrl" alt="">
+            </div>
+          </div>
+
+          <div class="icon" *ngIf="!item.ImageUrl">
+            <div class="user-dp-image">
+              <img src="assets/images/icons/add.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            {{item.Name}}
+            <span class="cat">
+
+            </span>
+
+            <span class="price">
+
+            </span>
+
+          </p>
+        </div>
+
+        <div class="item">
+        </div>
+      </div>
+
+
+
+      <button class="more" (click)="onAddEditCategory('parent')">Add new parent</button>
+
+      <div class="p6"></div>
+
+
+
+
+      <div class="product-item" *ngFor="let item of categoryTertiaryList" (click)="edit(item)">
+        <div class="item">
+          <div class="icon" *ngIf="item.ImageUrl">
+            <div class="user-dp-image">
+              <img [src]="item.ImageUrl" alt="">
+            </div>
+          </div>
+
+          <div class="icon" *ngIf="!item.ImageUrl">
+            <div class="user-dp-image">
+              <img src="assets/images/icons/add.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            {{item.Name}}
+            <span class="cat">
+
+            </span>
+
+            <span class="price">
+
+            </span>
+
+          </p>
+        </div>
+
+        <div class="item">
+        </div>
+      </div>
+
+      <button class="more" (click)="onAddEditCategory('tertiary')">Add new tertiary</button>
+
+
+    </div>
+
+  </div>
+
+
+  <div class="" *ngIf="category.Children && !category.Children.length">
+    <div class="no-data">
+      <h1>
+        Create Children Categories
+      </h1>
+      <img src="assets/images/common/products.svg" alt="">
+      <p>
+
+        <button class="more" (click)="onAddEditCategory('child')"> {{ctaCreate}}</button>
+    </div>
+  </div>
+
+
+  <div (click)="onAddEditCategory('child')" class="add" *ngIf="category.Children && category.Children.length">
+    {{ctaCreate}}
+  </div>
+
+
+</div> -->
+
+<div class="overlay" *ngIf="showModal" (click)="closeModal()"></div>
+<div class="modal" *ngIf="showModal">
+  <div class="close" (click)="closeModal()">
+    <span class="material-icons">
+      west
+    </span> {{modalHeading}}
+  </div>
+  <app-super-add-adit-category [category]="addEditCategory"></app-super-add-adit-category>
+</div>

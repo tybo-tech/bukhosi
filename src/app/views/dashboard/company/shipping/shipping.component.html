@@ -1,0 +1,71 @@
+  <div class="body success-modal mobile-full"  *ngIf="shippingMethods && shippingMethods.length">
+
+    <div class="top-bar" *ngIf="shippingMethods">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+    
+    
+      <div class="name">
+        Shipping methods
+      </div>
+    </div>
+
+
+ <div class="cards">
+  <div class="product-item" *ngFor="let item of shippingMethods" (click)="select(item)">
+    <div class="item">
+      <div class="icon" *ngIf="item.Dp">
+        <div class="user-dp-image">
+          <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+        </div>
+      </div>
+
+      <div class="icon" *ngIf="!item.Dp">
+        <div class="user-dp-image">
+          <img src="assets/images/common/order.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="item">
+     
+      <p>
+        {{item.Name}}
+        <span class="price">
+          {{item.Price  | currency:'R'}}
+        </span>
+      
+       <!-- <span class="tittle"> {{item.Description}}</span> -->
+      </p>
+    </div>
+
+    <div class="item">
+      <mat-slide-toggle (change)="select(item)"  [(ngModel)]="item.Selected"></mat-slide-toggle>
+    </div>
+  </div>
+ </div>
+
+    <div class="p6"></div>
+  </div>
+
+
+<div class="" *ngIf="shippingMethods && !shippingMethods.length">
+  <div class="no-data">
+    <h1>
+     No shipping methods found in the system
+    </h1>
+    <img src="assets/images/common/customer.svg" alt="">
+    <p>
+      Add your own.
+    </p>
+
+    <button class="more" (click)="add()">Add method</button>
+  </div>
+</div>
+
+
+<!-- <div (click)="add()" class="add" *ngIf="shippingMethods && shippingMethods.length">
+  Add method
+</div> -->

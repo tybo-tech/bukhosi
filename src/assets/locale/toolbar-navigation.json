@@ -1,0 +1,13 @@
+[{
+    "Url": "",
+    "ImageUrl": "assets/images/common/favorite.svg"
+  },
+  {
+    "Url": "/sign-in",
+    "ImageUrl": "assets/images/common/account.svg"
+  },
+  {
+    "Url": "",
+    "ImageUrl": "assets/images/common/bag.svg"
+  }
+]

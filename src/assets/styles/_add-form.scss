@@ -1,0 +1,259 @@
+.add-screen {
+  .main-list {
+    background: $cloud;
+  }
+
+  .page-section {
+    background: $cloud;
+  }
+
+  .form-section {
+    background: $white;
+    padding: 0;
+    margin: 1rem 0;
+    margin-top: 0;
+    // box-shadow: $box-shadow;
+    // border: 2px solid $cloud;
+    border-top: none;
+
+    .header {
+      background: $cloud;
+      padding: .5em 1em;
+      color: $primary;
+      // border-bottom: 1px solid $darker-grey;
+      margin: 0;
+    }
+
+    .body {
+      padding: 1em;
+    }
+
+    .quill {
+      width: 95%;
+      margin-bottom: 5em;
+      color: $black;
+    }
+  }
+
+  .no-border {
+    border: none;
+  }
+
+  .mat-select {
+    border: none;
+    padding: .5em;
+    color: $black;
+  }
+
+  span.label {
+    font-weight: 500;
+
+    margin-bottom: 1em;
+    color: $primary;
+  }
+
+  select,
+  input,
+  textarea {
+    padding: 0.5em;
+    line-height: .5rem;
+    border: none;
+    margin-top: .2em;
+    width: 98%;
+
+    option {
+      padding: .2em;
+    }
+  }
+
+  textarea {
+    height: 5em;
+  }
+
+  .create-cta {
+    text-align: center;
+  }
+
+
+
+
+  .total {
+    text-align: right;
+    margin: 2em 20em;
+
+    p {
+      font-weight: 600;
+
+      .label {
+        color: $black;
+        padding: 0;
+        margin: .4em 4em;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .choose-products {
+    width: 40%;
+    left: 30%;
+    height: 80%;
+    top: 10%;
+    padding: 2em;
+    background: $cloud;
+  }
+
+  .inline {
+    position: relative;
+    top: 1em;
+    display: inline;
+  }
+
+  .unit-price {
+    position: relative;
+    top: .5em;
+  }
+
+  .details {
+    // margin-top: 3em;
+    display: grid;
+    grid-template-columns: 50% auto;
+    // grid-gap: 1em;
+
+    .detail {
+      input {
+        width: 90%;
+        border: none;
+        margin-bottom: 2em;
+      }
+    }
+  }
+
+  .customer-link {
+    width: 30%;
+    text-align: center;
+    padding: 1em 2em;
+  }
+
+  label {
+    display: block;
+  }
+
+}
+
+
+
+
+.dash-forms {
+  padding: 1em;
+  background: $white;
+  margin: 1em auto;
+  border-radius: .5em;
+  // height: 86vh;
+  // overflow-y: scroll;
+  border-radius: 1em;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding: 0;
+    padding-top: 3em;
+  }
+
+  .form-item {
+    margin: .8em 0;
+    padding: .8em;
+
+    margin: .8em 0;
+    padding: .8em;
+    width: 100%;
+    margin: 0;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+
+
+    label {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      border: 0;
+      background: $cloud;
+      border-radius: .5em;
+      margin-bottom: .5em;
+      padding: 1em;
+
+      color: $black;
+      // padding: .4em;
+    }
+  }
+
+  .action {
+    @media only screen and (max-width: 600px) {
+      position: fixed;
+      width: 100%;
+      height: 2.5em;
+      bottom: 0;
+      padding: 0;
+      left: 0;
+    }
+  }
+
+  img {
+    width: 4em;
+  }
+
+  .more {
+
+
+    width: 100%;
+    padding: 1em;
+    display: block;
+    margin: 1em auto;
+    width: 96%;
+
+    // @media only screen and (max-width: 600px) {
+    //   width: 100%;
+    //   height: 2.5em;
+    //   bottom: 0;
+    //   padding: 0;
+    //   left: 0;
+    //   position: fixed;
+    //   bottom: 0;
+    // }
+  }
+
+  .user-dp {
+    padding: 0;
+    margin: 0;
+    display: block;
+    text-align: left;
+
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+    }
+  }
+
+  .preview,
+  .upload-preview {
+    display: block;
+    text-align: left;
+    text-align: center;
+
+    .material-icons {
+      text-align: center;
+      font-size: 5.4em;
+      cursor: pointer;
+    }
+
+    @media only screen and (max-width: 600px) {}
+
+    img {
+      // width: 100%;
+      height: 10em;
+      width: auto;
+      border-radius: .4em;
+    }
+  }
+}

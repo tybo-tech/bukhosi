@@ -1,0 +1,54 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main" *ngIf="selectedVaraition">
+
+  <div class="page-section">
+    <h3>
+      <span class="material-icons pointer" (click)="back()">
+        west
+      </span>
+      Set up company variations options.
+    </h3>
+    <div class="main-list">
+      <div class="form-section">
+        <span class="label">
+          Choose your options for <b>{{selectedVaraition.Name}}</b>.
+        </span>
+
+        <div class="categories">
+          <div *ngFor="let variation of variationsOptions ; let i = index" (click)="selectVariation(variation)"
+            class="variation-item">
+
+            <section class="example-section">
+              <mat-checkbox class="example-margin" disabled [(ngModel)]="variation.IsSelected">{{variation.Name}}
+              </mat-checkbox>
+            </section>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="form-section">
+
+
+        <div class="create-cta">
+          <div class="action">
+            <button mat-button class="mat-primary" type="button" (click)="save()">
+              Next
+            </button>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<app-user-feedback *ngIf="showModal" [modalModel]="modalModel"></app-user-feedback>

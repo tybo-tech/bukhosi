@@ -1,0 +1,89 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 3% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 10% auto;
+  }
+
+}
+
+
+.cards {
+  // height: 90vh;
+  // overflow-y: scroll;
+
+  @media only screen and (max-width: 600px) {
+    padding-top: 4em;
+    height: auto;
+    overflow: auto;
+  }
+}
+
+.product-item {
+  grid-template-columns: 60% auto;
+  width: 100%;
+
+  .item {
+    &:last-child {
+      text-align: right;
+      padding: 1em;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 65% auto;
+    width: 100%;
+  }
+}
+
+
+.tittle {
+  font-weight: 600;
+}
+
+.due {
+  font-weight: 600;
+}
+
+pre {
+  color: black;
+}
+
+.tasks {
+  padding: .5em 0;
+}
+
+
+
+.item-header {
+  grid-template-columns: 70% auto;
+  font-weight: 500;
+}
+
+.job-status {
+  font-weight: 600;
+  color: $pop;
+  background: rgba(0, 0, 0, 0.568);
+  width: 8em;
+  padding: .3em;
+  text-align: center;
+  border-radius: 0;
+  margin-top: .5em;
+
+
+}
+
+
+
+
+.link{
+  text-align: center;
+  font-weight: 700;
+}
+
+.no-data{
+  margin: .5em 1em;
+}
+

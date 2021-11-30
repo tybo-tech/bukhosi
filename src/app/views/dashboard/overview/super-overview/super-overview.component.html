@@ -1,0 +1,22 @@
+<div class="card" *ngIf="categories">
+  <h1>
+    <span>
+      Categories({{categories.length}})
+    </span>
+  </h1>
+  <div (click)="list('super-categories')" class="logout">
+    View
+  </div>
+</div>
+
+
+<div class="card" *ngIf="picks">
+  <h1>
+    <span>
+      Picks ({{categories.length}})
+    </span>
+  </h1>
+  <div (click)="list('super-products-picks')" class="logout">
+    View
+  </div>
+</div>

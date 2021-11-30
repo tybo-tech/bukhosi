@@ -1,0 +1,140 @@
+<div class="account-form mobile-full">
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      Custom design request.
+    </div>
+
+    <div class="btn-menu">
+    </div>
+  </div>
+
+  <div class="form">
+    <div class="form-container">
+      <!-- <div class="logo">
+        <img src="assets/images/logo.png" alt="">
+      </div> -->
+      <h1 class="highligther">
+        Get a quote from our professional designers in few minutes.
+      </h1>
+
+
+      <div class="form-group">
+        <label for="exampleInputName">
+          Please tell us everything we need to know about your design so we can be able to generate a qoute for you
+          immediately.
+        </label>
+
+
+        <textarea name="" [(ngModel)]="customDesign.Description" placeholder=" "></textarea>
+
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputSurname">When do you want it done & delivered you.</label>
+        <input type="date" class="form-control" [(ngModel)]="customDesign.DueDate" placeholder="Enter Contact Number">
+      </div>
+
+      <div class="form-group">
+        <label>
+          Do you have images of your design?
+        </label>
+
+
+        <div class="images">
+          <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file"
+            (change)="uploadFile(file.files, 1)" style="display:none;position: fixed;">
+
+          <input type="file" accept="image/png, image/jpeg" #file2 placeholder="Choose file"
+            (change)="uploadFile(file2.files, 2)" style="display:none;position: fixed;">
+
+          <input type="file" accept="image/png, image/jpeg" #file3 placeholder="Choose file"
+            (change)="uploadFile(file3.files, 3)" style="display:none;position: fixed;">
+
+          <input type="file" accept="image/png, image/jpeg" #file4 placeholder="Choose file"
+            (change)="uploadFile(file4.files,4)" style="display:none;position: fixed;">
+
+
+          <div class="group">
+            <div *ngIf="!customDesign.Image1" class="add-image" (click)="file.click()">
+              <span class="material-icons">
+                add_box
+              </span>
+            </div>
+
+            <div *ngIf="customDesign.Image1" class="image" (click)="file.click()">
+              <img [src]="customDesign.Image1" alt="">
+            </div>
+          </div>
+
+
+          <div class="group">
+            <div *ngIf="!customDesign.Image2" class="add-image" (click)="file2.click()">
+              <span class="material-icons">
+                add_box
+              </span>
+            </div>
+
+            <div *ngIf="customDesign.Image2" class="image" (click)="file2.click()">
+              <img [src]="customDesign.Image2" alt="">
+            </div>
+          </div>
+
+          <div class="group">
+            <div *ngIf="!customDesign.Image3" class="add-image" (click)="file3.click()">
+              <span class="material-icons">
+                add_box
+              </span>
+            </div>
+
+            <div *ngIf="customDesign.Image3" class="image" (click)="file3.click()">
+              <img [src]="customDesign.Image3" alt="">
+            </div>
+          </div>
+
+
+          <div class="group">
+            <div *ngIf="!customDesign.Image4" class="add-image" (click)="file4.click()">
+              <span class="material-icons">
+                add_box
+              </span>
+            </div>
+
+            <div *ngIf="customDesign.Image4" class="image" (click)="file4.click()">
+              <img [src]="customDesign.Image4" alt="">
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="form-group">
+     
+        <span class="error">{{error}}</span>
+      </div>
+      <button color="primary" class="more" (click)="save()" [disabled]="!customDesign || (!customDesign.Description)">
+        Send request
+      </button>
+    </div>
+  </div>
+</div>
+<app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+
+<app-home-loader *ngIf="showLoader"></app-home-loader>

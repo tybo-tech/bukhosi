@@ -1,0 +1,60 @@
+@import '../../../../../assets/styles/color';
+
+img {
+  width: 100%;
+}
+
+.carousel-container {
+  padding: 0;
+  background: $black;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+  height: 44em;
+  margin-top: 4em;
+  position: relative;
+
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    cursor: pointer;
+    //   transition: transform 0.4s ease-in-out;
+    //   transform: translateX(20px);
+  }
+}
+
+
+
+
+.scrolls {
+
+  grid-template-columns: 95% auto;
+  top: 18em;
+
+  span {
+    background: $pop;
+  }
+}
+
+
+
+.intro {
+  text-align: center;
+  background: $white;
+  padding: 4em 15%;
+
+  p {
+    max-width: 40em;
+    margin: 1em auto;
+  }
+
+  .primary {
+    width: 12em;
+    display: block;
+    margin: 2em auto;
+  }
+}

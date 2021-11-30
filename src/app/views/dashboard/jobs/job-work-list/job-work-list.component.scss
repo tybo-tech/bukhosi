@@ -1,0 +1,27 @@
+@import '../../../../../assets/styles/color';
+
+
+.product-item {
+  grid-template-columns: 50% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 50% auto;
+  }
+
+  .item {
+    p {
+      font-weight: 600;
+
+      span {
+        display: block;
+        color: $darker-grey;
+      }
+    }
+
+    &:nth-child(2) {
+      p {
+        text-align: right;
+      }
+    }
+  }
+}

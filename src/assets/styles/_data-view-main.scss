@@ -1,0 +1,163 @@
+.data-view-main {
+  padding: .5em 1em;
+  padding-bottom: 4em;
+  margin: 0;
+  background: $cloud;
+  margin-top: 4em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .basic {
+    background: $white;
+    margin: 2em auto;
+    // border-radius: .5em;
+    color: $black;
+    padding: 1em;
+    max-width: $max-width/$max-width-devider;
+
+
+
+    @media only screen and (max-width: 600px) {
+      // margin: 1em auto;
+      border-radius: 0;
+      width: 100%;
+      padding: 1em .4em;
+    }
+
+    h1 {
+      margin-bottom: 1em;
+
+      span {
+        display: block;
+        color: $darker-grey;
+        padding: .2em 0;
+        font-weight: 500;
+      }
+    }
+
+    .job-data {
+      span {
+        padding: .2em 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+
+.main-products {
+  margin: .5em 0;
+
+  @media only screen and (max-width: 600px) {
+    margin: .2em 0;
+  }
+
+  .full-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .collections {
+    display: grid;
+    grid-template-columns: 50% auto;
+
+    .collection {
+      background: $pop;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 1em;
+      padding: 1em;
+      cursor: pointer;
+      font-weight: 600;
+      color: $white;
+
+      &:hover {
+        background: $pop-darker;
+      }
+    }
+  }
+
+  .picked {
+    
+    padding: 1em 0;
+    // box-shadow: $box-shadow;
+    margin:0 ;
+    background: $white;
+    h4 {
+      padding: 1em;
+      color: $charcoal;
+      font-size: 1.8em;
+      text-transform: capitalize;
+      display: grid;
+      grid-template-columns: 90% auto;
+
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: 80% auto;
+      }
+
+      span {
+        display: block;
+
+        &:last-child {
+          text-align: center;
+          background: $pop;
+          color: $white;
+          width: 100%;
+          border-radius: .3em;
+          font-size: .55em !important;
+          padding: .65em;
+          font-style: normal;
+          cursor: pointer;
+
+          &:hover {
+            background: $pop-darker;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 1.2em;
+      }
+    }
+
+
+    .products-scroller {
+      width: 100%;
+      display: flex;
+      overflow-x: scroll;
+
+
+      .product {
+        margin: 0 .5em;
+
+        img {
+          height: 15em;
+        }
+
+        p {
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+.company-name {
+  display: block;
+  color: $darker-grey;
+  cursor: pointer;
+
+  &:hover {
+    color: $pop-darker;
+  }
+}

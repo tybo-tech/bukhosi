@@ -1,0 +1,4 @@
+<!-- <button class="btn-google"  #loginRef> Login with Google</button> -->
+<button class="btn-google" (click)="signInWithGoogle()"> Login with Google</button>
+<button class="btn-google btn-facebook" (click)="signInWithFB()"> Login with Facebook</button>
+<app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>

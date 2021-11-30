@@ -1,0 +1,37 @@
+
+
+<div class="quick-add" *ngIf="showAdd && user">
+  <div class="form">
+    <h3 *ngIf="userTo">
+     {{userTo.Name}}
+    </h3>
+
+    <div class="form-item chats" *ngIf="chats">
+      <div  *ngFor="let chat of chats; let i = index">
+        <div class="chat" *ngIf="chat.InteractionSourceId != user.UserId">
+          <div class="chat-dp">
+            <img *ngIf="chat.SourceDp" [src]="chat.SourceDp" alt="">
+          </div>
+          <div class="message">
+            {{chat.InteractionBody}}
+          </div>
+        </div>
+        <div class="chat-current-user" *ngIf="chat.InteractionSourceId == user.UserId">
+        <div class=""></div>
+          <div class="message">
+            {{chat.InteractionBody}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item">
+      <textarea [(ngModel)]="message" placeholder="Type your message here."></textarea>
+    </div>
+
+    <div class="form-item">
+      <button (click)="chat()" [disabled]="!message">Send</button>
+      <div class="link" (click)="showAdd = false">Close chat</div>
+    </div>
+
+  </div>
+</div>

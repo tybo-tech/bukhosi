@@ -1,0 +1,74 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 3% 45% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4% 40% auto;
+    position: relative;
+  }
+
+}
+
+.cards {
+  margin-top: 6em;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 6em;
+  }
+
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 50%;
+  padding: .45em 1em;
+  width: 100%;
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 80%;
+    width: 100%;
+    background: $white;
+  }
+
+  button {
+    background: $pop;
+    width: 90%;
+    padding: 1em;
+    margin: .2em auto;
+    border-radius: .4em;
+    text-align: center;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      margin-left: 1em;
+    }
+  }
+
+  .login {
+    background: $darker-grey;
+    color: $black;
+    margin-left: 0;
+  }
+}
+
+
+.product-item {
+  grid-template-columns: 10% 70%;
+  width: 50%;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 17% 70%;
+    width: 100%;
+  }
+
+  .item{
+    // cursor: default;
+
+      .date{
+          font-weight: 600;
+          color: $danger;
+      }
+  }
+}

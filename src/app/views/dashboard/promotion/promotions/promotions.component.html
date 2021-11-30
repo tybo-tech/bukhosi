@@ -1,0 +1,87 @@
+<div class="data-view-main" *ngIf="promotions">
+
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        Promotions
+      </div>
+    </div>
+  </div>
+
+  <app-dashbread [items]="items"></app-dashbread>
+
+
+  <div class="basic">
+    <h3 class="heading" *ngIf="promotions">
+      <span class="head"> My promotions</span> <span (click)="add()">Create promotion</span>
+    </h3>
+    <div class="list">
+
+      <div class="list-item" *ngFor="let item of promotions" (click)="view(item)">
+        <div class="col">
+          <p>
+            <b>  {{item.PromoType}}</b>
+            <span class="sub">
+              {{item.PromoCode || item.Name}}
+              <span class="material-icons">
+                fiber_manual_record
+              </span>
+             
+              {{item.PromoGroup}}
+              <span class="material-icons">
+                fiber_manual_record
+              </span>
+           
+              {{item.DiscountValue}} {{item.DiscountUnits}}
+
+
+            </span>
+
+            <span class="sub">
+              {{item.AppliesTo}}
+              <span class="material-icons">
+                fiber_manual_record
+              </span>
+              {{item.MinimumRequirementValue}}   {{item.MinimumRequirements}}
+            </span>
+            <span class="sub">
+              {{item.StartDate  | date: 'mediumDate'}} <b>{{item.StartTime}}</b>
+              <span class="material-icons">
+                trending_flat
+              </span>
+              {{item.FinishDate  | date: 'mediumDate'}} <b>{{item.FinishTime}}</b>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="empty" *ngIf="!promotions || !promotions.length">
+        <p>
+          <span class="material-icons">
+            info
+            </span>
+          Your promotions will show here.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="basic">
+    <div class="ctas">
+
+      <div class="cta">
+        <button class="secondary" mat-button color="primary" (click)="back()">
+          Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

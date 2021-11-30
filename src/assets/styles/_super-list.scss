@@ -1,0 +1,100 @@
+._super {
+
+  .dp {
+    width: 3rem;
+    height: 3rem;
+    padding: .8rem;
+
+    @media only screen and (max-width: 600px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .details {
+    grid-template-columns: 8% 40% 30% auto;
+  }
+
+  .create-cta {
+    display: grid;
+    grid-template-columns: 50% 30% auto;
+
+    input,
+    button {
+      width: 90%;
+      margin: .5em auto;
+      float: right;
+    }
+
+    input {
+      padding: .8em 1.2em;
+      border: 1px solid $silver;
+    }
+
+    h1 {
+      padding: .5em 0;
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  .item {
+    img {
+      width: 100%;
+    }
+
+    .img-ph {
+      width: 30%;
+      margin: .5em auto;
+    }
+  }
+
+  .code {
+    display: block;
+    color: $silver;
+    font-weight: 400;
+    margin: .5em 0;
+  }
+
+  .line-items,
+  .headers {
+    grid-template-columns: 20% 25% auto;
+  }
+
+
+  .np {
+    padding: .7em;
+  }
+
+  .filters {
+    padding: 1.5em 0;
+
+    img {
+      width: 3em;
+    }
+  }
+
+  .add {
+    background: $primary-05;
+  }
+
+  .line-items input {
+    margin: 0;
+  }
+
+  .color-input {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+  }
+
+  .a-edit{
+    display: block;
+    padding: .8em 0;
+    
+    font-weight: 600;
+    color: $info;
+    cursor: pointer;
+  }
+
+}

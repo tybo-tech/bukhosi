@@ -1,0 +1,136 @@
+$table-cols : 35% 15% 15% auto;
+
+.headers {
+  display: grid;
+  grid-template-columns: $table-cols;
+  border-right: 1px solid $cloud;
+  background: $primary;
+  background: $white;
+  padding: 0;
+  margin-top: 1em;
+
+  .item {
+    font-weight: 700;
+    color: $primary;
+    padding-left: 0;
+    border-right: 2px solid $white;
+    padding: .5em 1em;
+  }
+
+  .main-col {
+    color: $tec;
+  }
+}
+
+
+.line-items {
+  display: grid;
+  grid-template-columns: $table-cols;
+  border-bottom: 3px solid $white;
+
+  .item {
+    cursor: default;
+    border-right: 2px solid $white;
+    padding: .5em 1em;
+    background: $cloud;
+    position: relative;
+    padding-top: 1em;
+
+
+    &:first-child {
+      border-left: 2px solid $cloud;
+    }
+
+    h1 {
+      
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+      line-height: 1.2;
+    }
+  }
+
+  .pt {
+    padding-top: 1em;
+  }
+
+  input {
+    width: 90%;
+    border: none;
+  }
+
+  p {
+    padding: .5em 0;
+  }
+
+  .material-icons {
+    margin-left: 1em;
+    cursor: pointer;
+    color: $danger;
+  }
+}
+
+.np {
+  padding: 0;
+}
+
+.tac {
+  text-align: center;
+}
+
+.status {
+  border-radius: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  
+  background: $tertiary;
+  padding: .7em;
+  cursor: pointer;
+}
+
+.status-options {
+  position: absolute;
+  left: .7em;
+  top: 2.5em;
+  width: 100%;
+  background: $white;
+  height: 16em;
+  z-index: 1000;
+  padding: .5em;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid $cloud;
+
+  .status {
+    margin: .5em;
+    width: 90%;
+  }
+
+  .after {
+    position: absolute;
+    top: -.5em;
+    background: $white;
+    z-index: 10000;
+    width: 1em;
+    height: 1em;
+    left: 43%;
+    transform: rotate(45deg);
+  }
+}
+
+
+.to-do {
+  background: $tertiary;
+}
+.working {
+  background: $warn-color ;
+}
+.done {
+  background: $secondary ;
+}
+.stuck {
+  background: $danger ;
+}

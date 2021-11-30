@@ -1,0 +1,90 @@
+@import '../../../../../assets/styles/color';
+
+.success-modal {
+  h1 {
+    text-align: center;
+    width: 100%;
+    padding: 4em 0;
+    font-weight: 600;
+    
+
+    span {
+      color: $secondary;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  p {
+    text-align: center;
+    text-transform: none;
+    font-weight: 400;
+    padding: 2em;
+  }
+
+  .actions {
+      text-align: center;
+    button {
+      background: $pop;
+      color: $black;
+      margin: 1em auto;
+      border-radius: .5em;
+      width: 90%;
+      display: block;
+    }
+  }
+
+
+
+}
+
+
+.main {
+  background: $white;
+  width: 60%;
+  margin: .4em auto;
+  margin-top: 3em;
+  padding: 2em;
+  border-radius: 1em;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    
+    padding: 1em;
+  }
+}
+
+
+.actions {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% auto;
+  padding: 1em;
+  @media only screen and (max-width: 600px) {
+    width: 21em;
+    grid-template-columns: 100%;
+    position: fixed;
+    bottom: 3em;
+    text-align: center;
+    width: 100%;
+    left: 0;
+
+  }
+
+  button {
+    background: $pop;
+    color: $black;
+    width: 14em;
+    margin: .2em auto;
+    border: none;
+    border-radius: .5em;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}

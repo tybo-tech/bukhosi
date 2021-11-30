@@ -1,0 +1,105 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="body success-modal">
+  <div class="top-bar" *ngIf="products">
+    <div class="menu-back">
+      <span class="material-icons"  (click)="back()">
+        chevron_left
+      </span>
+    </div>
+  
+  
+    <div class="name" >
+      Products ({{products.length}})
+    </div>
+  
+    <div class="btn-menu">
+  
+    </div>
+  </div>
+  
+  <div class="main-list" *ngIf="products && products.length">
+    <div>
+      <div class="filters">
+        <div class="selects">
+  
+          <div class="form-item search">
+            <input type="search" [(ngModel)]="search" name="" id="" placeholder="🔎 filter...">
+          </div>
+          <div class="form-item" *ngIf="parentCategories && parentCategories.length">
+            <select [(ngModel)]="parentCategoryGuid" (change)="selectCategory($event.target.value)">
+              <option value="">All</option>
+              <option *ngFor="let pc of parentCategories" [ngValue]="pc.CategoryId"> {{pc.Name}}</option>
+            </select>
+          </div>
+    
+          <div class="form-item" *ngIf="chilndrenCategories && chilndrenCategories.length">
+            <select [(ngModel)]="categoryGuid"  (change)="selectSubCategory($event.target.value)">
+              <option value="">All</option>
+              <option *ngFor="let cc of chilndrenCategories" [ngValue]="cc.CategoryId"> {{cc.Name}}</option>
+            </select>
+          </div>
+  
+         
+        </div>
+      </div>
+      <div class="product-item" *ngFor="let item of products  | searchproduct: search" (click)="view(item)">
+        <div class="item">
+          <div class="icon" *ngIf="item.FeaturedImageUrl">
+            <div class="user-dp-image">
+              <img [src]="item.FeaturedImageUrl" alt="">
+            </div>
+          </div>
+  
+          <div class="icon" *ngIf="!item.FeaturedImageUrl">
+            <div class="user-dp-image">
+              <img src="assets/images/icons/add.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            <b>{{item.Name}}</b>
+            <span class="cat">
+              {{item.ParentCategoryName}} |  {{item.CategoryName}}
+            </span>
+       
+            <span class="price">
+              {{item.RegularPrice  | currency:'R'}}
+            </span>
+          
+          </p>
+        </div>
+  
+        <div class="item">
+          <!-- <span class="material-icons">
+          delete
+        </span> -->
+        </div>
+      </div>
+  
+      <div class="p6"></div>
+    </div>
+  
+  </div>
+  
+  <div class="" *ngIf="products && !products.length">
+    <div class="no-data">
+      <h1>
+        You don't have products yet.
+      </h1>
+      <img src="assets/images/common/products.svg" alt="">
+      <p>
+        To create an order you need to have products in the system. Click the button below to create a new product    </p>
+  
+      <button class="more" (click)="add()">Add product</button>
+    </div>
+  </div>
+  
+  
+  <div (click)="add()" class="add" *ngIf="products && products.length">
+    Add product
+  </div>
+  
+</div>
+

@@ -1,0 +1,132 @@
+<div class="main">
+  <div class="top-bar-conatiner">
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        My messages
+      </div>
+
+      <div class="btn-menu">
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="product-section col-1-of-1">
+    <div class="mt5" *ngIf="chats">
+      <div class="shops" *ngFor="let item of chats" (click)="select(item)">
+        <div class="shop">
+          <div class="icon" *ngIf="item.InteractionSourceId != user.UserId">
+            <img *ngIf="item.SourceDp" [src]="item.SourceDp" alt="">
+            <img *ngIf="!item.SourceDp" src="assets/images/shop.svg" alt="">
+          </div>
+          <div class="icon" *ngIf="item.InteractionSourceId == user.UserId">
+            <img *ngIf="item.TargetDp" [src]="item.TargetDp" alt="">
+            <img *ngIf="!item.TargetDp" src="assets/images/shop.svg" alt="">
+          </div>
+          <div class="item">
+            <h3  *ngIf="item.InteractionSourceId !== user.UserId">
+              {{item.SourceName}}
+              <span class="price">
+                {{item.InteractionBody}}
+              </span>
+           
+              <span class="price">
+                 {{item.CreateDate | date: 'shortTime'}}
+              </span>
+         
+            </h3>
+            <h3  *ngIf="item.InteractionSourceId === user.UserId">
+              {{item.TargetName}}
+              <span class="price">
+                {{item.InteractionBody}}
+              </span>
+           
+              <span class="price">
+                 {{item.CreateDate | date: 'shortTime'}}
+              </span>
+         
+            </h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="quick-add" id="chatBox" *ngIf="selectedChats && showChats">
+  <div class="form">
+    <h3>
+     {{targetName}}
+    </h3>
+
+    <div class="form-item chats" *ngIf="selectedChats">
+      <div  *ngFor="let chat of selectedChats; let i = index">
+        <div class="chat" *ngIf="chat.InteractionSourceId != user.UserId">
+          <div class="chat-dp">
+            <img *ngIf="chat.SourceDp" [src]="chat.SourceDp" alt="">
+          </div>
+          <div class="message">
+            {{chat.InteractionBody}}
+            <span class="chattime">
+              {{chat.CreateDate | date: 'shortTime'}}
+            </span>
+          </div>
+        </div>
+        <div class="chat-current-user" *ngIf="chat.InteractionSourceId == user.UserId">
+        <div class=""></div>
+          <div class="message">
+            {{chat.InteractionBody}}
+            <span class="chattime">
+              {{chat.CreateDate | date: 'shortTime'}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-item">
+      <textarea [(ngModel)]="message" placeholder="Type your message here."></textarea>
+    </div>
+
+    <div class="form-item">
+      <button (click)="chat()" [disabled]="!message">Send</button>
+      <div class="link" (click)="showChats = false">Close chat</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h3>
+      Please login or sign up to read or send messages.
+    </h3>
+
+    <div class="form-item">
+      <button (click)="goto('sign-in')">Login</button>
+      <div class="or">Or</div>
+      <button (click)="goto('sign-up')">Sign up</button>
+      <div class="link" (click)="back()">Back</div>
+    </div>
+
+  </div>
+</div>
+

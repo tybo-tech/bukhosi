@@ -1,0 +1,66 @@
+@import '../../../../assets/styles/color';
+
+.image {
+  text-align: center;
+
+  img {
+    width: 30%;
+    margin: 1em auto;
+  }
+}
+
+.modal {
+  padding: 1em;
+  animation: moveInButton .2s ease-out 0s;
+  animation-fill-mode: backwards;
+  z-index: 900000001;
+
+  .image {
+    text-align: center;
+
+    img {
+      width: 40%;
+      padding: 1em;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 65%;
+    top: 35%;
+  }
+
+
+
+  h1 {
+    color: $black;
+  }
+
+  p{
+    text-align: center;
+    padding: 1em;
+    font-weight: 400;
+    color: $black;
+    margin: 0;
+  }
+
+  .head {
+    border: none;
+    text-align: right;
+    display: block;
+
+  }
+
+  button {
+    left: 0rem;
+    bottom: 0rem;
+    width: 100%;
+    z-index: 10000;
+    padding: 1em;
+    background: $pop;
+    font-weight: 700;
+  }
+}
+
+.overlay{
+  z-index: 900000000;
+}

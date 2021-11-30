@@ -1,0 +1,76 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+
+    <div class="detail">
+      <label for="name">Category Name *</label>
+      <input type="text" [(ngModel)]="category.Name" placeholder="e.g. Male">
+    </div>
+
+    <div class="detail">
+      <label for="name">Display Order</label>
+      <select [(ngModel)]="category.DisplayOrder">
+        <option value="0">Not mater</option>
+        <option value="1">Always first</option>
+        <option value="2">Always second</option>
+        <option value="3">Always third</option>
+      </select>
+    </div>
+
+    <div class="detail">
+      <label for="name">Category Status</label>
+      <select [(ngModel)]="category.StatusId">
+        <option value="1">Active</option>
+        <option value="2">In-Active</option>
+        <option value="3">Deleted</option>
+      </select>
+    </div>
+
+
+    <div class="detail">
+      <label for="">upload image for PC</label>
+      <div class="upload-preview">
+        <div class="upload">
+          <input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+            (change)="uploadFile(file.files, 'PC')" style="display:none;">
+          <button mat-button class="btn-uplaod" (click)="file.click()">
+            📷 Set Category image for PC
+          </button>
+        </div>
+        <div class="preview">
+          <img *ngIf="category.ImageUrl" [src]="category.ImageUrl" alt="">
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+      <label for="">upload image for Mobile</label>
+
+      <div class="upload-preview">
+        <div class="upload">
+          <input type="file" accept="image/png, image/jpeg" #file2 placeholder="Choose file" multiple
+            (change)="uploadFile(file2.files, 'Mobile')" style="display:none;">
+          <button mat-button class="btn-uplaod" (click)="file2.click()">
+            📷 Set Category image for Mobile
+          </button>
+        </div>
+        <div class="preview">
+          <img *ngIf="category.PhoneBanner" [src]="category.PhoneBanner" alt="">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="detail">
+      <button mat-button class="mat-primary" [disabled]="!category.Name" type="button" (click)="save()">
+        Save Category
+      </button>
+    </div>
+
+  </div>
+  <app-user-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-user-feedback>

@@ -1,0 +1,54 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar-conatiner {
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+.go-back {
+  padding: .5em 2em;
+  button{
+    width: 9em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 10em;
+
+  }
+}
+
+.main {
+  // background: $white;
+  padding: 1em;
+  border-radius: .5em;
+  margin: .5em;
+  margin-top: 4em;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 0;
+  }
+
+
+  .product-section {
+    @media only screen and (max-width: 600px) {
+      margin-top: 4em;
+    }
+  }
+}
+
+
+
+
+
+.child {
+  margin-bottom: 4em;
+  box-shadow: none;
+}
+
+.product-details p {
+  text-align: left;
+}
+

@@ -1,0 +1,304 @@
+@import '../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 50% 40% auto;
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 12% 45% 14% 10% auto;
+
+  }
+
+  .logo {
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: none;
+
+    @media only screen and (max-width: 600px) {
+      display: block;
+    }
+
+    img {
+      width: auto;
+      height: 3em;
+      top: .2em;
+      border-radius: .3em;
+      margin: 0 .75em;
+
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: 11% 65% 10% auto;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .menu {
+    display: none;
+
+    @media only screen and (max-width: 600px) {
+      left: 1em;
+      display: block;
+      text-align: right;
+      padding: 0 1em;
+    }
+  }
+
+  .nots{
+    text-align: center;
+  }
+  .name {
+    @media only screen and (max-width: 600px) {
+      left: 1em;
+    }
+
+  }
+
+  .user-tab {
+    .name {
+
+      width: 100%;
+      top: 0;
+      display: block;
+      padding: 0;
+
+
+      .profile-user {
+        left: 0;
+        // border: 3px solid $pop;
+        top: .5em;
+        width: auto;
+        height: 2em;
+        border-radius: .4em;
+
+      }
+
+      span {
+        color: $pop;
+      }
+    }
+  }
+
+
+}
+
+.success-modal {
+  background: $cloud;
+  position: relative;
+  height: 100vh;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+}
+
+.my-links {
+  display: grid;
+  grid-template-columns: 50% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 100%;
+  }
+
+  .may-link {
+
+    display: grid;
+    grid-template-columns: 80% auto;
+    background: $white;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: .5em;
+    width: 100%;
+
+
+    @media only screen and (max-width: 600px) {
+      margin: 1em auto;
+      margin-top: 6em;
+    }
+
+    .col {
+      width: 90%;
+      background: $cloud;
+      padding: .5em 1em;
+      border-radius: .5em;
+      text-align: center;
+
+      margin: 1em 0;
+      font-weight: 600;
+      cursor: pointer;
+
+      @media only screen and (max-width: 600px) {
+        margin: .2em auto;
+      }
+    }
+
+
+
+    .shoplink {
+      background: rgba(68, 221, 63, 0.075);
+      border: 2px solid $pop;
+      font-weight: 500;
+
+      width: 98%;
+      overflow-x: scroll;
+
+      b {
+        font-weight: 800;
+      }
+    }
+  }
+
+  .hello {
+    @media only screen and (max-width: 600px) {
+      margin: 1em auto;
+    }
+  }
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-gap: 1em;
+  width: 99%;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 100%);
+    width: 96%;
+    padding: .5em;
+    margin: .2em auto;
+    grid-gap: .5em;
+  }
+
+  .card {
+    background: $white;
+    margin: 1em 0;
+    padding: 1em;
+    border-radius: .5em;
+    position: relative;
+    box-shadow: $box-shadow;
+
+    h1 {
+
+      color: $black;
+      border-bottom: 1px solid $cloud;
+      padding: .5em;
+      text-align: left;
+      width: 100%;
+      text-transform: capitalize;
+      font-weight: 600;
+
+      span {
+        display: block;
+        color: $black;
+        font-weight: 600;
+      }
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 50% auto;
+      border-bottom: 1px solid $cloud;
+      cursor: pointer;
+
+      div {
+        padding: .4em;
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+}
+
+.logout {
+  color: $black;
+}
+
+.add {
+  font-weight: 700;
+  color: $secondary;
+  position: relative;
+  color: $primary;
+  width: 10em;
+  padding: .5em;
+  margin: .88em;
+  top: .4em;
+
+  @media only screen and (max-width: 600px) {
+    margin: .88em auto;
+    width: 8em;
+  }
+}
+
+
+
+.mt5 {
+  margin-top: 7em;
+}
+
+
+.add {
+  right: 0em;
+}
+
+.hello-h1 {
+  width: 100%;
+  font-weight: 600;
+  color: $black;
+  text-transform: capitalize;
+  margin-top: 1em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 1.3em;
+  }
+
+  span {
+    display: block;
+
+    color: $black;
+    text-transform: lowercase;
+    background: $white;
+    padding: 0;
+    width: 35%;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: 70% auto;
+    margin: .5em 0;
+    font-size: .75em;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+
+    .name {
+      padding: .4em;
+    }
+
+    .share {
+      text-align: right;
+      background: $pop;
+      text-align: center;
+      padding: .4em;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.goto-shop {
+  background: $pop;
+  width: 15em;
+  margin: 1em 0;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin: 0;
+  }
+}

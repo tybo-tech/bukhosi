@@ -1,0 +1,78 @@
+@import '../../../../../../assets/styles/color';
+
+.main {
+  padding: .5em 1em;
+  padding-bottom: 4em;
+  margin: 0;
+  background: $cloud;
+  overflow-y: scroll;
+  height: 100vh;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+  }
+
+  .top-bar {
+    grid-template-columns: 3% 45% auto;
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 4% 40% auto;
+      position: relative;
+    }
+
+  }
+
+  .viewer {
+    width: 70em;
+    height: 85vh;
+    margin: 1em;
+    @media only screen and (max-width: 600px) {
+      width: 24em;
+    height: 85vh;
+    margin: 1em auto;
+    }
+  }
+}
+
+.inputs {
+  background: $white;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: .5em;
+
+  width: 30%;
+
+  @media only screen and (max-width: 600px) {
+width: 100%;
+  }
+
+  .col {
+    display: grid;
+    grid-template-columns: 50% auto;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  label,
+  input {
+    margin: .4em 0;
+    border: none;
+    padding: 0;
+  }
+
+  input {
+    right: 0;
+    position: absolute;
+  }
+
+  button {
+    background: $pop;
+    margin: 1em 0;
+    border-radius: .4em;
+    margin-bottom: 0;
+
+  }
+
+}

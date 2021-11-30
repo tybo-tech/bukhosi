@@ -1,0 +1,90 @@
+@import '../../../../../assets/styles/color';
+
+.myorders {
+  display: block;
+  text-align: center;
+}
+.mobile-full{
+  @media only screen and (max-width: 600px) {
+    padding: 4em 1em;
+
+  }
+}
+
+.track {
+  display: flex;
+  width: 96%;
+  overflow-x: scroll;
+  padding: 1em .4em;
+
+  .status {
+    width: 20em;
+    padding: .5em 1em;
+    text-align: center;
+    border-radius: .5em;
+    border: none;
+    margin: .4em;
+    background: $cloud;
+    font-weight: 600;
+    color: $darker-grey;
+    cursor: default;
+
+
+    span {
+      display: block;
+      text-align: center;
+      top: .2em;
+    }
+  }
+
+  .done {
+    color: $secondary;
+  }
+
+  .bussy {
+    color: $black;
+    border: 2px solid $black;
+  }
+}
+
+
+.products {
+  display: flex;
+  padding: 1em 0;
+  padding-bottom: 0;
+
+  .product {
+    margin: 1em .3em;
+    margin-bottom: 0;
+
+    img {
+      height: 4em;
+      border-radius: .5em;
+      width: auto !important;
+    }
+  }
+}
+
+.item {
+  background: $white;
+  padding: 1em .5em;
+  margin: 1.5em 0;
+  border-radius: .5em;
+
+  .dates,
+  .price {
+    display: block;
+    padding: .2em;
+    
+    font-weight: 500;
+    color: $darker-grey;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.user-profile{
+  display: block;
+}

@@ -1,0 +1,81 @@
+@import '../../../../../assets/styles/color';
+
+.item {
+  background: $white;
+  position: relative;
+  height: 25em;
+
+  .image {
+    height: 20em;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+
+      @media only screen and (max-width: 600px) {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+  .info {
+    // position: absolute;
+    width: 100%;
+    // height: 10em;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    // background: $cloud;
+    color: $primary;
+    // display: none;
+
+    a {
+      background: #333333;
+      color: $white;
+      padding: .5em;
+      text-align: center;
+      display: block;
+      width: 100%;
+      margin-top: 1em;
+      background: rgb(64, 191, 250);
+
+
+    }
+  }
+}
+
+.actions {
+  padding: 1em;
+}
+
+
+
+
+.product-name {
+  
+  padding: 1em;
+  display: block;
+
+  span {
+    display: block;
+    font-weight: 600;
+  }
+}
+
+mark {
+  background: $primary;
+  color: $white;
+  padding: .4em;
+}
+
+.product-info {
+  display: block;
+  
+
+  span {
+    display: block;
+  }
+}

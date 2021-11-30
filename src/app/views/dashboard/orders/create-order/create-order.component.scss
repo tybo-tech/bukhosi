@@ -1,0 +1,66 @@
+@import '../../../../../assets/styles/color';
+
+.top-bar {
+  grid-template-columns: 3% 45% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4% 35% auto;
+    position: relative;
+  }
+
+}
+
+.user-profile {
+  animation: none;
+
+  @media only screen and (max-width: 600px) {
+    position: relative;
+    height: auto;
+  }
+}
+
+.shippings {
+  background: $white;
+  padding: 1em;
+  margin: 1em 0;
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 0em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .line-item {
+    display: grid;
+    grid-template-columns: 70% auto;
+    border-bottom: 1px solid $cloud;
+    padding: .5em 1em;
+
+    .item {
+      .material-icons{
+        top: .2em;
+        font-size: 1em;
+        color: $darker-grey;
+      }
+      .active{
+        color: $pop-darker;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+
+}
+
+.sammary{
+  padding: 1em;
+    span{
+    display: block;
+    font-size: .7em;
+    padding: .5em 0;
+  }
+}
+

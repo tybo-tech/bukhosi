@@ -1,0 +1,81 @@
+<div class="edit-user-profile">
+
+  <div class="top-bar-home">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        keyboard_arrow_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      My profile
+    </div>
+  </div>
+
+  <div class="user">
+
+    <div class="user-section">
+      <div class="">
+        <div class="icon" *ngIf="user.Dp">
+          <img *ngIf="user.Dp" [src]="user.Dp" alt="">
+        </div>
+
+        <div class="icon" *ngIf="!user.Dp">
+          <img class="profile-user" src="assets/images/common/profile-user.svg" alt="">
+        </div>
+      </div>
+
+
+      <div class="more-details">
+        <p>
+
+
+          <span class="cat">
+            {{user.Name}}
+          </span>
+          <span class="cat">
+            {{user.PhoneNumber}}
+          </span>
+
+          <span class="price">
+            {{user.Email}}
+          </span>
+
+          <span class="price" *ngIf="user.BirthdayDate || user.BirthdayMonth">
+         DOB:   {{user.BirthdayDate}}  {{user.BirthdayMonth}}
+          </span>
+
+          <span class="span">
+            Delivery address
+          </span>
+
+          <span class="value">
+            {{user.AddressLineHome}}
+          </span>
+
+
+
+        </p>
+
+
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="edit" (click)="edit()">
+      Edit profile
+    </div>
+
+    <div class="edit" *ngIf="user.UserType === 'Admin'" (click)="dashboard()">
+      Go to my dashboard
+    </div>
+    <div class="edit" (click)="logout()">
+      Logout
+    </div>
+  </div>
+</div>

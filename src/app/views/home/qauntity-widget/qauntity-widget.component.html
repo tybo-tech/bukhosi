@@ -1,0 +1,21 @@
+<div class="qty">
+  <div class="col">
+    <img src="assets/images/icon-qty-min.svg" *ngIf="qty > 1" (click)="prev()" alt="">
+    <img src="assets/images/icon-qty-min-disabled.svg"  (click)="showNegError = true; showNotice = false" *ngIf="qty <= 1"  alt="">
+  </div>
+  <div class="col">
+    <span>
+      {{qty}}
+    </span>
+  </div>
+  <div class="col">
+    <img src="assets/images/icon-qty-plus.svg" *ngIf="qty < maxItems" (click)="next()" alt="">
+    <img src="assets/images/icon-qty-plus-disabled.svg" (click)="showNotice = true; showNegError = false;"  *ngIf="qty >= maxItems">
+  </div>
+</div>
+<p *ngIf="showNotice ">
+There is only {{maxItems}} left!
+</p>
+<p *ngIf="showNegError">
+Press + to add qty
+</p>

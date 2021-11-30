@@ -1,0 +1,27 @@
+<div class="images" *ngIf="images"> 
+  <div class="image" *ngFor="let image of images; let i = index">
+    <div class="file">
+      <img [src]="image.Url" alt="">
+    </div>
+    <div class="actions">
+      <div class="action">
+        <button class="delete" (click)="delete(image)">Delete</button>
+      </div>
+      <div class="action">
+        <button class="delete" *ngIf="!image.IsMain || image.IsMain == 0" (click)="main(image)">Main</button>
+        <button class="delete active" *ngIf="image.IsMain == 1">Main</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="image btn">
+    <img src="assets/new/uplaod.svg" (click)="file.click()" alt="">
+  
+  </div>
+</div>
+
+<div class="row" style="margin-bottom:15px;">
+  <div class="col-md-3">
+    <input type="file" #file placeholder="Choose file" multiple (change)="uploadFile(file.files)" style="display:none;">
+  </div>
+</div>

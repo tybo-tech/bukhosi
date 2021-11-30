@@ -1,0 +1,65 @@
+<div class="top-bar-conatiner">
+
+  <div class="top-bar" *ngIf="orders">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+    <div class="name pointer"  (click)="back()">
+      Back to dashboard 
+    </div>
+    <div class="btn-menu">
+
+    </div>
+  </div>
+</div>
+
+
+<div class="data-view-main" *ngIf="orders">
+
+  <div class="basic">
+    <h3 class="header-label heading">
+      My orders ({{orders?.length}})
+
+      <span (click)="add()">
+        Add new order
+      </span>
+    </h3>
+
+    <div class="product-item" *ngFor="let item of orders; let i = index" (click)="view(item)">
+
+      <div class="item">
+        <p>
+          <b> {{item.Customer?.Name}} {{item.Customer?.Surname}}</b>
+          <span class="cat">
+            {{item.Total  | currency:'R'}}
+          </span>
+          <span class="date">
+            Created {{item.InvoiceDate | date: 'mediumDate'}}
+          </span>
+          <span class="date" *ngIf="item.EstimatedDeliveryDate" style="color: rgba(13, 110, 26, 0.678);">
+            Est. Delivery {{item.EstimatedDeliveryDate | date: 'mediumDate'}}
+          </span>
+
+
+        </p>
+      </div>
+
+      <div class="item">
+        <span class="order-status">
+          {{item.Status}}
+        </span>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+

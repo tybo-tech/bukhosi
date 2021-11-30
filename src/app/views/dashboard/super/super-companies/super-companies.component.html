@@ -1,0 +1,59 @@
+<div class="edit-user-profile" *ngIf="companies">
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        keyboard_arrow_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      Companies
+    </div>
+  </div>
+
+  
+  <div class="main-list" *ngIf="companies && companies.length">
+    <div>
+    
+      <div class="product-item" *ngFor="let item of companies">
+        <div class="item"  (click)="viewCompany(item)">
+          <div class="icon" *ngIf="item.Dp">
+            <div class="user-dp-image">
+              <img [src]="item.Dp" alt="">
+            </div>
+          </div>
+  
+          <div class="icon" *ngIf="!item.Dp">
+            <div class="user-dp-image">
+              <img src="assets/images/icons/add.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            <b>{{item.Name}}</b>
+            <span class="cat" *ngIf="item.Email || item.Phone">
+              {{item.Email}} | {{item.Phone}}
+            </span>
+       
+            
+          
+          </p>
+        </div>
+  
+        <div class="item count"  (click)="view(item)">
+          <span class="price">
+            {{item.ProductsCount?.ProductsCount}} Products
+          </span>
+        </div>
+      </div>
+  
+      <div class="p6"></div>
+    </div>
+  
+  </div>
+</div>
+
+
+

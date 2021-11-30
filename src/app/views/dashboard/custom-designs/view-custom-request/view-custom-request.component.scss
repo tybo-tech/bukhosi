@@ -1,0 +1,76 @@
+@import '../../../../../assets/styles/color';
+
+.main {
+  padding: 1em;
+  background: $white;
+  margin: 1em;
+  border-radius: .5em;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .image {
+    img {
+      width: 18em;
+      margin-top: 1em;
+
+      @media only screen and (max-width: 600px) {
+        margin: 0;
+        width: 100%
+      }
+    }
+  }
+}
+
+.description {
+  p {
+    padding: 1em;
+
+    span {
+      display: block;
+      font-weight: 600;
+      color: $danger;
+    }
+  }
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 50% auto;
+  padding: .45em 1em;
+  width: 40%;
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 100%;
+    width: 100%;
+    background: $white;
+    padding: 1em 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  button {
+    background: $pop;
+    width: 90%;
+    padding: 1.2em;
+    margin: .2em auto;
+    border-radius: .4em;
+    text-align: center;
+    ;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
+  .login {
+    background: $darker-grey;
+    color: $black;
+    margin-left: 0;
+  }
+}

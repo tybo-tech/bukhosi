@@ -1,0 +1,105 @@
+@import '../../../../../assets/styles/color';
+
+.logo {
+  margin-top: 4em;
+  text-align: center;
+
+  img {
+    left: 0;
+  }
+}
+
+
+h1 {
+  margin: 1em auto;
+  margin-top: 3em;
+  text-align: center;
+  
+  background: rgba(0, 233, 58, 0.24);
+  padding: 1em;
+  border-radius: .4em;
+  width: 96%;
+  font-weight: 400;
+}
+
+.images {
+  display: grid;
+  margin: .5em auto;
+  grid-template-columns: repeat(2, 10.5em);
+  margin-top: 1.5em;
+  width: auto;
+
+  .image {
+    padding: 1rem;
+
+    img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: .2em;
+      margin: auto;
+    }
+  }
+
+  .active {
+    border: 2px solid $pop;
+  }
+}
+
+
+.file {
+  background: $white;
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 0;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $primary;
+
+  }
+}
+
+.add-image {
+  padding: .5em;
+  text-align: center;
+  background: $pop;
+  width: 8.5em;
+  min-height: 4.5em;
+  top: 1em;
+  border-radius: .2em;
+  margin: .5em 0;
+  //   opacity: .5;
+  cursor: pointer;
+
+
+
+  span {
+    top: .6em;
+  }
+
+  &:hover {
+    opacity: .84;
+  }
+}
+
+.actions {
+  a {
+    background: $cloud;
+    margin: 1em 0;
+    padding: .2em .5em;
+    font-weight: 600;
+    border-radius: .2em;
+    top: .75em;
+    border: 2px solid $pop;
+
+    &:nth-child(2) {
+      margin-left: 1em;
+    }
+  }
+
+
+}
+
+.overlay{
+    z-index: 90000000;
+}

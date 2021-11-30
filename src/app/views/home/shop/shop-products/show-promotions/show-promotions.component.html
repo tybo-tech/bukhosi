@@ -1,0 +1,17 @@
+<div class="promotions" *ngIf="promotions && promotions.length" [ngStyle]="promotions[promoIndex].Style">
+  <div class="user-dp-image" *ngIf="promotions[promoIndex].ImageUrl">
+    <img [src]="promotions[promoIndex].ImageUrl" alt="">
+
+  </div>
+
+  <div class="details">
+    <div [innerHTML]="promotions[promoIndex] | promotionText:products">
+      <!-- {{promotions[promoIndex] | promotionText}}  -->
+    </div>
+  </div>
+  <div class="promo-buttons">
+    <span class="material-icons" *ngFor="let product of promotions;  let i = index" (click)="selectPromo(i)">
+      fiber_manual_record
+    </span>
+  </div>
+</div>

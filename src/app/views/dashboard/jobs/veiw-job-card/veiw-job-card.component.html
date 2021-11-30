@@ -1,0 +1,256 @@
+<div class="top-bar-conatiner">
+
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons link" (click)="back()">
+        keyboard_arrow_left
+      </span>
+    </div>
+
+
+    <div class="name link tal" (click)="back()">
+      Jobs
+    </div>
+    <div class="name">
+      Job
+    </div>
+  </div>
+</div>
+
+<div class="data-view-main" *ngIf="job">
+
+  <div class="basic">
+    <div class="tittle" *ngIf="job.JobId">
+      <div class="icon">
+        <img src="assets/images/common/job.svg" alt="">
+      </div>
+
+      <div class="data">
+        {{job.Tittle}}
+        <span class="created due" *ngIf="job.DueDate">
+          Due by {{job.DueDate | date: 'mediumDate'}}
+        </span>
+        <span class="created" *ngIf="job.CreateDate">
+          Created on {{job.CreateDate | date: 'mediumDate'}}
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="basic">
+    <h3 class="header-label">
+      Customer
+    </h3>
+    <div class="no-child" *ngIf="!job.Customer">
+      <div>
+        No customer
+      </div>
+      <div class="link" (click)="showAddCustomer = true">
+        Add
+        <span class="material-icons">
+          chevron_right
+        </span>
+      </div>
+    </div>
+
+    <div class="user-profile" *ngIf="job.Customer">
+      <div class="icon" *ngIf="job.Customer.Dp">
+        <img *ngIf="job.Customer.Dp" [src]="job.Customer.Dp" alt="">
+      </div>
+
+      <div class="icon" *ngIf="!job.Customer.Dp">
+        <img class="profile-user" src="assets/images/common/profile-user-darker.svg" alt="">
+      </div>
+
+      <div class="name">
+        {{job.Customer.Name}}
+        <span>
+          {{job.Customer.PhoneNumber}}
+        </span>
+        <span>
+          {{job.Customer.Email}}
+        </span>
+        <span class="address">
+          {{job.Customer.AddressLineHome}}
+        </span>
+        <span class="address link pointer " style="text-align: left;" (click)="showAddCustomer = true">
+          Change customer
+        </span>
+      </div>
+    </div>
+
+  
+  </div>
+
+
+
+  <div class="basic">
+    <h3 class="header-label">
+      Job items
+    </h3>
+
+
+    <app-job-item *ngIf="job && jobItems" [job]="job" [jobItems]="jobItems" [jobId]="job.JobId"
+      [customer]="job.Customer">
+    </app-job-item>
+  </div>
+
+  <div class="basic cloud">
+    <button class="mat-primary checkout " mat-button color="primary" (click)="saveJob()">
+      Save job
+    </button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="data-view-main add-screen " *ngIf="job">
+
+
+
+
+  <h3 class="header-label" style="display: none;">
+    Tasks
+  </h3>
+
+
+
+  <div class="basic" *ngIf="job.JobId" style="display: none;">
+    <h3>
+      Tasks
+      <span class="cat">
+        “Before you eat the elephant, make sure you know what parts you want to eat.” <br>
+        ― Todd Stocker
+      </span>
+    </h3>
+
+    <div *ngIf="job.Tasks">
+      <div class="job-item" *ngFor="let item of job.Tasks" (click)="done(item)">
+        <div class="check">
+          <input type="checkbox" [checked]="item.IsSelected" name="" id="" [(ngModel)]="item.IsSelected">
+        </div>
+
+        <div class="label">
+          {{item.Tittle}}
+        </div>
+      </div>
+
+    </div>
+    <div class="notasks" *ngIf="!job.Tasks">
+      <p>
+        No tasks found for <b>{{job.Tittle}}</b>
+      </p>
+    </div>
+
+    <div class="job-item add-item" *ngIf="showAddTask">
+      <div class="check">
+        <label for="">New taks</label>
+        <input type="text" name="" id="" [(ngModel)]="taskName" placeholder="e.g. Buy fabric">
+        <button (click)="saveTask()" [disabled]="!taskName">Save</button>
+      </div>
+    </div>
+    <div class="add-new" (click)="addTask()">
+      <a>Add new task</a>
+    </div>
+  </div>
+
+
+  <div class="basic" style="display: none;">
+    <h3>
+      <span class="cat">
+        {{job.JobNo}} , Created <b> {{job.CreateDate | date: 'mediumDate'}}</b>
+      </span>
+    </h3>
+    <div class="">
+      <input type="text" name="" [(ngModel)]="job.Tittle" id="" (change)="saveJob()">
+    </div>
+    <div class="">
+      <label for="">Job Notes/Description</label>
+      <textarea name="" [(ngModel)]="job.Description" (change)="saveJob()"></textarea>
+    </div>
+    <div class="job-data">
+      <span class="job-status" [ngClass]="job.Class">
+        {{job.Status}}
+      </span>
+      <div class="due">
+        <div class="label">
+          Due date:
+        </div>
+        <div class="">
+          <!-- <input type="date" name="" id="" [(ngModel)]="job.DueDate"  > -->
+          <input type="date" #myDate [value]="job.DueDate | date:'yyyy-MM-dd'"
+            (input)="job.DueDate=parseDate($event.target.value)" (change)="saveJob()" />
+
+        </div>
+      </div>
+
+      <!-- <span class="due" *ngIf="job.DueDate">
+        Due: {{job.DueDate | date: 'mediumDate'}}
+      </span> -->
+
+
+
+
+      <!-- <span class="action">
+          {{job.Tasks && job.Tasks.length || 0}} Tasks.
+        </span> -->
+    </div>
+  </div>
+  <!-- <app-job-work-list *ngIf="selectedTab == 0 && job.Tasks" [job]="job" [jobWorks]="job.Tasks"></app-job-work-list>
+  <app-add-job-card [job]="job" *ngIf="selectedTab == 1"></app-add-job-card> -->
+</div>
+
+
+<div class="quick-add" *ngIf="showAddCustomer">
+  <div class="form">
+    <h3>
+      Select Customer
+    </h3>
+
+    <div class="form-item">
+      <button class="primary" (click)="addNewCustomer()"> Add new customer</button>
+      <div class="product-item" *ngFor="let item of users" (click)="selectCust(item)">
+        <div class="item">
+          <div class="icon" *ngIf="item.Dp">
+            <div class="user-dp-image">
+              <img *ngIf="item.Dp" [src]="item.Dp" alt="">
+            </div>
+          </div>
+
+          <div class="icon" *ngIf="!item.Dp">
+            <div class="user-dp-image">
+              <img src="assets/images/common/profile-user.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>
+            <b> {{item.Name}} {{item.Surname}}</b>
+            <span class="cat">
+              {{item.PhoneNumber}}
+              <br>
+              {{item.Email}}
+            </span>
+            <span class="cat address">
+              {{item.AddressLineHome}}
+            </span>
+
+          </p>
+        </div>
+      </div>
+      <div class="link" (click)="showAddCustomer = false">Cancel</div>
+    </div>
+  </div>
+</div>

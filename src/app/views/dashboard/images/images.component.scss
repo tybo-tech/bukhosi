@@ -1,0 +1,55 @@
+@import '../../../assets/styles/color';
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+
+  .image {
+    padding: 0rem;
+    // border:1px solid $cloud;
+    margin: 1em;
+    padding: .5em;
+    overflow: hidden;
+    border-radius: .5em;
+    .actions{
+      padding: .5em;
+      color: $black;
+      display: grid;
+      grid-template-columns: 50% auto;
+      button{
+        color: $black;
+        background: $cloud;
+        width: 94%;
+        
+        border-radius: .5em;
+      }
+      .active{
+        background: $pop;
+        color: $white;
+      }
+    }
+
+    img {
+      width: 100%;
+      border-radius: .5em;
+    }
+  }
+}
+
+
+.file {
+  background: $white;
+  border-bottom: 1px solid $cloud;
+  padding: 1rem 0;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $primary;
+
+  }
+}
+.btn{
+  cursor: pointer;
+  border: none;
+}

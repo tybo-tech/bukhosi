@@ -1,0 +1,87 @@
+@import '../../../../../assets/styles/color';
+
+.no-child {
+  display: grid;
+  grid-template-columns: 100%;
+
+  .black-label {
+    padding: 1em 0.2em;
+    top: .2em;
+  }
+
+  .link {
+    padding: 0.4em 0.2em;
+    padding-bottom: .5em;
+    top: -.4em;
+
+    .material-icons {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.mat-radio-button {
+  display: block;
+  margin: .4em 0;
+}
+
+.banner {
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 2em;
+  color: $danger;
+}
+
+.selector {
+  .list-item {
+    display: grid;
+    grid-template-columns: 7em auto;
+
+    img {
+      width: 4em;
+    }
+
+    .col {
+      padding: 1em;
+      border-bottom: 1px solid $cloud;
+
+      span {
+        top: 1.2em;
+      }
+
+      button {
+        max-width: 10em;
+        display: block;
+      }
+    }
+  }
+
+}
+
+.selected-products {
+  display: grid;
+  grid-template-columns: repeat(10, 4em);
+
+  .icon {
+    width: 4em;
+    height: 4em;
+    overflow: hidden;
+    border: 3px solid $white;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.data-view-main{
+  padding: 5em 1em;
+}

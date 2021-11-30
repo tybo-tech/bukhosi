@@ -1,0 +1,129 @@
+@import '../../../../../assets/styles/color';
+
+.side-nav,
+.side-nav-mob {
+  border: 1px solid $cloud;
+  margin: .5em;
+  padding: .5em;
+  background: $white;
+  border-radius: .5em;
+  height: 90vh;
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    top: 0;
+    display: none;
+    background: rgba(0, 0, 0, 0.644);
+    height: 100%;
+    background: $white;
+    padding: 0;
+    width: 60%;
+
+
+
+  }
+
+}
+
+.side-nav-mob {
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    animation: moveInLeft .2s ease-out 0s;
+    animation-fill-mode: backwards;
+  }
+}
+
+
+
+
+.bottom-nav {
+  position: relative;
+  left: 0;
+  background: $white;
+  height: 3.5em;
+  z-index: 1000;
+  width: 100%;
+  display: grid;
+  // box-shadow: $box-shadow;
+  grid-template-columns: repeat(3, 33%);
+  // grid-template-columns: 33% 33% .00000001% 33%;
+  padding: .5em;
+
+  .nav-items {
+    text-align: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+      
+      text-align: center;
+      padding: .4em;
+      top: .8em;
+      margin: .1em auto;
+      border-radius: 0;
+      color: $silver;
+      width: 80%;
+      font-weight: 800;
+    }
+
+    .active {
+      color: $pop-darker;
+      font-weight: 600;
+      background: $white;
+      // border-bottom: 3px solid $pop;
+      // box-shadow: $box-shadow;
+    }
+
+  }
+}
+
+.all-catergories {
+  padding-top: 1em;
+
+  button {
+    width: 100%;
+    
+    background: $white;
+    border-bottom: 1px solid $cloud;
+    color: $darker-grey;
+
+    span {
+      padding: .2em .5em;
+      background: $cloud;
+      margin-left: 1em;
+      border-radius: .4em;
+      
+    }
+  }
+
+  a {
+    display: block;
+    border-bottom: 1px solid $cloud;
+    width: 100%;
+    
+    background: $white;
+    padding: 1em;
+    text-align: center;
+    color: $darker-grey;
+    cursor: pointer;
+
+  }
+
+
+  .close-menu {
+    color: $danger;
+    width: 4em;
+    margin: .2em auto;
+    margin-top: 4em;
+    margin-bottom: 0;
+    position: fixed;
+    bottom: 2em;
+    left: 20%;
+  }
+}

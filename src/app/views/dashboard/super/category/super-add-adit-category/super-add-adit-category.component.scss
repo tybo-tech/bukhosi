@@ -1,0 +1,43 @@
+@import '../../../../../../assets/styles/color';
+
+.page-section {
+  padding: 1em;
+  background: $white;
+
+
+}
+
+.mat-primary{
+  width: 30%;
+  margin-top: 3em;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+
+   }
+}
+
+.detail {
+  width: 90%;
+  padding: .7em 0;
+
+  select,
+  input {
+    border: 1px solid $input-border;
+    width: 100%;
+  }
+}
+
+.upload {
+  padding: 1em 0;
+}
+
+
+.preview {
+  img {
+    width: 20%;
+  }
+}
+

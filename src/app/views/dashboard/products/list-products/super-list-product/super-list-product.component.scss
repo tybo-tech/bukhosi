@@ -1,0 +1,10 @@
+@import '../../../../../../assets/styles/color';
+
+.top-bar {
+    grid-template-columns: 3% auto;
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 10% auto;
+    }
+  
+  }
+  

@@ -1,0 +1,18 @@
+<div *ngIf="subCatergories" class="main box-shadow">
+  <h3>
+    Shop by Categories
+  </h3>
+<div class="flexy">
+  <div class="list">
+    <div class="catergory" *ngFor="let catergory of subCatergories; let i = index"
+     (click)="tapChildCategory(catergory)" [ngStyle]="{'background-image': 'url(' + catergory.ProductsImages[0].FeaturedImageUrl + ')'}">
+    <span>
+      {{catergory.Name}}
+    </span>
+    </div>
+  </div>
+</div>
+ 
+
+
+</div>

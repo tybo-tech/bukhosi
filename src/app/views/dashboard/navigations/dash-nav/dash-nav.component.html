@@ -1,0 +1,145 @@
+  
+  <div class="nav" *ngIf="isAdmin">
+    <ul (click)="toggleNav()">
+      <li>
+        <a routerLink="/admin/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            dashboard
+          </span>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a routerLink="/admin/dashboard/products" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Products
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/dashboard/customers" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Customers
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/dashboard/invoices/all" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            library_books
+          </span>
+          Orders
+        </a>
+      </li>
+      <li>
+        <a routerLink="/admin/dashboard/promotions" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            local_offer
+          </span>
+          Promotions
+        </a>
+      </li>
+   
+      <!-- <li>
+        <a routerLink="/admin/dashboard/shipping" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            local_shipping
+          </span>
+          Shipping methods
+        </a>
+      </li> -->
+
+      <li>
+        <a (click)="logout()" style="display: block;top: 2em; color: rgb(97, 0, 0);cursor: pointer;">
+          <span class="material-icons">
+            logout
+          </span>
+        Logout
+        </a>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <div class="nav" *ngIf="isSuper">
+  
+    <ul (click)="toggleNav()">
+      <li>
+        <a routerLink="/admin/dashboard/super-categories" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Categories
+        </a>
+      </li>
+      <li>
+        <a routerLink="/admin/dashboard/super-variations" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            list
+          </span>
+          Variations
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/dashboard/invoices/all" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          All orders
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/dashboard/super-companies" routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            supervisor_account
+          </span>
+          Companies
+        </a>
+      </li>
+
+      <li>
+        <a routerLink="/admin/dashboard/invoices/all" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            library_books
+          </span>
+          Invoices
+        </a>
+      </li>
+      <li>
+        <a routerLink="/admin/dashboard/all-users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            people_outline
+            </span>
+          Users
+        </a>
+      </li>
+      <li>
+        <a routerLink="/admin/dashboard/jobs" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+          <span class="material-icons">
+            playlist_add_check
+          </span>
+          Job cards
+        </a>
+      </li>
+      <li>
+        <a (click)="logout()" style="display: block;top: 2em; color: rgb(97, 0, 0);cursor: pointer;">
+          <span class="material-icons">
+            logout
+          </span>
+        Logout
+        </a>
+      </li>
+
+    </ul>
+  </div>

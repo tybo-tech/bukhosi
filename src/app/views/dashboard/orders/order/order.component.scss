@@ -1,0 +1,111 @@
+@import '../../../../../assets/styles/color';
+
+.create-order .section-card .options {
+  grid-template-columns: 100%;
+}
+
+.top-bar {
+  grid-template-columns: 3% 45% auto;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 4% 35% auto;
+    position: relative;
+  }
+
+}
+
+h4 {
+  text-align: left;
+  color: rgb(2, 1, 1);
+  font-weight: 600;
+  padding: .2em 1em;
+  ;
+
+  span {
+    font-weight: 400;
+    margin-right: .5em;
+  }
+}
+
+.user-profile {
+  animation: none;
+
+  @media only screen and (max-width: 600px) {
+    position: relative;
+    height: auto;
+  }
+}
+
+
+.pay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.39);
+  z-index: 10000000;
+  top: 0;
+  left: 0;
+
+  .pay-modal {
+    position: fixed;
+    bottom: 50%;
+    left: 25%;
+    padding: 2em;
+    background: $white;
+    width: 50%;
+    border-radius: 1em;
+
+    @media only screen and (max-width: 600px) {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-radius: 1em;
+      padding: 1em;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 1em;
+      color: $black;
+    }
+  }
+}
+
+.amount-due {
+  color: $darker-grey;
+  padding: .5em 0;
+  font-weight: 600;
+  ;
+  color: $black;
+  padding: .5em 0;
+  display: block;
+
+}
+
+.tracking {
+  // width: 93%;
+
+  @media only screen and (max-width: 600px) {
+    // width: 91%;
+    margin: 0;
+    margin-bottom: 10em;
+  }
+}
+
+.ctas {
+padding-bottom: .5em;
+padding-top: .5em;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 50% auto;
+    margin-top: .5em;
+  }
+}
+
+
+.mobile-full{
+  @media only screen and (max-width: 600px) {
+    padding:  0;
+
+  }
+}

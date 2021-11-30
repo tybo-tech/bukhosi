@@ -1,0 +1,92 @@
+@import '../../../../../assets/styles/color';
+.success-modal{
+  background: $cloud;
+}
+
+.card {
+  background: $white;
+  margin: 1em;
+  padding: 1em;
+  border-radius: .5em;
+  position: relative;
+  box-shadow: $box-shadow;
+
+  h1 {
+    
+    color: $black;
+    border-bottom: 1px solid $cloud;
+    padding: .5em;
+    text-align: left;
+    width: 100%;
+    text-transform: capitalize;
+
+    span {
+      display: block;
+      color: $black;
+      font-weight: 600;
+    }
+  }
+}
+
+.logout {
+  color: $black;
+}
+.add{
+    font-weight: 700;
+    color: $secondary;
+    position: relative;
+    color: $primary;
+    width: 40%;
+    padding: .5em ;
+    margin: .88em ;
+    top: .4em;
+}
+
+
+.top-bar{
+  grid-template-columns: 11% 65% 10% auto;
+
+
+  .logo{
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    img{
+      width: 100%;
+      top: .2em;
+      border-radius: .3em;
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .user-tab{
+    .name {
+      
+      width: 100%;
+      top: 0;
+      display: block;
+      padding: 0;
+      .profile-user{
+        left: 0;
+        border: 3px solid $pop;
+        top: .5em;
+        width: auto;
+        height: 2.8em;
+        border-radius: .4em;
+        
+      }
+      span{
+        color: $pop;
+      }
+    }
+  }
+
+
+}
+
+.mt5{
+  margin-top: 7em;
+}

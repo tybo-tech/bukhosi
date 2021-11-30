@@ -1,0 +1,29 @@
+@import '../../../../../assets/styles/color';
+
+.add-new {
+  background: $white;
+  width: 12em;
+  color: $pop-darker;
+  margin-top: 2em;
+}
+
+h4 {
+  padding: 2em 1em;
+  color: $darker-grey;
+
+  span {
+    display: block;
+  }
+}
+
+.small-grid {
+  display: grid;
+  grid-template-columns: 50% auto;
+  margin-top: 1.5em;
+  border-top: 1px solid $cloud;
+  padding: 1em 0;
+
+  h4 {
+    padding: 1em;
+  }
+}

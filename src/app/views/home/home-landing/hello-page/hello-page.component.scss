@@ -1,0 +1,198 @@
+@import '../../../../../assets/styles/color';
+
+.more {
+  position: fixed;
+  z-index: 1000;
+  bottom: 4em;
+  left: 0;
+}
+
+.main {
+  background: $cloud;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000000;
+  overflow-y: scroll;
+
+  .body {
+    max-width: 80em;
+    background: $white;
+    margin: 1em auto;
+    padding: 2em;
+    border-radius: .5em;
+
+    @media only screen and (max-width: 600px) {
+      margin: 0;
+    }
+  }
+}
+
+
+.logo {
+  display: block;
+  text-align: left;
+  margin: 0;
+
+  @media only screen and (max-width: 600px) {
+    text-align: center;
+  }
+
+  img {
+    height: 2em;
+    margin: .1em auto;
+    width: auto;
+    left: 0;
+  }
+}
+
+.intro {
+  padding: 1em 0;
+  position: relative;
+
+  h1 {
+    text-align: left;
+    font-weight: 600;
+    width: 40%;
+    margin-bottom: 1.5em;
+    
+    span{
+        color: $pop-darker; 
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+      margin: 2em 0;
+    }
+  }
+
+  p {
+    // border-left: 1.5em solid $pop;
+    padding: .1em 1em;
+    margin: 1.5em 0;
+    width: 40%;
+    color: $darker-grey;
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: .2em;
+    }
+
+    i {
+      color: $pop-darker;
+    }
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 50% auto;
+    padding: .85em 0;
+    width: 40%;
+
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 62% auto;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: $white;
+    }
+
+    button {
+      background: $pop;
+      width: 90%;
+      padding: 1em 1.5em;
+      margin: .2em auto;
+      border-radius: .4em;
+
+      @media only screen and (max-width: 600px) {
+        
+        // width: 100%;
+        // margin: .2em auto;
+        // position: fixed;
+        // z-index: 1000;
+        // bottom: 0;
+        // left: 0;
+        // border-radius: 0;
+        // margin: 0;
+      }
+    }
+
+    .login {
+      background: $black;
+      color: $white;
+    }
+  }
+
+
+  // .login {
+  //   margin-left: 1em;
+  //   background: $black;
+  //   color: $white;
+
+  //   @media only screen and (max-width: 600px) {
+  //     bottom: 4em;
+  //     margin: 0;
+  //   }
+  // }
+
+  .eg-image {
+    width: 60%;
+    padding: .5em;
+    position: absolute;
+    right: 0;
+    top: -4em;
+    text-align: center;
+
+    @media only screen and (max-width: 600px) {
+      position: relative;
+      width: 100%;
+      top: .5em;
+    }
+
+    img {
+      width: auto;
+      height: 30em;
+      margin: .5em auto;
+      left: 7em;
+      animation: moveInLeft .5s ease-out 0s;
+      animation-fill-mode: backwards;
+
+      @media only screen and (max-width: 600px) {
+        height: 15em;
+        left: 0;
+      }
+    }
+
+    .btns {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 3em);
+      width: 20%;
+      margin: 1em auto;
+      left: 7em;
+
+      @media only screen and (max-width: 600px) {
+        width: 45%;
+        left: 0;
+      }
+
+      .btn {
+        width: 1em;
+        height: 1em;
+        border-radius: 1em;
+        margin: .2em;
+        background: $cloud;
+        border: 2px solid $darker-grey;
+        cursor: pointer;
+
+
+      }
+    }
+  }
+}

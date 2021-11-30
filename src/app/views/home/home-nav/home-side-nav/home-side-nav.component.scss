@@ -1,0 +1,200 @@
+@import '../../../../../assets/styles/color';
+
+.side-nav,
+.side-nav-mob {
+  // border: 1px solid $cloud;
+  padding: .5em;
+  background: $primary;
+  border-radius: 0;
+  height: 90vh;
+  color: $white;
+
+
+  position: fixed;
+  z-index: 50000000002;
+  left: 0;
+  top: 0;
+
+  // display: none;
+  @media only screen and (max-width: 600px) {
+
+    height: 100%;
+    padding: 0;
+    width: 60%;
+
+
+
+  }
+
+}
+
+.side-nav-mob {
+  // display: none;
+  width: 20%;
+  animation: moveInLeft .2s ease-out 0s;
+  animation-fill-mode: backwards;
+  left: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-bottom: 2em;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    width: 80%;
+
+  }
+}
+
+
+
+
+.bottom-nav {
+  position: relative;
+  left: 0;
+  background: $white;
+  height: 3.5em;
+  z-index: 1000;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  padding: .5em;
+
+  .nav-items {
+    text-align: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      text-align: center;
+      padding: .4em;
+      top: .8em;
+      margin: .1em auto;
+      border-radius: 0;
+      color: $silver;
+      width: 80%;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .active {
+      color: $black;
+      font-weight: 600;
+      background: $pop;
+      border-radius: .5em;
+      // border-bottom: 3px solid $pop;
+      // box-shadow: $box-shadow;
+    }
+
+  }
+
+}
+
+
+.bottom-nav-2-cols {
+  grid-template-columns: repeat(2, 50%);
+}
+
+
+
+.all-catergories {
+  padding-top: 1em;
+
+
+  button {
+    width: 100%;
+
+    background: $white;
+    border-bottom: 1px solid $cloud;
+    color: $black;
+
+    span {
+      padding: .2em .5em;
+      background: $cloud;
+      margin-left: 1em;
+      border-radius: .4em;
+
+    }
+  }
+
+  a {
+    display: block;
+    border-bottom: 1px solid $cloud;
+    width: 100%;
+
+    background: $white;
+    padding: 1em;
+    text-align: center;
+    color: $black;
+    cursor: pointer;
+    font-weight: 600;
+
+  }
+
+
+
+}
+
+
+.close-menu {
+  color: red;
+  width: 100%;
+  margin: .2em auto;
+  margin-bottom: 0;
+  text-align: right;
+  padding: 1em;
+}
+
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.devider {
+  margin-top: 4em;
+}
+
+.user {
+  padding: 1em;
+  font-size: 1.3em;
+}
+
+.main-collections {
+  .collection {
+    padding: .5em;
+    margin: 1em;
+    // border-bottom: 1px solid $white;
+    border-radius: 0;
+    text-align: left;
+    font-weight: 600;
+    cursor: pointer;
+    span{
+      top: 3px;
+      font-size: 16px;
+    }
+  }
+}
+
+.logout{
+  display: block;
+  margin: 1em 0;
+  padding: .1em;
+  text-align: left;
+  width: 7em;
+  font-weight: 600;
+  font-size: .85em;
+  cursor: pointer;
+  background: $primary;
+  color: $cloud;
+}
+
+.sub-collections{
+    animation: sildeDown .5s ease-out 0s;
+  animation-fill-mode: backwards;
+  overflow: hidden;
+}
+
+

@@ -1,0 +1,25 @@
+@import '../../../../../../../assets/styles/color';
+
+.bread {
+//   display: grid;
+//   grid-template-columns: repeat(3, 33%);
+  padding: 1em 0;
+  background: $cloud;
+  grid-gap: 1em;
+  max-width: $max-width/$max-width-devider;
+  margin: 0 auto;
+  a{
+      text-decoration: none;
+      color: $black;
+      span{
+          margin: 0;
+          font-size: 1em;
+          left: 1em;
+          top: .1em;
+      }
+
+      &:last-child{
+          color: $darker-grey;
+      }
+  }
+}

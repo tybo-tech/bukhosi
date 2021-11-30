@@ -1,0 +1,48 @@
+<div class="main mobile-full">
+  <div class="logo">
+    <a routerLink="">
+      <img src="assets/images/logo.png" alt="">
+    </a>
+  </div>
+
+  <div class="form-item">
+    <h1>
+      Setup shop account
+    </h1>
+  </div>
+  
+  
+  <div class="form-item">
+    <label for="name">Your Shop Name *</label>
+    <input type="search" [(ngModel)]="user.CompanyName" placeholder="Shop/Brand name">
+  </div>
+  
+  <div class="form-item">
+    <label for="name">Your Full Name *</label>
+    <input type="search" [(ngModel)]="user.Name" placeholder="The shop owner or shop admin name">
+  </div>
+  
+  <div class="form-item">
+    <label for="name">Your Email</label>
+    <input type="search" [(ngModel)]="user.Email" placeholder="The shop owner or shop admin email address.">
+  </div>
+  
+  <div class="form-item p6">
+    <label for="name">Password</label>
+    <input type="password" [(ngModel)]="user.Password" placeholder="********">
+  </div>
+  
+  
+  
+  
+  
+  <button mat-button class="more" [disabled]="!user.Name" type="button" (click)="save()">
+    🏡 Create your shop
+  </button>
+  <app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+  <app-home-loader *ngIf="showLoader"></app-home-loader>
+  
+</div>
+
+
+

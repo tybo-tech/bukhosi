@@ -1,0 +1,15 @@
+@import '../../../../../assets/styles/color';
+
+.product-item{
+  grid-template-columns: 4em 70% auto;
+  img{
+    width: 3em;
+    height: auto;
+  }
+  .count{
+    text-align: right;
+    font-weight: 600;
+    
+    padding: .5em;
+  }
+}

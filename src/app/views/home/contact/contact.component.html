@@ -1,0 +1,73 @@
+<div class="section">
+
+  <h1 class="main-heading">
+    contact <span>us.</span>
+  </h1>
+  <p>
+    Please contact us if you have any questions related to our products or if you need technical support.
+    You may e-mail or fill out the contact form and let us know your needs.
+    Our sales representatives will contact you as soon as possible.
+    <br>
+    Please fill all the fields with * to complete your inquiry.
+  </p>
+
+
+  <div class="form">
+    <div class="form-item">
+      <label for="name">Your Name *</label>
+      <input type="text" [(ngModel)]="name" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="name">Your Email *</label>
+      <input type="email" [(ngModel)]="email" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="name">Your Phone *</label>
+      <input type="tel" [(ngModel)]="phone" placeholder="">
+    </div>
+
+    <div class="form-item">
+      <label for="name">Message *</label>
+      <textarea [(ngModel)]="massage" placeholder="">
+
+      </textarea>
+    </div>
+    <div class="form-item">
+
+
+      <button class="primary" [disabled]="!name || !email || !phone || !massage" type="button" (click)="sendEmail()">
+        Send Message
+      </button>
+
+      <br>
+
+      <!-- <button class="secondary" type="button" (click)="back()">
+        Back
+      </button> -->
+
+      <span *ngIf="!name || !email || !phone || !massage" class="error">
+
+        Please fill all the fields with * to complete your inquiry.
+      </span>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="modal" *ngIf="sent">
+  <div class="body">
+    <p>
+      Thank you for contacting us we will reply as soon as possible
+    </p>
+
+
+    <button class="secondary" type="button" (click)="back()">
+      Ok
+    </button>
+  </div>
+</div>

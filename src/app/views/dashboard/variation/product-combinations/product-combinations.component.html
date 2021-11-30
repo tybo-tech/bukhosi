@@ -1,0 +1,98 @@
+<span *ngIf="product">
+  <div class="no-child" *ngFor="let item of product.ProductCombinations; let i = index">
+    <div class="black-label">
+      {{item.CombinationString}}
+    </div>
+    <div class="link" (click)="showStock(item)">
+      {{item.AvailabelStock}} - IN Stock
+      <span class="material-icons">
+        chevron_right
+      </span>
+    </div>
+  </div>
+</span>
+
+
+
+<div class="quick-add" *ngIf="showAdd">
+  <div class="form">
+    <h3>
+      {{stockHeading}}
+    </h3>
+    <div class="form-item">
+      <label for=""> Stock amount</label>
+      <input type="number" name="" id="" [(ngModel)]="stock.TotalStock" placeholder="Number of items." (keyup)="validate()">
+    </div>
+
+    <div class="form-item" *ngIf="stock.StockChangeType == 'Increase'">
+      <label for="">Increase Reason</label>
+      <select [(ngModel)]="stock.StockChangeReason">
+        <option value="Opening stock"> Opening stock</option>
+        <option value="Re-stock"> Re-stock</option>
+        <option value="Returns"> Returns</option>
+        <option value="Other"> Other</option>
+      </select>
+    </div>
+    <div class="form-item"  *ngIf="stock.StockChangeType == 'Decrease'">
+      <label for="">Decrease Reason</label>
+      <select [(ngModel)]="stock.StockChangeReason">
+        <option value="Capturing error">Capturing error</option>
+        <option value="Product damaged">Product damaged</option>
+        <option value="promotions">Promotions</option>
+        <option value="Other"> Other</option>
+      </select>
+    </div>
+
+    <div class="form-item" *ngIf="stock.StockChangeReason == 'Other'">
+      <label for="">Other Reason</label>
+      <input type="text" name="" id="" [(ngModel)]="stock.OtherReason" placeholder="Type reason here.">
+    </div>
+    <div class="form-item col-1">
+      <button (click)="saveStock()" [disabled]="!stock.TotalStock || stockEntryInvalid">Save</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="quick-add" *ngIf="showAddList">
+  <div class="form">
+    <h3>
+      {{stockHeading}}
+    </h3>
+    <div class="form-item col-1">
+      <div class="items" *ngIf="productCombination && productCombination.ProductStock">
+        <div class="item" *ngFor="let item of productCombination.ProductStock; let i = index">
+          <div class="col">
+            <span class="material-icons" *ngIf="item.StockChangeType == 'Decrease'" style="color: rgb(158, 10, 10);">
+              call_received
+            </span>
+            <span class="material-icons" *ngIf="item.StockChangeType == 'Increase'" style="color: rgb(0, 218, 83);">
+              call_made
+            </span>
+            {{item.StockChangeReason}}
+          </div>
+
+          <div class="col">
+            <b>{{item.TotalStock}}</b>
+          </div>
+        </div>
+      </div>
+      <div class="no-data" *ngIf="!productCombination || !productCombination.ProductStock">
+        You do not have stock yet.
+      </div>
+    </div>
+
+
+
+    <div class="form-item col-1">
+      <div class="actions">
+        <button (click)="increase()">
+          Increase stock</button>
+        <button (click)="descrease()" [disabled]="!productCombination.AvailabelStock  || productCombination.AvailabelStock == 0">
+          Decrease stock         </button>
+      </div>
+      <div class="link" (click)="showAddList = false">Cancel</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,138 @@
+@import '../../../assets/styles/color';
+$height : 6em;
+
+.images {
+  display: flex;
+  margin: .5em 0;
+  width: auto;
+  overflow-x: scroll;
+  padding-bottom: 1em;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+
+  .image {
+    padding: 1rem;
+    color: $white;
+
+    @media only screen and (max-width: 600px) {
+      padding: .3em;
+    }
+
+    img {
+      width: auto;
+      cursor: pointer;
+      border-radius: .2em;
+      margin: auto;
+      height: $height;
+    }
+  }
+
+  .active {
+    border: 2px solid $pop;
+  }
+}
+
+
+.file {
+  background: $white;
+  // border-bottom: 1px solid $cloud;
+  padding: 1rem 0;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $primary;
+    cursor: pointer;
+
+  }
+}
+
+.add-image {
+  padding: .5em;
+  text-align: center;
+  background: $pop;
+  width: $height;
+  height: $height;
+  top: .4em;
+  left: 1em;
+  border-radius: .2em;
+  cursor: pointer;
+
+
+  span {
+    top: .85em;
+  }cursor: $white;
+}
+
+.actions {
+  a {
+    background: $cloud;
+    margin: 1em 0;
+    padding: .2em .5em;
+    font-weight: 600;
+    border-radius: .2em;
+    top: .75em;
+    border: 2px solid $pop;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: .5;
+      cursor: no-drop;
+    }
+
+    &:nth-child(2) {
+      margin-left: 1em;
+    }
+  }
+
+
+}
+
+.iam-main {
+  display: block;
+  position: absolute;
+  font-weight: 600;
+  background: $pop;
+  padding: .3em .7em;
+}
+
+.image-zoomed {
+  text-align: center;
+  position: relative;
+  .sliders{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50% auto;
+    .slider-btn{
+      
+    }
+  }
+
+  img {
+    height: 60vh;
+    width: auto;
+
+    @media only screen and (max-width: 600px) {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 50% auto;
+    margin: 1em auto;
+    width: 40%;
+
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
+
+    button {
+      margin: .5em;
+      width: 90%;
+    }
+  }
+}

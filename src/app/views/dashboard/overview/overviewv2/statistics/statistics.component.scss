@@ -1,0 +1,30 @@
+@import '../../../../../../assets/styles/color';
+
+.stats {
+  margin: .1em auto;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 7.5em);
+  grid-gap: .5em;
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: repeat(4, 23.5%);
+  }
+
+  .stat {
+    background: white;
+    box-shadow: $box-shadow;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    margin: .1em auto;
+    font-weight: 600;
+    cursor: pointer;
+
+    span {
+      display: block;
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+  }
+}

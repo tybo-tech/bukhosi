@@ -1,0 +1,92 @@
+<div class="top-bar-conatiner">
+
+  <div class="top-bar">
+    <div class="menu-back">
+      <span class="material-icons" (click)="back()">
+        chevron_left
+      </span>
+    </div>
+
+
+    <div class="name">
+      Editor's pick.
+    </div>
+
+  </div>
+</div>
+
+
+<h3 class="devider">
+  <span>Picks for {{category?.Name}}</span>
+  <span class="add-new" (click)="addNewpick()">
+    <b>+</b> New pick
+  </span>
+</h3>
+
+
+
+<div class="main" *ngIf="category">
+  <div class="tab-items" *ngIf="category.Picks">
+    <div class="all-items action-row" *ngFor="let item of category.Picks">
+   
+      <div class="item">
+        <img *ngIf="item.FeaturedImageUrl" [src]="item.FeaturedImageUrl" alt="">
+        <img *ngIf="!item.FeaturedImageUrl" src="assets/images/icons/add.svg" alt="">
+      </div>
+
+      <div class="item">
+        {{item?.Name}}
+      </div>
+
+      <div class="item">
+        <span class="material-icons" (click)="delete(item)">
+          delete
+          </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="quick-add" *ngIf="showAdd && products">
+  <div class="form">
+    <h3>
+      Pick products.
+    </h3>
+
+    <div class="form-item search">
+      <input type="search" [(ngModel)]="search" name="" id="" placeholder="🔎 filter...">
+    </div>
+
+
+    <div class="form-item scroller">
+      <div class="tab-items">
+        <div class="all-items" *ngFor="let item of products  | searchproduct: search" >
+          <div class="item">
+            <input type="checkbox"  [(ngModel)]="item.IsSelected"/>
+          </div>
+          <div class="item">
+            <img *ngIf="item.FeaturedImageUrl" [src]="item.FeaturedImageUrl" alt="">
+            <img *ngIf="!item.FeaturedImageUrl" src="assets/images/icons/add.svg" alt="">
+          </div>
+
+          <div class="item">
+            {{item?.Name}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="form-item">
+      <button (click)="savePicks()" [disabled]="!showAdd">Next</button>
+      <div class="link" (click)="showAdd = false">Cancel</div>
+    </div>
+
+  </div>
+</div>

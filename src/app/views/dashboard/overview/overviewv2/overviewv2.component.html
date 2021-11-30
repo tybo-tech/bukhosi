@@ -1,0 +1,81 @@
+<app-dash-nav *ngIf="showMenu"></app-dash-nav>
+<div class="overlay" *ngIf="showMenu" (click)="menu()"></div>
+
+<div class="main" *ngIf="user && user.Company && products">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar" *ngIf="user && user.Company">
+      <div class="menu-back" (click)="menu()">
+        <span class="material-icons">
+          menu
+        </span>
+      </div>
+  
+  
+      <div class="name pointer" (click)="goto('user-profile')">
+        Hi , {{user.Name}}
+      </div>
+  
+    </div>
+  </div>
+  <div class="company-profile">
+    <div class="cdp">
+      <img [src]="user.Company.Dp" alt="">
+    </div>
+
+    <div class="details">
+      <h3>
+        {{user.Company.Name}}
+        <span class="block lnk">
+         <a  (click)="gotoShop()"> Go to my shop</a>
+         <!-- <a  (click)="gotoShop()"> {{companyLink}}</a> -->
+          <span class="material-icons" style="left: 2em;"  [cdkCopyToClipboard]="companyLink" (click)="copy()">
+            share
+            </span>
+            
+
+        </span>
+        <span class="block black" *ngIf="user.Company.Description">{{user.Company.Description}} <br> <br></span>
+
+        <span class="block col-2-of-2">
+          <span class="block follow" (click)="goto('company-profile')">Edit company</span>
+          <!-- <span class="block follow" (click)="goto('company-profile')">Following</span> -->
+        </span>
+      </h3>
+    </div>
+  </div>
+  <!-- 
+  <div class="collections">
+    <div class="collection" (click)="goto('home/shop-for/Ladies')">
+      Ladies collection
+    </div>
+    <div class="collection" (click)="goto('home/shop-for/Mens')">
+      Men's collection
+    </div>
+  </div> -->
+
+
+  <!-- <div class="catergories" *ngIf="catergories">
+    <button class="catergory" (click)="all()">
+      All ({{allProducts.length}})
+    </button>
+    <button class="catergory" *ngFor="let catergory of catergories; let i = index"
+      (click)="tapChildCategory(catergory)">
+      {{catergory.Name}}
+    </button>
+
+  </div> -->
+  <h3 class="heading">
+    Orders overview <span (click)="goto('create-order')">New order</span>
+  </h3>
+
+  <app-statistics *ngIf="user && user.UserType === ADMIN"></app-statistics>
+
+
+
+  <app-product-list-cards *ngIf="user && user.UserType === ADMIN"></app-product-list-cards>
+
+  <app-super-overview *ngIf="user && user.UserType === SUPER"></app-super-overview>
+
+
+</div>

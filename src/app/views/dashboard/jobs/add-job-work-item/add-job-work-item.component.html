@@ -1,0 +1,66 @@
+<app-loader [showLoader]="showLoader" *ngIf="showLoader"></app-loader>
+
+<div class="main">
+
+  <div class="page-section">
+
+    <div class="main-list">
+
+      <div class="form-section" *ngIf="jobWork">
+          <div class="col">
+            <div class="detail">
+              <label for="name">Tittle *</label>
+              <input type="text" [(ngModel)]="jobWork.Tittle" placeholder="e.g. Cut the fabric">
+            </div>
+            <div class="detail">
+              <label for="name">Cost to do work (ZAR)</label>
+              <input type="number" [(ngModel)]="jobWork.TotalCost" placeholder="Helps to estimate costs">
+            </div>
+
+
+            <div class="detail">
+              <label for="name">Quantity</label>
+              <input type="number" [(ngModel)]="jobWork.Quantity">
+            </div>
+            <div class="detail">
+              <label for="name">Units</label>
+              <select [(ngModel)]="jobWork.Units">
+                <option value="Units">Units</option>
+                <option value="Miters">Miters</option>
+                <option value="Hours">Hours</option>
+              </select>
+
+            </div>
+            <div class="detail">
+              <label for="name">Work Status</label>
+              <select [(ngModel)]="jobWork.Status">
+                <option value="To do">To do</option>
+                <option value="Working on it">Working on it</option>
+                <option value="Done">Done</option>
+                <option value="Stuck">Stuck</option>
+              </select>
+
+            </div>
+            <div class="detail">
+              <label for="name">Work Notes</label>
+              <textarea [(ngModel)]="jobWork.Description"></textarea>
+
+            </div>
+
+            <button mat-button class="more" [disabled]="!jobWork.Tittle" type="button" (click)="saveJobWork()">
+              Save Work
+            </button>
+
+
+          </div>
+
+       
+
+
+
+
+      </div>
+
+
+    </div>
+  </div>

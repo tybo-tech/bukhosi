@@ -1,0 +1,382 @@
+<input type="file" accept="image/png, image/jpeg" #file placeholder="Choose file" multiple
+  (change)="uploadFile(file.files)" style="display:none;position: fixed;">
+<input type="file" accept="image/png, image/jpeg" #file2 placeholder="Choose file" multiple
+  (change)="uploadFile(file2.files)" style="display:none;position: fixed;">
+
+
+<div class="data-view-main" *ngIf="promotion">
+
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        {{heading}}
+      </div>
+    </div>
+  </div>
+  <app-dashbread [items]="items"></app-dashbread>
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Apply Discount Method
+      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="promotion.PromoGroup">
+        <mat-radio-button *ngFor="let item of DISCOUNT_GROUP" [value]="item">{{item}}</mat-radio-button>
+      </mat-radio-group>
+
+
+    </div>
+  </div>
+
+
+  <div class="basic" *ngIf="promotion.PromoGroup === DISCOUNT_GROUP[1]">
+    <div class="no-child">
+      <div class="black-label">
+        Promo Code
+      </div>
+      <div class="link">
+        <input type="text" [(ngModel)]="promotion.PromoCode" placeholder="e.g. Hot20">
+      </div>
+      <span class="explain-section">Customer will enter this promo code at checkout</span>
+    </div>
+  </div>
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Promotion Type
+      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="promotion.PromoType">
+        <mat-radio-button *ngFor="let item of DISCOUNT_TYPES" [value]="item">{{item}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+
+  <div class="basic" *ngIf="promotion.PromoType === DISCOUNT_TYPES[0]">
+    <div class="no-child">
+      <div class="black-label">
+        Percentage value <b>(%)</b>
+      </div>
+      <div class="link">
+        <input type="tel" [(ngModel)]="promotion.DiscountValue" placeholder="e.g. 20">
+      </div>
+    </div>
+  </div>
+
+  <div class="basic" *ngIf="promotion.PromoType === DISCOUNT_TYPES[1]">
+    <div class="no-child">
+      <div class="black-label">
+        Fixed Off Amount <b>ZAR</b>
+      </div>
+      <div class="link">
+        <input type="tel" [(ngModel)]="promotion.DiscountValue" placeholder="e.g. 20">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Promotion Applies To
+      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="promotion.AppliesTo">
+        <mat-radio-button *ngFor="let item of DISCOUNT_APPLIES_TO" [value]="item">{{item}}</mat-radio-button>
+      </mat-radio-group>
+
+      <div class="" *ngIf="promotion.AppliesTo == DISCOUNT_APPLIES_TO[1]">
+        <div class="search">
+          <br>
+          <input type="search" placeholder="🔎 Search products" (click)="showAdd = true">
+          <div class="selected-products">
+            <div class="product" *ngFor="let product of selectedProducts" (click)="selectAndSerach(product)">
+              <div class="icon">
+                <img [src]="product.FeaturedImageUrl" *ngIf="product.FeaturedImageUrl" alt="Awesome Sunglasses">
+                <img *ngIf="!product.FeaturedImageUrl" src="assets/images/common/image-holder.svg" alt="">
+              </div>
+            </div>
+          </div>
+          .
+        </div>
+      </div>
+
+
+      <div class="" *ngIf="promotion.PromoType == DISCOUNT_TYPES[3]">
+
+        <hr>
+        <div class="black-label">
+          Customer gets
+        </div>
+        <div class="search">
+          <br>
+          <input type="search" placeholder="🔎 Search products" (click)="showAddCustomerGets = true">
+          <div class="selected-products">
+            <div class="product" *ngFor="let product of selectedGetsProducts" (click)="selectAndSerachForGet(product)">
+              <div class="icon">
+                <img [src]="product.FeaturedImageUrl" *ngIf="product.FeaturedImageUrl" alt="Awesome Sunglasses">
+                <img *ngIf="!product.FeaturedImageUrl" src="assets/images/common/image-holder.svg" alt="">
+              </div>
+            </div>
+          </div>
+          .
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="no-child" *ngIf="promotion.AppliesTo == DISCOUNT_APPLIES_TO[2]">
+      <div class="black-label">
+        Select collections
+      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="promotion.AppliesTo">
+        <mat-radio-button *ngFor="let item of DISCOUNT_APPLIES_TO" [value]="item">{{item}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Start Date
+      </div>
+      <div class="link">
+        <input type="date" [(ngModel)]="promotion.StartDate">
+      </div>
+
+      <div class="black-label">
+        Start Time
+      </div>
+      <div class="link">
+        <input type="time" [(ngModel)]="promotion.StartTime">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Finish Date
+      </div>
+      <div class="link">
+        <input type="date" [(ngModel)]="promotion.FinishDate">
+      </div>
+
+      <div class="black-label">
+        Finish Time
+      </div>
+      <div class="link">
+        <input type="time" [(ngModel)]="promotion.FinishTime">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="basic" style="display: none;">
+    <div class="no-child">
+      <div class="black-label">
+        Status
+      </div>
+      <select [(ngModel)]="promotion.StatusId">
+        <option value="1">Running</option>
+        <option value="2">Scheduled</option>
+        <option value="3">Stopped</option>
+        <option value="4">Paused</option>
+      </select>
+    </div>
+  </div>
+
+
+
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Minimum Requirements
+      </div>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="promotion.MinimumRequirements">
+        <mat-radio-button *ngFor="let item of DISCOUNT_MIN_RQS" [value]="item">{{item}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+
+  <div class="basic" *ngIf="promotion.MinimumRequirements !== DISCOUNT_MIN_RQS[0]">
+    <div class="no-child">
+      <div class="black-label">
+        {{promotion.MinimumRequirements}}
+      </div>
+      <div class="link">
+        <input type="tel" [(ngModel)]="promotion.MinimumRequirementValue" placeholder="e.g. 20">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Promotion poster.
+      </div>
+      <div class="banner">
+        <div class="icon" *ngIf="promotion.ImageUrl">
+          <div class="user-dp-image">
+            <img [src]="promotion.ImageUrl" alt="">
+          </div>
+        </div>
+
+        <div class="icon" *ngIf="!promotion.ImageUrl">
+          <div class="user-dp-image">
+            <img src="assets/images/icons/add.svg" style="width: 40%;" alt="">
+          </div>
+        </div>
+
+        <div class="error" *ngIf="!promotion.ImageUrl">The promotion banner is requried.</div>
+        <div *ngIf="!promotion.ImageUrl">
+          <button class="secondary" (click)="file.click()">Uplaod poster</button>
+        </div>
+        <div *ngIf="promotion.ImageUrl">
+          <button class="secondary" (click)="file2.click()">Change poster</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div> -->
+
+
+<!-- 
+  <div class="basic">
+    <div class="no-child">
+      <div class="black-label">
+        Promotion background color
+      </div>
+      <div class="link">
+        <input type="color" [(ngModel)]="promotion.Bg">
+      </div>
+    </div>
+    <div class="no-child">
+      <div class="black-label">
+        Promotion text color
+      </div>
+      <div class="link">
+        <input type="color" [(ngModel)]="promotion.Color">
+      </div>
+    </div>
+  </div> -->
+
+
+
+  <div class="basic">
+    <div class="ctas">
+
+      <div class="cta">
+        <button class="secondary" mat-button color="primary" (click)="back()">
+          Back
+        </button>
+      </div>
+
+      <div class="cta">
+        <button class="mat-primary checkout" mat-button color="primary" (click)="savePromotion()">
+          Save Promotion
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="quick-add" *ngIf="showAdd && promotion.AppliesTo == DISCOUNT_APPLIES_TO[1]">
+  <div class="form">
+    <h3>
+      Select products
+    </h3>
+    <div class="search-box">
+      <input type="search" [(ngModel)]="searchString" placeholder="🔎 Filter by product name or description">
+    </div>
+
+    <div class="selector">
+      <div class="list-item" *ngFor="let product of products  | searchproduct: searchString"
+        (click)="selectProduct(product)">
+
+        <div class="col">
+          <img [src]="product.FeaturedImageUrl" *ngIf="product.FeaturedImageUrl" alt="Awesome Sunglasses">
+          <img *ngIf="!product.FeaturedImageUrl" src="assets/images/common/image-holder.svg" alt="">
+
+        </div>
+        <div class="col">
+          {{product.Name}}
+          <button class="primary" *ngIf="!product.IsSelected">Select</button>
+          <button class="secondary" *ngIf="product.IsSelected">Selected</button>
+
+        </div>
+      </div>
+
+      <div class="form-item">
+        <button (click)="showAdd = false">Done</button>
+        <div class="link" (click)="showAdd = false">Cancel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="quick-add" *ngIf="showAddCustomerGets && promotion.PromoType == DISCOUNT_TYPES[3]">
+  <div class="form">
+    <h3>
+      Select product(s) the customer gets.
+    </h3>
+    <div class="search-box">
+      <input type="search" [(ngModel)]="searchString" placeholder="🔎 Filter by product name or description">
+    </div>
+
+    <div class="selector">
+      <div class="list-item" *ngFor="let product of products  | searchproduct: searchString"
+        (click)="selectProductForGet(product)">
+
+        <div class="col">
+          <img [src]="product.FeaturedImageUrl" *ngIf="product.FeaturedImageUrl" alt="Awesome Sunglasses">
+          <img *ngIf="!product.FeaturedImageUrl" src="assets/images/common/image-holder.svg" alt="">
+
+        </div>
+        <div class="col">
+          {{product.Name}}
+          <button class="primary" *ngIf="!product.IsSelectedForGet">Select</button>
+          <button class="secondary" *ngIf="product.IsSelectedForGet">Selected</button>
+
+        </div>
+      </div>
+
+      <div class="form-item">
+        <button (click)="showAddCustomerGets = false">Done</button>
+        <div class="link" (click)="showAddCustomerGets = false">Cancel</div>
+      </div>
+    </div>
+  </div>
+</div>

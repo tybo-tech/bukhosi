@@ -1,0 +1,22 @@
+@import '../../../../../../assets/styles/color';
+
+.bread {
+//   display: grid;
+//   grid-template-columns: repeat(3, 33%);
+  padding: 1em;
+  background: $cloud;
+  a{
+      text-decoration: none;
+      color: $black;
+      span{
+          margin: 0;
+          font-size: 1em;
+          left: 1em;
+          top: .1em;
+      }
+
+      &:last-child{
+          color: $darker-grey;
+      }
+  }
+}

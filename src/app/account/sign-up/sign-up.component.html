@@ -1,0 +1,107 @@
+<div class="account-form mobile-full">
+  <div class="top-bar-conatiner">
+
+    <div class="top-bar">
+      <div class="menu-back">
+        <span class="material-icons" (click)="back()">
+          chevron_left
+        </span>
+      </div>
+
+
+      <div class="name">
+        Customer sign up
+      </div>
+
+      <div class="btn-menu">
+      </div>
+    </div>
+  </div>
+
+  <form class="form" [formGroup]="rForm">
+    <div class="form-container">
+      <div class="logo">
+        <a routerLink="">
+          <img src="assets/images/logo.png" alt="">
+        </a>
+      </div>
+
+      <!-- <div class="social">
+        <app-social-login></app-social-login>
+        <div class="or">Or</div>
+      </div> -->
+
+
+      <div class="form-group">
+        <label for="exampleInputName">Full Name*</label>
+        <input type="text" class="form-control" formControlName="Name" id="exampleInputFirstName"
+          placeholder="John Doe">
+        <div class="alert" *ngIf="!rForm.controls['Name'].valid  && rForm.controls['Name'].touched ">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPhoneNumber">Contact number*</label>
+        <input type="email" class="form-control" formControlName="PhoneNumber" id="exampleInputPhoneNumber"
+          placeholder="Enter Contact Number">
+        <div class="alert" *ngIf="!rForm.controls['PhoneNumber'].valid  && rForm.controls['PhoneNumber'].touched ">
+          PhoneNumber is required
+        </div>
+      </div>
+<!-- 
+      <div class="form-group">
+        <label for="exampleInputPhoneNumber">Date of birth</label>
+        <input type="email" class="form-control" formControlName="PhoneNumber" id="exampleInputPhoneNumber"
+          placeholder="Enter Contact Number">
+        <div class="alert" *ngIf="!rForm.controls['PhoneNumber'].valid  && rForm.controls['PhoneNumber'].touched ">
+          PhoneNumber is required
+        </div>
+      </div> -->
+
+
+      <!-- <div class="form-group">
+        <label for="exampleInputSurname">Delivery address</label>
+        <input ngx-google-places-autocomplete [options]='options' formControlName="AddressLineHome"
+          placeholder="Start typing..." class="input" #places="ngx-places"
+          (onAddressChange)="handleAddressChange($event)" />
+      </div> -->
+
+      <div class="form-group">
+        <label for="exampleInputEmail">Email address*</label>
+        <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail"
+          placeholder="Enter email">
+        <div class="alert" *ngIf="!rForm.controls['Email'].valid  && rForm.controls['Email'].touched ">
+          Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">
+          Password* <mat-icon class="pointer" (click)="hidePassword = !hidePassword">
+            {{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </label>
+        <input type="password" [type]="hidePassword? 'password': 'text'" class="form-control" formControlName="Password"
+          id="exampleInputPassword1" placeholder="Password">
+        <div class="showPassword" (click)="hidePassword = !hidePassword">
+          <div class="alert" *ngIf="!rForm.controls['Password'].valid && rForm.controls['Password'].touched ">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button color="primary" class="more" (click)="onSubmit(rForm.value)" [disabled]="!rForm.valid">
+          Sign up for free
+        </button>
+        <span class="error">{{error}}</span>
+        <div class="go-login">
+          <a routerLink="/sign-in"> Go to login</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<app-customer-feedback *ngIf="modalModel && modalModel.heading" [modalModel]="modalModel"></app-customer-feedback>
+
+<app-home-loader *ngIf="showLoader"></app-home-loader>

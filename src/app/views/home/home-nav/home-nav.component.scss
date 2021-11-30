@@ -1,0 +1,158 @@
+@import '../../../../assets/styles/color';
+
+.top-banner {
+  background: $pop;
+  display: grid;
+  grid-template-columns: 80% 10% auto;
+  padding: 1em 2em;
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 50% 25% auto;
+    padding: 1em .5em;
+
+  }
+
+  .col {
+    a {
+
+      color: $black;
+      display: block;
+      text-decoration: none;
+      padding: .5em .1em;
+
+    }
+
+    .a-btn {
+      text-align: center;
+      border: 1px solid $black;
+      width: 8em;
+
+      @media only screen and (max-width: 600px) {
+        width: 6em;
+      }
+    }
+  }
+}
+
+.nav-banner {
+  background: $white;
+  display: grid;
+  grid-template-columns: 50% auto;
+  padding: 0 2em;
+
+
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 100%;
+    padding: .5em;
+
+  }
+
+  .col {
+    img {
+      width: 12.5em;
+      // left: ;
+    }
+
+
+    @media only screen and (max-width: 600px) {
+      text-align: center;
+    }
+
+    ul {
+      top: 2em;
+
+      li {
+        display: inline-block;
+
+        a {
+          display: block;
+          padding: 1em;
+          text-align: center;
+          text-decoration: none;
+          font-weight: 600;
+          color: $pop;
+        }
+      }
+    }
+  }
+}
+
+
+.phone-menu {
+  display: none !important;
+
+  @media only screen and (max-width: 600px) {
+    display: grid !important;
+    grid-template-columns: 4em auto 4em;
+    padding: 0 .5em;
+    background: $black;
+  }
+
+  .col {
+    // border: 2px solid red;
+    text-align: center;
+    color: $pop;
+
+    .icons {
+      position: relative;
+      top: 1em;
+    }
+
+    img {
+      width: 10em;
+      top: .2em;
+    }
+  }
+}
+
+
+.mess {
+  padding: .5em;
+  font-size: .85em;
+  font-weight: 600;
+  color: $black;
+}
+
+.pc-menu {
+  background: $black;
+  border: none;
+  padding: 1em 11em;
+  display: grid;
+  grid-template-columns: 50% auto;
+  position: fixed;
+  width: 100%;
+  z-index: 10000;
+  top: 0;
+  border-bottom: 2px solid $pop;
+
+  img {
+    width: 10em;
+  }
+
+  ul {
+    top: 2em;
+    position: relative;
+    float: right;
+    margin-right: 1em;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 1em;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 600;
+        color: $pop;
+        margin: 0 1em;
+      }
+
+      .active-link {
+        // color: $secondary;
+        border-bottom: 2px solid $black;
+      }
+    }
+  }
+}

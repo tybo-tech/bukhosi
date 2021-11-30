@@ -1,0 +1,73 @@
+.account-form {
+  background: $white;
+  margin: .5em;
+  position: relative;
+  padding: 2em;
+
+  @media only screen and (max-width: 600px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90000;
+    padding: .2em;
+    margin: 0;
+  }
+
+  .top-bar {
+    grid-template-columns: 3% auto;
+
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: 10% auto;
+    }
+  }
+
+}
+
+
+
+.more {
+
+  width: 12em;
+  border-radius: .2em;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+
+  }
+}
+
+.go-login {
+  display: block;
+  text-align: left;
+  margin-top: 4em;
+  margin-bottom: 4em;
+
+  a {
+    color: $info;
+    text-transform: none;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.logo {
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 4em;
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+
+  img {
+    width: 60%;
+    
+  @media only screen and (max-width: 600px) {
+  //  left: -1em;
+  }
+  }
+}
+
